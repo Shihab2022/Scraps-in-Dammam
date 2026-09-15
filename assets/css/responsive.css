@@ -1,0 +1,99 @@
+/* ============================================================
+   Responsive layout — 320 → 1920px
+   ============================================================ */
+
+/* ----- 1280px and below ----- */
+@media (max-width: 1280px){
+    .footer-grid{grid-template-columns:1.2fr 1fr 1.2fr 1fr}
+    .footer-col--contact{grid-column:1 / -1}
+}
+
+/* ----- 1024px and below: tablet ----- */
+@media (max-width: 1024px){
+    :root{--header-h:66px}
+    .nav-toggle{display:flex}
+    .topbar__info{display:none}
+    .navbar__inner{min-height:var(--header-h)}
+    .nav-cta-wrap{display:none}
+
+    /* Navigation becomes a slide-in drawer */
+    .nav-menu{
+        position:fixed;top:0;bottom:0;right:0;width:min(360px,88vw);max-width:360px;
+        background:#fff;flex-direction:column;align-items:stretch;gap:2px;
+        padding:24px 18px 130px;overflow-y:auto;
+        box-shadow:-14px 0 40px rgba(22,24,29,.22);z-index:960;
+        transform:translateX(105%);transition:transform .3s ease;
+    }
+    .nav-menu.open{transform:translateX(0)}
+    .nav-menu>li{position:static}
+    .nav-menu>li>a,.nav-dropdown-toggle{width:100%;justify-content:space-between;padding:14px 12px;font-size:1rem;border-radius:10px}
+    .nav-dropdown{position:static;transform:none;min-width:0;box-shadow:none;border:none;background:var(--bg);
+        opacity:1;visibility:visible;display:none;margin:0 0 6px 8px;border-radius:10px}
+    .has-dropdown.open>.nav-dropdown{display:block}
+    .nav-dropdown li a{padding:12px}
+    .nav-dropdown li a i{width:22px}
+    .nav-menu .nav-cta-wrap{display:flex;flex-direction:column;margin:20px 0 0}
+
+    .scrap-grid,.loc-grid,.why-grid,.testimonial-grid,.steps-grid,.contact-grid{grid-template-columns:repeat(2,1fr)}
+    .hero__inner{grid-template-columns:1fr;gap:32px}
+    .hero{padding-block:72px}
+    .hero__media{max-width:640px}
+    .split{grid-template-columns:1fr;gap:28px}
+    .split--reverse .split__body{order:0}
+    .material-grid{grid-template-columns:repeat(2,1fr)}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ----- 768px and below: phone ----- */
+@media (max-width: 768px){
+    .section{padding-block:52px}
+    .scrap-grid,.loc-grid,.why-grid,.testimonial-grid,.steps-grid,.contact-grid,.material-grid{grid-template-columns:1fr}
+    .form-grid{grid-template-columns:1fr}
+    .map-card__list{grid-template-columns:1fr}
+    .trust-grid{grid-template-columns:1fr;padding:20px}
+    .trust-strip{margin-top:-30px}
+    .stats-grid{gap:20px;padding-block:34px}
+    .stat strong{font-size:1.6rem}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:26px}
+    .footer-legal{flex-direction:column;text-align:center}
+
+    /* sticky bottom CTA + floating wa */
+    .mobile-cta{display:grid}
+    body{padding-bottom:56px}
+    .wa-float{bottom:80px;right:16px;width:52px;height:52px;font-size:1.5rem}
+    .site-footer{padding-bottom:14px}
+
+    .page-hero{padding-block:44px 50px}
+    .cta-band__inner{flex-direction:column;text-align:center;justify-content:center}
+    .cta-band__actions{justify-content:center}
+    .hero__actions{flex-direction:column;align-items:stretch}
+    .hero__actions .btn{justify-content:center}
+    .center-box{margin:44px auto;padding:36px 22px}
+    .table-wrap{border-radius:10px}
+}
+
+/* ----- 480px and below: small phones ----- */
+@media (max-width: 480px){
+    .container{padding-inline:16px}
+    .brand__text{font-size:1rem}
+    .brand__mark{width:34px;height:34px}
+    .section-head h1,.section-head h2{font-size:1.6rem}
+    .footer-grid{grid-template-columns:1fr}
+    .form-card{padding:22px}
+    .btn--lg{padding:15px 24px;font-size:.95rem}
+    .grid-2{grid-template-columns:1fr}
+    .hero h1{font-size:1.95rem}
+    .topbar__inner{justify-content:center}
+}
+
+/* ----- Height limits for very small landscape phones ----- */
+@media (max-height: 480px) and (orientation: landscape){
+    .nav-menu{padding-bottom:60px}
+}
+
+@media print{
+    .topbar,.mobile-cta,.wa-float,.nav-toggle,.cta-band,.footer-legal__links{display:none !important}
+    body{padding-bottom:0}
+    .site-header{position:static;box-shadow:none}
+    a{color:#000}
+}

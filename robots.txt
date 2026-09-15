@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /actions/
+Disallow: /includes/
+Disallow: /config/
+Disallow: /uploads/files/
+
+Sitemap: {APP_URL}/sitemap.xml
