@@ -98,18 +98,22 @@ $scrapCategories = [
     ],
 ];
 
-function scrap_category(string $key): ?array
-{
-    global $scrapCategories;
-    return $scrapCategories[$key] ?? null;
+if (!function_exists('scrap_category')) {
+    function scrap_category(string $key): ?array
+    {
+        global $scrapCategories;
+        return $scrapCategories[$key] ?? null;
+    }
 }
 
 /** Return the active scrap category key for the current URL. */
-function current_scrap_key(): ?string
-{
-    $route = trim(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH), '/');
-    foreach ($GLOBALS['scrapCategories'] as $cat) {
-        if ($route === $cat['slug']) return $cat['key'];
+if (!function_exists('current_scrap_key')) {
+    function current_scrap_key(): ?string
+    {
+        $route = trim(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH), '/');
+        foreach ($GLOBALS['scrapCategories'] as $cat) {
+            if ($route === $cat['slug']) return $cat['key'];
+        }
+        return null;
     }
-    return null;
 }

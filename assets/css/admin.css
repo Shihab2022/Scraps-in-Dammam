@@ -53,6 +53,15 @@ a{color:#1e5631;text-decoration:none}
 .pill-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
 .pill-nav a{background:#fff;border:1px solid #d9dedb;border-radius:999px;padding:7px 14px;font-size:.82rem;font-weight:600;color:#20242b}
 .pill-nav a.active{background:#1e5631;color:#fff;border-color:#1e5631}
+.admin__auth{display:flex;justify-content:center;padding:60px 20px}
+.admin__auth-card{background:#fff;border:1px solid #e3e9e6;border-radius:14px;padding:32px;width:100%;max-width:400px;box-shadow:0 8px 28px rgba(22,24,29,.08)}
+.admin__auth-card--wide{max-width:640px}
+.admin__auth-card h2{margin-bottom:6px;font-size:1.15rem}
+.admin__auth-card .muted{color:#5c6b75;font-size:.85rem;margin-bottom:18px}
+.admin__auth-card .btn--block{width:100%;justify-content:center;margin-top:6px}
+.muted{color:#5c6b75;font-size:.85rem}
+.mt-1{margin-top:12px}
+code{background:#eef1ef;padding:2px 6px;border-radius:4px;font-size:.85em}
 @media (max-width:900px){
   .admin{grid-template-columns:1fr}
   .admin__side{flex-direction:row;flex-wrap:wrap;align-items:center}

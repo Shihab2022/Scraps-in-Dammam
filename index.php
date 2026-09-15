@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-require __DIR__ . '/includes/bootstrap.php';
-require __DIR__ . '/includes/security.php';
-require __DIR__ . '/includes/storage.php';
-require __DIR__ . '/includes/mailer.php';
-require __DIR__ . '/includes/auth.php';
-require __DIR__ . '/includes/components.php';
-require __DIR__ . '/scrap/_data.php';
+require_once __DIR__ . '/includes/bootstrap.php';
+require_once __DIR__ . '/includes/security.php';
+require_once __DIR__ . '/includes/storage.php';
+require_once __DIR__ . '/includes/mailer.php';
+require_once __DIR__ . '/includes/auth.php';
+require_once __DIR__ . '/includes/components.php';
+require_once __DIR__ . '/scrap/_data.php';
 
 $rawPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?? '/';
 $route = trim($rawPath, '/');
@@ -71,10 +71,9 @@ if (isset($routes[$route])) {
     exit;
 }
 
-// Serve generated static SEO maps (sitemap.xml is regenerated here too).
+// Serve generated static SEO maps (sitemap.xml is generated here too).
 if ($route === 'sitemap.xml') {
-    header('Content-Type: application/xml; charset=utf-8');
-    readfile(__DIR__ . '/sitemap.php');
+    require __DIR__ . '/sitemap.php';
     exit;
 }
 if ($route === 'robots.txt') {

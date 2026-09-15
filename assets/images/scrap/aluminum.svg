@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320">
+  <rect width="480" height="320" fill="#eef3ef"/>
+  <g transform="translate(60 60)">
+    <rect x="0" y="0" width="120" height="120" rx="12" fill="#9aa5a0"/>
+    <rect x="140" y="10" width="110" height="110" rx="12" fill="#b4bdb8"/>
+    <rect x="270" y="0" width="90" height="120" rx="12" fill="#8a9490"/>
+    <g stroke="#e8ecea" stroke-width="6">
+      <line x1="20" y1="40" x2="100" y2="40"/>
+      <line x1="20" y1="70" x2="100" y2="70"/>
+      <line x1="160" y1="44" x2="240" y2="44"/>
+      <line x1="160" y1="80" x2="240" y2="80"/>
+    </g>
+  </g>
+  <g transform="translate(90 215)">
+    <rect x="0" y="0" width="300" height="26" rx="13" fill="#22c55e"/>
+    <rect x="0" y="34" width="300" height="6" rx="3" fill="#9fb8a8"/>
+  </g>
+  <text x="240" y="66" font-family="Arial, sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="bold">AL 6000</text>
+  <text x="240" y="306" font-family="Arial, sans-serif" font-size="15" fill="#5c6b75" text-anchor="middle">Aluminum Profiles &amp; Sheet</text>
+</svg>

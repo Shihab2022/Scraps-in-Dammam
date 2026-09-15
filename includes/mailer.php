@@ -31,12 +31,11 @@ if (!function_exists('send_notification')) {
         $logDir = uploads_subdir('logs');
 
         try {
+            $sent = false;
+
             if ($driver === 'smtp' && is_file(ROOT_PATH . '/vendor/autoload.php')) {
                 require_once ROOT_PATH . '/vendor/autoload.php';
-                $mail = new PHPMailer\PHPMailer\PHPMailer(true);
             }
-
-            $sent = false;
 
             if (($driver === 'smtp') && class_exists('PHPMailer\PHPMailer\PHPMailer')) {
                 $mail->isSMTP();

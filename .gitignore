@@ -1,0 +1,25 @@
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+
+# Build / runtime
+/vendor/
+composer.lock
+
+# Logs & uploads (never commit customer data or logs)
+/uploads/logs/*
+!/uploads/logs/.gitkeep
+/uploads/records/*
+!/uploads/records/.gitkeep
+/uploads/files/*
+!/uploads/files/.gitkeep
+/uploads/tmp/*
+!/uploads/tmp/.gitkeep
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log

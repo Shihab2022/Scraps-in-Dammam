@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320">
+  <rect width="480" height="320" fill="#dfe6e1"/>
+  <rect x="0" y="250" width="480" height="70" fill="#b7bfb8"/>
+  <g transform="translate(40 30)">
+    <rect x="0" y="60" width="380" height="180" fill="#aab5aa"/>
+    <path d="M0 40 L40 0 H200 L0 40 Z" fill="#5b6470"/>
+    <rect x="150" y="90" width="200" height="150" rx="10" fill="#d5dcd7"/>
+    <g stroke="#22c55e" stroke-width="6">
+      <line x1="190" y1="150" x2="270" y2="150"/>
+      <line x1="190" y1="185" x2="270" y2="185"/>
+    </g>
+    <g fill="#7c8783">
+      <rect x="40" y="90" width="60" height="50" rx="6"/>
+      <rect x="120" y="150" width="80" height="40" rx="6"/>
+      <circle cx="70" cy="160" r="16" fill="#16181d" stroke="#cbd5d1" stroke-width="5"/>
+    </g>
+  </g>
+  <text x="240" y="306" font-family="Arial, sans-serif" font-size="15" fill="#4a524d" text-anchor="middle">Scrap Yard Sorting Area</text>
+</svg>

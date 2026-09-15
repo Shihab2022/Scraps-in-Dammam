@@ -123,7 +123,13 @@ if (!function_exists('asset')) {
 if (!function_exists('redirect')) {
     function redirect(string $path): void
     {
-        header('Location: ' . url($path), true, 302);
+        // With APP_URL configured (production) use the absolute URL.
+        // Otherwise use a root-relative Location so the app works on any host/port in local dev.
+        if (env('APP_URL', '') !== '') {
+            header('Location: ' . url($path), true, 302);
+        } else {
+            header('Location: /' . ltrim($path, '/'), true, 302);
+        }
         exit;
     }
 }
@@ -154,8 +160,7 @@ if (!function_exists('flash_set')) {
         $_SESSION['flash'] = ['type' => $type, 'message' => $message];
     }
 }
-if (!function_exists('flash_get')) {
-    /* -------------------- JSON-LD helpers -------------------- */
+/* -------------------- JSON-LD helpers -------------------- */
 if (!function_exists('jsonld')) {
     function jsonld(array $data): string
     {

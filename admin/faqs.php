@@ -8,6 +8,11 @@ require __DIR__ . '/_layout.php';
 $pdo = db();
 $action = $_POST['action'] ?? '';
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pdo === null) {
+    flash_set('error', 'Database not reachable — cannot save changes.');
+    redirect('admin/faqs');
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!csrf_verify(post('csrf_token'))) {
         flash_set('error', 'Invalid form token.');

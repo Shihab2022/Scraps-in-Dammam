@@ -27,6 +27,9 @@ DirectoryIndex index.php
     Require all denied
 </FilesMatch>
 
+# Deny direct access to application internals (the front controller serves everything)
+RedirectMatch 403 ^/(includes|config|scrap|pages|locations|actions|database|admin)/.*\.php$
+
 # Security headers
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"

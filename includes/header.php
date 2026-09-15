@@ -18,7 +18,9 @@ $businessSchema   = $businessSchema ?? false;
 $noindex          = $noindex ?? false;
 
 $fullTitle = ($pageTitle === $siteName) ? $siteName : $pageTitle . ' | ' . $siteName;
-$desc = mb_substr(trim($pageDescription), 0, 158);
+$desc = function_exists('mb_substr')
+    ? mb_substr(trim($pageDescription), 0, 158)
+    : substr(trim($pageDescription), 0, 158);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,6 +55,7 @@ $desc = mb_substr(trim($pageDescription), 0, 158);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <link rel="stylesheet" href="<?= e(asset('css/style.css')) ?>">
+    <link rel="stylesheet" href="<?= e(asset('css/responsive.css')) ?>">
     <?php if ($businessSchema): echo jsonld([
             '@context' => 'https://schema.org',
             '@type'    => 'LocalBusiness',

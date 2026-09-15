@@ -3,10 +3,10 @@
  * Pickup request handler.
  */
 declare(strict_types=1);
-require __DIR__ . '/../includes/bootstrap.php';
-require __DIR__ . '/../includes/security.php';
-require __DIR__ . '/../includes/storage.php';
-require __DIR__ . '/../includes/mailer.php';
+require_once __DIR__ . '/../includes/bootstrap.php';
+require_once __DIR__ . '/../includes/security.php';
+require_once __DIR__ . '/../includes/storage.php';
+require_once __DIR__ . '/../includes/mailer.php';
 
 $errors = [];
 

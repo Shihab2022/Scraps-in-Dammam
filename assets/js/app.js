@@ -122,6 +122,7 @@
         }
         input.addEventListener('change', renderNames);
         if (target) {
+            target.addEventListener('click', function () { input.click(); });
             ['dragover', 'dragleave', 'drop'].forEach(function (evt) {
                 target.addEventListener(evt, function (e) {
                     e.preventDefault();

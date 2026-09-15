@@ -39,7 +39,7 @@ include __DIR__ . '/../includes/header.php';
         <p>Ownership of all material is transferred to us upon pickup and payment. By accepting payment you release us from claims relating to the material.</p>
 
         <h2>8. Limitation of Liability</h2>
-        <p>Our maximum liability arising out of these terms is limited to the amount paid (if any) paid for the material in question. We are not liable for indirect or indirect consequential loss.</p>
+        <p>Our maximum liability arising out of these terms is limited to the amount paid for the material in question. We are not liable for indirect or consequential loss.</p>
 
         <h2>9. Website Use</h2>
         <p>You agree not to misuse this website, including attempting to disrupt it, gaining unauthorised access, or submitting false or harmful content.</p>

@@ -102,11 +102,15 @@ if (!function_exists('handle_uploads')) {
             }
             $tmp = (string) ($input['tmp_name'][$i] ?? '');
             if (!is_uploaded_file($tmp)) { $result['ok'] = false; continue; }
-            $mime = function_exists('finfo_open')
-                ? (new finfo(FILEINFO_MIME_TYPE))->file($tmp)
-                : (function_exists('mime_content_type') ? mime_content_type($tmp) : '');
+            $mime = '';
+            if (function_exists('finfo_open')) {
+                $fi = finfo_open(FILEINFO_MIME_TYPE);
+                if ($fi !== false) { $mime = (string) finfo_file($fi, $tmp); finfo_close($fi); }
+            } elseif (function_exists('mime_content_type')) {
+                $mime = (string) mime_content_type($tmp);
+            }
             $ext = array_search($mime, $allowed, true);
-            if ($mime === false || $ext === false) {
+            if ($ext === false) {
                 $result['errors'][] = 'Photo "' . e($name) . '" must be a JPG, PNG or WEBP image.';
                 $result['ok'] = false;
                 continue;

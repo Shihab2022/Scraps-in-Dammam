@@ -27,7 +27,7 @@ $faqs = [
     ['question' => 'Do I need to clean or sort my scrap?', 'answer' => 'No. We grade and sort on site. Clean, sorted material simply earns a higher grade rate.'],
     ['question' => 'Do you buy scrap from private homes?', 'answer' => 'Yes — residential pickup is one of our most common services, from single copper pipes and old AC units to garage clean-outs.'],
     ['question' => 'Can you handle large factory volumes?', 'answer' => 'Yes, we purchase bulk industrial scrap with dedicated trucks, site inspections and scheduled/recurring collection contracts.'],
-    ['question' => 'What if I don\u2019t know the type of scrap?', 'answer' => 'Send a photo on WhatsApp and we will identify the material and give you an accurate quote.'],
+    ['question' => 'What if I don’t know the type of scrap?', 'answer' => 'Send a photo on WhatsApp and we will identify the material and give you an accurate quote.'],
     ['question' => 'Are prices fixed or do they change?', 'answer' => 'Scrap prices follow the market and can change daily. We always confirm the current rate at the time of your inquiry.'],
     ['question' => 'Is weighing done electronically?', 'answer' => 'Yes, we use calibrated digital scales and you can watch the weighing and calculation throughout.'],
     ['question' => 'Do you recycle environmentally responsibly?', 'answer' => 'Yes, all materials are processed through licensed recycling facilities and our own sorting yard, with documented handling.'],

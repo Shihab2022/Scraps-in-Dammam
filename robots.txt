@@ -6,4 +6,4 @@ Disallow: /includes/
 Disallow: /config/
 Disallow: /uploads/files/
 
-Sitemap: {APP_URL}/sitemap.xml
+Sitemap: /sitemap.xml

@@ -45,7 +45,7 @@ $waMsg = 'Hello, I would like to sell my scrap. Can you provide a quote?';
             <ul class="nav-menu" id="navMenu" role="menubar">
                 <li<?= $activeRoute === '' ? ' class="active"' : '' ?>>
                     <a href="<?= e(url('/')) ?>">Home</a></li>
-                <li<?= $activeRoute === '/about-us' ? ' class="active' : '' ?>>
+                <li<?= $activeRoute === '/about-us' ? ' class="active"' : '' ?>>
                     <a href="<?= e(url('about-us')) ?>">About Us</a></li>
 
                 <li class="has-dropdown">

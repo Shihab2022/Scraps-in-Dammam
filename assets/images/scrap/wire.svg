@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320">
+  <rect width="480" height="320" fill="#eef1f2"/>
+  <g transform="translate(80 60)">
+    <ellipse cx="160" cy="70" rx="95" ry="55" fill="none" stroke="#b87333" stroke-width="12"/>
+    <ellipse cx="160" cy="70" rx="70" ry="38" fill="none" stroke="#c0803a" stroke-width="7"/>
+    <path d="M40 120 q16 60 240 56" stroke="#3a3f46" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <path d="M46 118 q30 58 120 64 M300 174 q-90 22 -140 6" stroke="#a9b0b6" stroke-width="10" fill="none" stroke-linecap="round"/>
+  </g>
+  <text x="240" y="270" font-family="Arial, sans-serif" font-size="15" fill="#5c6b75" text-anchor="middle">Insulated Wire Coils</text>
+</svg>

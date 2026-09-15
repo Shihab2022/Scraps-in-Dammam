@@ -1,0 +1,14 @@
+# Block PHP execution inside uploads
+<FilesMatch "\.(?i:php|phtml|php3|php4|php5|php7|phps|phar|pl|py|cgi|asp|aspx|sh)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+
+# Don't allow directory listing
+Options -Indexes

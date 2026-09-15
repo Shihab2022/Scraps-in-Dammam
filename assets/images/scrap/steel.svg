@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320">
+  <rect width="480" height="320" fill="#eef0f2"/>
+  <g transform="translate(70 60)">
+    <rect x="0" y="40" width="320" height="120" rx="14" fill="#8a9097"/>
+    <rect x="16" y="56" width="90" height="88" rx="8" fill="#6b7280"/>
+    <rect x="122" y="52" width="70" height="92" rx="8" fill="#59616b"/>
+    <rect x="208" y="60" width="80" height="80" rx="8" fill="#49515a"/>
+    <g stroke="#cbd5d1" stroke-width="7">
+      <line x1="70" y1="160" x2="70" y2="196"/>
+      <line x1="160" y1="160" x2="160" y2="196"/>
+      <line x1="250" y1="160" x2="250" y2="196"/>
+    </g>
+    <rect x="40" y="196" width="250" height="14" rx="7" fill="#aeb5bb"/>
+  </g>
+  <text x="240" y="300" font-family="Arial, sans-serif" font-size="15" fill="#5c6b75" text-anchor="middle">Structural Steel Bundles</text>
+</svg>
