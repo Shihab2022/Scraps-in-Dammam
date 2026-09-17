@@ -16,7 +16,7 @@ include __DIR__ . '/../includes/header.php';
         <div class="page-hero__cta">
             <a class="btn btn--wa" href="<?= e(whatsapp_link('Hello, I have copper scrap to sell. Can you give me a quote?')) ?>" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp a Photo</a>
             <a class="btn btn--outline" href="<?= e(phone_href()) ?>"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now</a>
-            <a class="btn btn--ghost" href="<?= e(url('scrap-pickup')) ?>">Request Pickup</a>
+            <a class="btn btn--ghost" href="<?= e(url('contact-us')) ?>">Contact Us</a>
         </div>
     </div>
 </section>

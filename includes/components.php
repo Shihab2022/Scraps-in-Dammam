@@ -43,7 +43,7 @@ if (!function_exists('render_breadcrumbs')) {
 
 /* -------------------- CTA section -------------------- */
 if (!function_exists('render_cta')) {
-    function render_cta(string $heading = 'Ready to Sell Your Scrap?', string $subtext = 'Send us a WhatsApp photo for an instant quote, or call us now for free pickup within our service areas.'): void
+    function render_cta(string $heading = 'Ready to Sell Your Scrap?', string $subtext = 'Send us a WhatsApp photo for an instant quote, or call us now for free pickup in Dammam, Eastern, Saudi Arabia.'): void
     {
         ?>
         <section class="cta-band">
@@ -57,7 +57,6 @@ if (!function_exists('render_cta')) {
                         <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
                     <a class="btn btn--outline btn--lg" href="<?= e(phone_href()) ?>">
                         <i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now</a>
-                    <a class="btn btn--ghost btn--lg" href="<?= e(url('scrap-pickup')) ?>">Request Pickup</a>
                 </div>
             </div>
         </section>

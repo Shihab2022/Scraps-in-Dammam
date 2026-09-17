@@ -12,19 +12,17 @@ $urls = [
     '/'                       => ['priority' => '1.0', 'freq' => 'weekly'],
     '/about-us/'              => ['priority' => '0.7', 'freq' => 'monthly'],
     '/services/'              => ['priority' => '0.9', 'freq' => 'monthly'],
-    '/scrap-pickup/'          => ['priority' => '0.9', 'freq' => 'weekly'],
+    '/contact-us/'            => ['priority' => '0.9', 'freq' => 'weekly'],
     '/how-it-works/'          => ['priority' => '0.6', 'freq' => 'monthly'],
     '/faq/'                   => ['priority' => '0.6', 'freq' => 'monthly'],
-    '/contact-us/'            => ['priority' => '0.8', 'freq' => 'monthly'],
     '/privacy-policy/'        => ['priority' => '0.2', 'freq' => 'yearly'],
     '/terms/'                 => ['priority' => '0.2', 'freq' => 'yearly'],
 ];
 
-foreach (['metal-scrap-buyer-dammam','iron-steel-scrap-buyer-dammam','copper-scrap-buyer-dammam','aluminum-scrap-buyer-dammam','cable-wire-scrap-buyer-dammam','ac-appliance-scrap-buyer-dammam','industrial-scrap-buyer-dammam','car-scrap-buyer-dammam','construction-demolition-scrap-buyer-dammam'] as $slug) {
+foreach (array_values($GLOBALS['scrapCategories'] ?? []) as $cat) {
+    $slug = is_array($cat) && isset($cat['slug']) ? $cat['slug'] : '';
+    if ($slug === '') continue;
     $urls['/' . $slug . '/'] = ['priority' => '0.9', 'freq' => 'weekly'];
-}
-foreach (['scrap-buyer-jubail','scrap-buyer-khobar','scrap-buyer-in-al-ahsa'] as $slug) {
-    $urls['/' . $slug . '/'] = ['priority' => '0.8', 'freq' => 'monthly'];
 }
 
 header('Content-Type: application/xml; charset=utf-8');

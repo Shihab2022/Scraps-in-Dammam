@@ -3,7 +3,7 @@
  * Services
  * ============================================================ */
 $pageTitle       = 'Our Services';
-$pageDescription = 'Scrap buying services in Dammam and the Eastern Province: free pickup, scrap metal buying, industrial scrap collection, vehicle scrapping, site clearance and certified weighing with instant payment.';
+$pageDescription = 'Scrap buying services in Dammam, Eastern, Saudi Arabia: free pickup, scrap metal buying, industrial scrap collection, vehicle scrapping, site clearance and certified weighing with instant payment.';
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -12,7 +12,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="container">
         <?php render_breadcrumbs([['label' => 'Services']]); ?>
         <h1>Our Scrap Buying Services</h1>
-        <p>From a single bag of copper to a complete factory load — we make selling scrap fast, fair and effortless with free pickup across the Eastern Province.</p>
+        <p>From a single bag of copper to a complete factory load — we make selling scrap fast, fair and effortless with free pickup in Dammam, Eastern, Saudi Arabia.</p>
         <div class="page-hero__cta">
             <a class="btn btn--wa" href="<?= e(whatsapp_link()) ?>" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
             <a class="btn btn--outline" href="<?= e(phone_href()) ?>"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now</a>
@@ -75,7 +75,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Immediate cash or transfer payment</li>
                 <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Responsible recycling of all materials</li>
             </ul>
-            <a class="btn btn--primary" href="<?= e(url('scrap-pickup')) ?>">Request a Pickup
+            <a class="btn btn--primary" href="<?= e(whatsapp_link('Hello, I need a scrap pickup.')) ?>" target="_blank" rel="noopener">WhatsApp Us
                 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
         <img src="<?= e(asset('images/scrap/truck.svg')) ?>" alt="Scrap collection truck providing pickup service" loading="lazy" width="560" height="420">

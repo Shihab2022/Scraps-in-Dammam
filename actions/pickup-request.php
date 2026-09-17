@@ -12,13 +12,13 @@ $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !csrf_verify(post('csrf_token'))) {
     flash_set('error', 'Invalid or expired form token. Please try again.');
-    redirect('scrap-pickup');
+    redirect('contact-us');
 }
 
 $rl = rate_limit_allowed('pickup', 4, 900);
 if (!$rl['allowed']) {
     flash_set('error', 'Too many requests. Try again in ' . ceil($rl['retry_after'] / 60) . ' minutes.');
-    redirect('scrap-pickup');
+    redirect('contact-us');
 }
 
 if (!honeypot_verified()) redirect('thank-you');
@@ -52,7 +52,7 @@ if (!$uploadResult['ok']) foreach ($uploadResult['errors'] as $err) $errors[] = 
 
 if ($errors) {
     flash_set('error', 'Please fix the following and resubmit: ' . implode(' · ', array_slice($errors, 0, 3)));
-    redirect('scrap-pickup');
+    redirect('contact-us');
 }
 
 $leadId = store_request('pickup', [

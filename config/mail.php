@@ -15,7 +15,7 @@ return [
     'username' => env('MAIL_USERNAME', ''),
     'password' => env('MAIL_PASSWORD', ''),
     'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-    'from_email' => env('MAIL_FROM_EMAIL', env('ADMIN_EMAIL', 'info@gulfscrapbuyer.com')),
+    'from_email' => env('MAIL_FROM_EMAIL', env('ADMIN_EMAIL', 'scrapbuyerindammam@gmail.com')),
     'from_name'  => env('MAIL_FROM_NAME', 'Gulf Scrap Buyer'),
-    'to_email'   => env('ADMIN_EMAIL', 'info@gulfscrapbuyer.com'),
+    'to_email'   => env('ADMIN_EMAIL', 'scrapbuyerindammam@gmail.com'),
 ];

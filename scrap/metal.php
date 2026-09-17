@@ -17,7 +17,7 @@ include __DIR__ . '/../includes/header.php';
         <div class="page-hero__cta">
             <a class="btn btn--wa" href="<?= e(whatsapp_link('Hello, I have metal scrap to sell. Can you give me a quote?')) ?>" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp a Photo</a>
             <a class="btn btn--outline" href="<?= e(phone_href()) ?>"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now</a>
-            <a class="btn btn--ghost" href="<?= e(url('scrap-pickup')) ?>">Request Pickup</a>
+            <a class="btn btn--ghost" href="<?= e(url('contact-us')) ?>">Contact Us</a>
         </div>
     </div>
 </section>
@@ -34,7 +34,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Free pickup and certified weighing</li>
                 <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Cash or bank transfer on the same day</li>
             </ul>
-            <a class="btn btn--primary" href="<?= e(url('scrap-pickup')) ?>">Book a Free Pickup</a>
+            <a class="btn btn--primary" href="<?= e(url('contact-us')) ?>">Contact Us for Free Pickup</a>
         </div>
         <img src="<?= e(asset('images/scrap/metal.svg')) ?>" alt="Assorted metal scrap pile ready for grading and weighing" loading="lazy" width="560" height="420">
     </div>
@@ -126,7 +126,7 @@ include __DIR__ . '/../includes/header.php';
             <div class="split__body">
                 <p class="section-eyebrow">Service Areas</p>
                 <h2>Where We Collect Metal Scrap</h2>
-                <p>Our trucks collect mixed and single-grade metal scrap across the Eastern Province, including Dammam, Khobar, Dhahran, Qatif, Jubail and Al-Ahsa.</p>
+                <p>Our trucks collect mixed and single-grade metal scrap in Dammam, Eastern, Saudi Arabia — including homes, shops, warehouses and construction sites.</p>
             </div>
             <ul class="check-list">
                 <?php foreach (site('service_areas', []) as $area): ?>

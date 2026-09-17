@@ -47,28 +47,15 @@ $waMsg = 'Hello, I would like to sell my scrap. Can you provide a quote?';
                     <a href="<?= e(url('/')) ?>">Home</a></li>
                 <li<?= $activeRoute === '/about-us' ? ' class="active"' : '' ?>>
                     <a href="<?= e(url('about-us')) ?>">About Us</a></li>
-
                 <li class="has-dropdown">
                     <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
                         We Buy <i class="fa-solid fa-chevron-down nav-caret" aria-hidden="true"></i></button>
                     <ul class="nav-dropdown">
                         <?php foreach ($GLOBALS['scrapCategories'] as $cat): ?>
-                        <li><a href="<?= e(url($cat['slug'])) ?>"><i class="fa-solid <?= e($cat['icon']) ?>" aria-hidden="true"></i> <?= e($cat['name']) ?></a></li>
+                        <li><a href="<?= e(url($cat['slug'])) ?>"><i class="fa-solid <?= e($cat['icon']) ?>" aria-hidden="true"></i> <span><?= e($cat['name']) ?></span></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </li>
-
-                <li class="has-dropdown">
-                    <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
-                        Locations <i class="fa-solid fa-chevron-down nav-caret" aria-hidden="true"></i></button>
-                    <ul class="nav-dropdown">
-                        <li><a href="<?= e(url('scrap-buyer-jubail')) ?>"><i class="fa-solid fa-city" aria-hidden="true"></i> Jubail</a></li>
-                        <li><a href="<?= e(url('scrap-buyer-khobar')) ?>"><i class="fa-solid fa-city" aria-hidden="true"></i> Khobar</a></li>
-                        <li><a href="<?= e(url('scrap-buyer-in-al-ahsa')) ?>"><i class="fa-solid fa-city" aria-hidden="true"></i> Al-Ahsa / Hofuf</a></li>
-                        <li><a href="<?= e(url('contact-us')) ?>"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Dammam</a></li>
-                    </ul>
-                </li>
-
                 <li<?= $activeRoute === '/contact-us' ? ' class="active"' : '' ?>>
                     <a href="<?= e(url('contact-us')) ?>">Contact Us</a></li>
 

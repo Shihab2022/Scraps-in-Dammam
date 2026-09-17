@@ -6,8 +6,8 @@
 declare(strict_types=1);
 function render_contact_form(string $context = 'contact'): void
 {
-    $scrapTypes = ['Metal Scrap','Iron & Steel','Copper','Aluminum','Cable & Wire','AC & Appliances','Industrial / Factory','Cars & Vehicles','Construction & Demolition','Mixed / Not Sure'];
-    $locations = ['Dammam','Khobar','Dhahran','Qatif','Jubail','Al-Ahsa / Hofuf','Other'];
+    $scrapTypes = ['Copper','Old Cable','Used Battery','Aluminum','Iron Steel','Wood','S.S. Steel','Metal Scrap','Industrial / Factory','Cars & Vehicles','Construction & Demolition','All Mix Scrap','Mixed / Not Sure'];
+    $locations = ['Dammam'];
     ?>
     <form class="form-card" action="<?= e(url('actions/contact')) ?>" method="post"
           enctype="multipart/form-data" data-validate novalidate>
@@ -36,11 +36,9 @@ function render_contact_form(string $context = 'contact'): void
                 </select>
             </div>
             <div class="field">
-                <label for="cf-location">Location <span class="req" aria-hidden="true">*</span></label>
-                <select id="cf-location" name="location" required>
-                    <option value="">Select city…</option>
-                    <?php foreach ($locations as $l): ?><option value="<?= e($l) ?>"><?= e($l) ?></option><?php endforeach; ?>
-                </select>
+                <label for="cf-location">Location</label>
+                <input type="text" id="cf-location" value="Dammam, Eastern, Saudi Arabia" disabled>
+                <input type="hidden" name="location" value="Dammam">
             </div>
             <div class="field">
                 <label for="cf-photos">Scrap Photos <span class="field-help">(optional, max 5 MB each)</span></label>

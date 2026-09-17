@@ -29,15 +29,15 @@ include __DIR__ . '/../includes/header.php';
                 <h3>Contact Us</h3>
                 <p>Call <?= e(site('phone')) ?> or message us on
                     <a href="<?= e(whatsapp_link()) ?>" target="_blank" rel="noopener">WhatsApp</a>.
-                    Tell us what scrap you have and where you are. You can also submit the
-                    <a href="<?= e(url('scrap-pickup')) ?>">pickup form</a> on this website.</p>
+                    Tell us what scrap you have and where you are in Dammam. You can also use the
+                    <a href="<?= e(url('contact-us')) ?>">contact form</a> on this website.</p>
             </article>
             <article class="step-card reveal">
                 <span class="step-card__num" aria-hidden="true">2</span>
                 <span class="step-card__icon" aria-hidden="true"><i class="fa-solid fa-images"></i></span>
                 <h3>Send Scrap Photos</h3>
                 <p>Clear photos help us identify the material type and grade instantly. Send photos through
-                    WhatsApp or upload them with the pickup request form — it takes less than a minute.</p>
+                    WhatsApp or share them with your contact request — it takes less than a minute.</p>
             </article>
             <article class="step-card reveal">
                 <span class="step-card__num" aria-hidden="true">3</span>

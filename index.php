@@ -23,7 +23,6 @@ $routes = [
     'about-us'                             => 'pages/about.php',
     'contact-us'                           => 'pages/contact.php',
     'services'                             => 'pages/services.php',
-    'scrap-pickup'                         => 'pages/scrap-pickup.php',
     'how-it-works'                         => 'pages/how-it-works.php',
     'faq'                                  => 'pages/faq.php',
     'privacy-policy'                       => 'pages/privacy.php',
@@ -40,9 +39,14 @@ $routes = [
     'car-scrap-buyer-dammam'                => 'scrap/cars.php',
     'construction-demolition-scrap-buyer-dammam' => 'scrap/construction.php',
 
-    'scrap-buyer-jubail'                    => 'locations/jubail.php',
-    'scrap-buyer-khobar'                    => 'locations/khobar.php',
-    'scrap-buyer-in-al-ahsa'                => 'locations/al-ahsa.php',
+    'used-battery-scrap-buyer-dammam'       => 'scrap/detail.php',
+    'ss-steel-scrap-buyer-dammam'           => 'scrap/detail.php',
+    'wood-scrap-buyer-dammam'               => 'scrap/detail.php',
+    'mix-scrap-buyer-dammam'                => 'scrap/detail.php',
+
+    'scrap-buyer-jubail'                    => 'pages/contact.php',
+    'scrap-buyer-khobar'                    => 'pages/contact.php',
+    'scrap-buyer-in-al-ahsa'                => 'pages/contact.php',
 
     'actions/contact'                       => 'actions/contact.php',
     'actions/pickup-request'                => 'actions/pickup-request.php',

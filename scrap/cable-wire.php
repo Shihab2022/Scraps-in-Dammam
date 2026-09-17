@@ -102,7 +102,7 @@ include __DIR__ . '/../includes/header.php';
             <p>Contractors and electricians regularly end a project with kilometers of surplus cable. We provide
                 bulk collection with certified weighing at the site, transparent insulation deductions and immediate
                 payment — plus receipts for your records.</p>
-            <a class="btn btn--primary" href="<?= e(url('scrap-pickup')) ?>">Book a Collection</a>
+            <a class="btn btn--primary" href="<?= e(url('contact-us')) ?>">Contact Us for Collection</a>
         </div>
     </div>
 </section>

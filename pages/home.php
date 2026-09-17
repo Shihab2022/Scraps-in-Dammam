@@ -22,7 +22,6 @@ include __DIR__ . '/../includes/header.php';
                     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> <?= e(site('hero.primary_cta')) ?></a>
                 <a class="btn btn--outline btn--lg" href="<?= e(phone_href()) ?>">
                     <i class="fa-solid fa-phone" aria-hidden="true"></i> <?= e(site('hero.secondary_cta')) ?></a>
-                <a class="btn btn--ghost btn--lg" href="<?= e(url('scrap-pickup')) ?>">Request Pickup</a>
             </div>
         </div>
         <figure class="hero__media">
@@ -141,7 +140,7 @@ include __DIR__ . '/../includes/header.php';
             <?php
             $reasons = [
                 ['fa-sack-dollar',  'Best Market Rates',       'Competitive, transparent pricing based on current market rates.'],
-                ['fa-truck-fast',   'Free Pickup',             'Doorstep collection across Dammam and the Eastern Province.'],
+                ['fa-truck-fast',   'Free Pickup',             'Doorstep collection in Dammam, Eastern, Saudi Arabia.'],
                 ['fa-bolt',         'Same-Day Service',        'Fast response and pickup whenever same-day service is available.'],
                 ['fa-money-bill-wave','Instant Payment',       'Payment immediately after weighing and price confirmation.'],
                 ['fa-scale-balanced','Certified Weighing',     'Accurate digital scales, calibrated and verified.'],
@@ -165,17 +164,14 @@ include __DIR__ . '/../includes/header.php';
     <div class="container">
         <header class="section-head">
             <p class="section-eyebrow">Service Areas</p>
-            <h2>Free Scrap Pickup Across the Eastern Province</h2>
-            <p class="section-sub">We collect scrap in all of these cities and surrounding areas.</p>
+            <h2>Free Scrap Pickup in Dammam</h2>
+            <p class="section-sub">Our base location: Dammam, Eastern, Saudi Arabia.</p>
         </header>
         <div class="map-card">
             <iframe src="<?= e(site('map_embed')) ?>" title="Map — <?= e(site('service_area')) ?>"
                     loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
             <ul class="map-card__list">
-                <?php foreach (site('service_areas', []) as $area): ?>
-                <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <?= e($area) ?></li>
-                <?php endforeach; ?>
-                <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Eastern Province (surrounding areas)</li>
+                <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Dammam, Eastern, Saudi Arabia</li>
             </ul>
         </div>
     </div>
@@ -188,9 +184,9 @@ $faqs = [
     ['question' => 'Who is the best scrap buyer in the area?',
      'answer'   => 'A reliable scrap buyer offers free pickup, certified weighing, transparent market-based pricing and immediate payment — which is exactly what we provide. Check our WhatsApp or call us for a same-day quotation and compare for yourself.'],
     ['question' => 'Do you offer same-day scrap pickup?',
-     'answer'   => 'Yes, in most cases we can arrange same-day pickup in Dammam and nearby cities when slots are available. Call or WhatsApp us in the morning with your location and scrap type and we will confirm the earliest loading time.'],
+     'answer'   => 'Yes, in most cases we can arrange same-day pickup in Dammam when slots are available. Call or WhatsApp us in the morning with your scrap type and address and we will confirm the earliest loading time.'],
     ['question' => 'What types of scrap do you buy?',
-     'answer'   => 'We buy metal scrap, iron and steel, copper, aluminum, cable and wire, AC units and appliances, industrial and factory scrap, junk cars and vehicles, and construction/demolition scrap. If you are unsure, send us a photo on WhatsApp.'],
+     'answer'   => 'We Buy All Types Scrap Metal — Copper, Old Cable, Used Battery, Aluminum, Iron Steel, Wood, S.S. Steel & All Mix Scrap. If you are unsure, send us a photo on WhatsApp.'],
     ['question' => 'How is the scrap price calculated?',
      'answer'   => 'Prices are based on the current international market rates, the material grade, weight and cleanliness. We confirm the rate per kilogram before pickup, then weigh the material with certified scales on site.'],
     ['question' => 'Do you pay cash on the same day?',
@@ -198,7 +194,7 @@ $faqs = [
     ['question' => 'Is there a minimum quantity?',
      'answer'   => 'No. We buy everything from a few kilograms of copper wire to complete factory loads. Pricing per kilogram is the same regardless of quantity.'],
     ['question' => 'Which areas do you serve?',
-     'answer'   => 'We serve Dammam, Khobar, Dhahran, Qatif, Jubail, Al-Ahsa (Hofuf) and the surrounding Eastern Province areas with free pickup.'],
+     'answer'   => 'Our base location is Dammam, Eastern, Saudi Arabia with free pickup.'],
     ['question' => 'Can I send photos through WhatsApp?',
      'answer'   => 'Absolutely — this is the fastest way to get a quote. Send clear photos of your scrap and we will assess the material type and approximate value quickly.'],
     ['question' => 'Do you buy mixed scrap?',
@@ -206,7 +202,7 @@ $faqs = [
     ['question' => 'Do you buy industrial scrap?',
      'answer'   => 'Yes. We purchase factory production waste, offcuts, HMS 1 and 2, machinery scrap, industrial cables and more, with site inspections and scheduled bulk collection for factories and warehouses.'],
 ];
-render_faq($faqs, 'Scrap Buyer FAQ', 'Answers to the questions we hear most often from sellers in the Eastern Province.');
+render_faq($faqs, 'Scrap Buyer FAQ', 'Answers to the questions we hear most often from sellers in Dammam, Eastern, Saudi Arabia.');
 ?>
 
 <?php render_cta(); ?>

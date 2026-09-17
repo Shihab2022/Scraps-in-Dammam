@@ -21,10 +21,8 @@ $year = date('Y');
                         <?= e(site('service_area')) ?>. Fair prices, official weighing and instant payment.
                     </p>
                     <ul class="social-links">
-                        <?php foreach (site('social', []) as $platform => $link): if (!$link) continue; ?>
-                        <li><a href="<?= e($link) ?>" target="_blank" rel="noopener" aria-label="<?= e(ucfirst($platform)) ?>">
-                            <i class="fa-brands fa-<?= e($platform === 'twitter' ? 'x-twitter' : $platform) ?>" aria-hidden="true"></i></a></li>
-                        <?php endforeach; ?>
+                        <li><a href="https://www.linkedin.com/in/scrap-buyer-in-dammam-787970290/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
 
@@ -34,7 +32,6 @@ $year = date('Y');
                         <li><a href="<?= e(url('about-us')) ?>">About Us</a></li>
                         <li><a href="<?= e(url('services')) ?>">Services</a></li>
                         <li><a href="<?= e(url('how-it-works')) ?>">How It Works</a></li>
-                        <li><a href="<?= e(url('scrap-pickup')) ?>">Scrap Pickup</a></li>
                         <li><a href="<?= e(url('faq')) ?>">FAQ</a></li>
                         <li><a href="<?= e(url('contact-us')) ?>">Contact Us</a></li>
                     </ul>
@@ -49,13 +46,10 @@ $year = date('Y');
                     </ul>
                 </nav>
 
-                <nav class="footer-col" aria-label="Locations">
-                    <h2 class="footer__heading">Locations</h2>
+                <nav class="footer-col" aria-label="Location">
+                    <h2 class="footer__heading">Location</h2>
                     <ul class="footer__links">
-                        <li><a href="<?= e(url('scrap-buyer-jubail')) ?>">Jubail</a></li>
-                        <li><a href="<?= e(url('scrap-buyer-khobar')) ?>">Khobar</a></li>
-                        <li><a href="<?= e(url('scrap-buyer-in-al-ahsa')) ?>">Al-Ahsa / Hofuf</a></li>
-                        <li><a href="<?= e(url('contact-us')) ?>">Dammam</a></li>
+                        <li><a href="<?= e(url('contact-us')) ?>">Dammam, Eastern, Saudi Arabia</a></li>
                     </ul>
                 </nav>
 
@@ -75,8 +69,6 @@ $year = date('Y');
                     </ul>
                 </div>
             </div>
-
-            <div class="footer-legal">
                 <div class="footer-legal__links">
                     <a href="<?= e(url('privacy-policy')) ?>">Privacy Policy</a>
                     <a href="<?= e(url('terms')) ?>">Terms &amp; Conditions</a>

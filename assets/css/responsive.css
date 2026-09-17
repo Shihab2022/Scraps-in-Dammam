@@ -20,18 +20,28 @@
     .nav-menu{
         position:fixed;top:0;bottom:0;right:0;width:min(360px,88vw);max-width:360px;
         background:#fff;flex-direction:column;align-items:stretch;gap:2px;
-        padding:24px 18px 130px;overflow-y:auto;
+        padding:24px 18px 130px;overflow-y:auto;overflow-x:hidden;
         box-shadow:-14px 0 40px rgba(22,24,29,.22);z-index:960;
         transform:translateX(105%);transition:transform .3s ease;
+        max-width:100vw;box-sizing:border-box;
     }
     .nav-menu.open{transform:translateX(0)}
-    .nav-menu>li{position:static}
-    .nav-menu>li>a,.nav-dropdown-toggle{width:100%;justify-content:space-between;padding:14px 12px;font-size:1rem;border-radius:10px}
-    .nav-dropdown{position:static;transform:none;min-width:0;box-shadow:none;border:none;background:var(--bg);
-        opacity:1;visibility:visible;display:none;margin:0 0 6px 8px;border-radius:10px}
+    .nav-menu>li{position:static;max-width:100%}
+    .nav-menu>li>a,.nav-dropdown-toggle{width:100%;max-width:100%;box-sizing:border-box;justify-content:space-between;padding:14px 12px;font-size:1rem;border-radius:10px;white-space:normal;text-align:left}
+    .nav-dropdown{position:static;transform:none;min-width:0;max-width:100%;width:100%;box-sizing:border-box;box-shadow:none;border:none;background:var(--bg);
+        opacity:1;visibility:visible;display:none;margin:0 0 6px 0;border-radius:10px;overflow:hidden}
+    .nav-menu .has-dropdown>.nav-dropdown,
+    .nav-menu .has-dropdown:hover>.nav-dropdown,
+    .nav-menu .has-dropdown.open>.nav-dropdown{transform:none;left:auto;top:auto}
+    .nav-menu>li{flex-shrink:0}
     .has-dropdown.open>.nav-dropdown{display:block}
-    .nav-dropdown li a{padding:12px}
-    .nav-dropdown li a i{width:22px}
+    .nav-toggle{position:relative;z-index:970;flex-shrink:0}
+    body.nav-open{overflow:hidden}
+    .grid-2{grid-template-columns:minmax(0,1fr)}
+    .nav-dropdown li{max-width:100%}
+    .nav-dropdown li a{padding:12px 10px;white-space:normal;word-break:break-word;overflow-wrap:anywhere}
+    .nav-dropdown li a i{width:22px;flex:none}
+    .nav-dropdown li a span{min-width:0;flex:1}
     .nav-menu .nav-cta-wrap{display:flex;flex-direction:column;margin:20px 0 0}
 
     .scrap-grid,.loc-grid,.why-grid,.testimonial-grid,.steps-grid,.contact-grid{grid-template-columns:repeat(2,1fr)}

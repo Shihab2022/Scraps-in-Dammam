@@ -149,7 +149,8 @@ if (!function_exists('whatsapp_link')) {
 if (!function_exists('phone_href')) {
     function phone_href(): string
     {
-        return 'tel:' . preg_replace('/\D/', '', site('phone'));
+        $tel = site('phone_tel', site('phone'));
+        return 'tel:' . preg_replace('/[^\d+]/', '', (string) $tel);
     }
 }
 

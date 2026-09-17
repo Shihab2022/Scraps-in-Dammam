@@ -10,7 +10,7 @@ $siteName = site('site_name');
 $company  = site('company');
 
 $pageTitle       ??= $siteName;
-$pageDescription ??= 'Professional scrap metal buying and pickup service across Dammam and the Eastern Province, Saudi Arabia.';
+$pageDescription ??= 'We Buy All Types Scrap Metal in Dammam, Eastern, Saudi Arabia — Copper, Old Cable, Used Battery, Aluminum, Iron Steel, Wood, S.S. Steel & All Mix Scrap. Free pickup, certified weighing and instant payment.';
 $pageImage       ??= asset('images/og-default.svg');
 $current          = current_path();
 $pageCanonical   ??= url($current === '' ? '/' : $current . '/');

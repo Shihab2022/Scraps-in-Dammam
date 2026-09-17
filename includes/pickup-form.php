@@ -5,8 +5,8 @@
 declare(strict_types=1);
 function render_pickup_form(): void
 {
-    $scrapTypes = ['Metal Scrap','Iron & Steel','Copper','Aluminum','Cable & Wire','AC & Appliances','Industrial / Factory','Cars & Vehicles','Construction & Demolition','Mixed / Not Sure'];
-    $locations = ['Dammam','Khobar','Dhahran','Qatif','Jubail','Al-Ahsa / Hofuf','Other'];
+    $scrapTypes = ['Copper','Old Cable','Used Battery','Aluminum','Iron Steel','Wood','S.S. Steel','Metal Scrap','Industrial / Factory','Cars & Vehicles','Construction & Demolition','All Mix Scrap','Mixed / Not Sure'];
+    $locations = ['Dammam'];
     ?>
     <form class="form-card" action="<?= e(url('actions/pickup-request')) ?>" method="post"
           enctype="multipart/form-data" data-validate novalidate>
@@ -38,11 +38,9 @@ function render_pickup_form(): void
                 <input type="text" id="pu-weight" name="estimated_weight" maxlength="80" placeholder="e.g. 300 kg / 1.5 tonnes">
             </div>
             <div class="field">
-                <label for="pu-location">City <span class="req" aria-hidden="true">*</span></label>
-                <select id="pu-location" name="location" required>
-                    <option value="">Select city…</option>
-                    <?php foreach ($locations as $l): ?><option value="<?= e($l) ?>"><?= e($l) ?></option><?php endforeach; ?>
-                </select>
+                <label for="pu-location">City</label>
+                <input type="text" id="pu-location" value="Dammam" disabled>
+                <input type="hidden" name="location" value="Dammam">
             </div>
             <div class="field field--full">
                 <label for="pu-address">Pickup Address <span class="req" aria-hidden="true">*</span></label>

@@ -3,7 +3,7 @@
  * Iron & Steel Scrap Buyer in Dammam
  * ============================================================ */
 $pageTitle       = 'Iron & Steel Scrap Buyer in Dammam';
-$pageDescription = 'We buy iron and steel scrap in Dammam — rebar, structural steel, beams, pipes, sheet metal and cast iron. Free pickup, certified weighing and instant payment across the Eastern Province.';
+$pageDescription = 'We buy iron and steel scrap in Dammam — rebar, structural steel, beams, pipes, sheet metal and cast iron. Free pickup, certified weighing and instant payment in Dammam, Eastern, Saudi Arabia.';
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -16,7 +16,7 @@ include __DIR__ . '/../includes/header.php';
         <div class="page-hero__cta">
             <a class="btn btn--wa" href="<?= e(whatsapp_link('Hello, I have iron and steel scrap to sell. Can you give me a quote?')) ?>" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp a Photo</a>
             <a class="btn btn--outline" href="<?= e(phone_href()) ?>"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now</a>
-            <a class="btn btn--ghost" href="<?= e(url('scrap-pickup')) ?>">Request Pickup</a>
+            <a class="btn btn--ghost" href="<?= e(url('contact-us')) ?>">Contact Us</a>
         </div>
     </div>
 </section>
@@ -127,8 +127,8 @@ include __DIR__ . '/../includes/header.php';
     <div class="container split mb-3">
         <div class="split__body">
             <p class="section-eyebrow">Service Areas</p>
-            <h2>Steel Scrap Pickup Across the Region</h2>
-            <p>We collect iron and steel scrap from Dammam, Khobar, Dhahran and surrounding areas — including active construction sites and industrial zones.</p>
+            <h2>Iron Steel Scrap Pickup in Dammam</h2>
+            <p>We collect iron and steel scrap anywhere in Dammam, Eastern, Saudi Arabia — including active construction sites, warehouses and industrial zones.</p>
         </div>
         <ul class="check-list">
             <?php foreach (site('service_areas', []) as $area): ?>

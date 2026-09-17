@@ -3,7 +3,7 @@
  * About Us
  * ============================================================ */
 $pageTitle       = 'About Us';
-$pageDescription = 'Learn about our scrap buying company in Dammam — our story, the scrap we buy, how we work, who we serve, and why customers choose us across the Eastern Province.';
+$pageDescription = 'Learn about our scrap buying company in Dammam — our story, the scrap we buy, how we work, who we serve, and why customers choose us in Dammam, Eastern, Saudi Arabia.';
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -25,8 +25,8 @@ include __DIR__ . '/../includes/header.php';
         <div>
             <p class="section-eyebrow">Our Story</p>
             <h2>Built on Trust, Fast Payment &amp; Recycling</h2>
-            <p>What started as a small family trading business in Dammam more than <?= e(site('stats.years_experience')) ?> years ago is today a full-service scrap buying operation covering the Eastern Province. We grew by doing one thing consistently: paying fairly, weighing transparently and picking up fast.</p>
-            <p>Today we serve residential customers, shops, maintenance workshops, contractors, warehouses and factories across Dammam, Khobar, Dhahran, Qatif, Jubail and Al-Ahsa. Every kilogram we buy is graded honestly, weighed on certified scales and processed responsibly with licensed recycling partners.</p>
+            <p>What started as a small family trading business in Dammam more than <?= e(site('stats.years_experience')) ?> years ago is today a full-service scrap buying operation in Dammam, Eastern, Saudi Arabia. We grew by doing one thing consistently: paying fairly, weighing transparently and picking up fast.</p>
+            <p>Today we serve residential customers, shops, maintenance workshops, contractors, warehouses and factories in Dammam, Eastern, Saudi Arabia. Every kilogram we buy is graded honestly, weighed on certified scales and processed responsibly with licensed recycling partners.</p>
             <p>We believe that selling scrap should be simple, transparent and profitable for the seller. That is why we confirm the price before we arrive, pay immediately after weighing, and never ask you to transport heavy material yourself.</p>
         </div>
         <img src="<?= e(asset('images/scrap/scrap-yard.svg')) ?>" alt="Our team sorting scrap at the yard in Dammam" loading="lazy" width="560" height="420">
@@ -106,7 +106,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="container">
         <header class="section-head">
             <p class="section-eyebrow">Service Area</p>
-            <h2>Proudly Serving the Eastern Province</h2>
+            <h2>Proudly Serving Dammam, Eastern, Saudi Arabia</h2>
         </header>
         <div class="map-card">
             <iframe src="<?= e(site('map_embed')) ?>" title="Service area map of <?= e(site('service_area')) ?>" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
