@@ -35,7 +35,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Free site clearance and bulk collection</li>
             </ul>
         </div>
-        <img src="<?= e(asset('images/scrap/construction.svg')) ?>" alt="Rebar and structural steel scrap on a demolition site" loading="lazy" width="560" height="420">
+        <img src="<?= e(asset('images/construction-demolition.avif')) ?>" alt="Rebar and structural steel scrap on a demolition site" loading="lazy" width="560" height="420">
     </div>
 </section>
 

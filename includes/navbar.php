@@ -51,8 +51,8 @@ $waMsg = 'Hello, I would like to sell my scrap. Can you provide a quote?';
                     <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
                         We Buy <i class="fa-solid fa-chevron-down nav-caret" aria-hidden="true"></i></button>
                     <ul class="nav-dropdown">
-                        <?php foreach ($GLOBALS['scrapCategories'] as $cat): ?>
-                        <li><a href="<?= e(url($cat['slug'])) ?>"><i class="fa-solid <?= e($cat['icon']) ?>" aria-hidden="true"></i> <span><?= e($cat['name']) ?></span></a></li>
+                        <?php foreach ($GLOBALS['scrapCategories'] as $navCat): ?>
+                        <li><a href="<?= e(url($navCat['slug'])) ?>"><i class="fa-solid <?= e($navCat['icon']) ?>" aria-hidden="true"></i> <span><?= e($navCat['name']) ?></span></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </li>

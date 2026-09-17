@@ -33,7 +33,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Machine and appliance wiring</li>
             </ul>
         </div>
-        <img src="<?= e(asset('images/scrap/cable.svg')) ?>" alt="Coils of scrap electrical cable and wire" loading="lazy" width="560" height="420">
+        <img src="<?= e(asset('images/old-cable.jpg')) ?>" alt="Coils of scrap electrical cable and wire" loading="lazy" width="560" height="420">
     </div>
 </section>
 
@@ -118,5 +118,5 @@ $faqs = [
 render_faq($faqs, 'Cable & Wire FAQ');
 ?>
 
-<?php render_cta('Selling Surplus Cable?', 'Message us photos of your cable for today’s rate per kilogram. Bulk pickup with certified weighing available across the Eastern Province.'); ?>
+<?php render_cta('Selling Surplus Cable?', 'Message us photos of your cable for today’s rate per kilogram. Bulk pickup with certified weighing available in Dammam, Eastern, Saudi Arabia.'); ?>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

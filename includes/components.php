@@ -130,8 +130,8 @@ if (!function_exists('render_testimonials')) {
         } else {
             $testimonials = [
                 ['name' => 'Ahmed Al-M.', 'role' => 'Homeowner — Dammam', 'quote' => 'Excellent service and very fast pickup. They weighed the copper on the spot and paid immediately.', 'rating' => 5],
-                ['name' => 'Sara K.', 'role' => 'Restaurant owner — Khobar', 'quote' => 'Professional team and transparent pricing. They removed our old kitchen appliances and paid a fair price.', 'rating' => 5],
-                ['name' => 'Muhammad R.', 'role' => 'Facility manager — Jubail', 'quote' => 'Very convenient scrap collection service. Same-day pickup for our factory cable scrap. Highly recommended.', 'rating' => 5],
+                ['name' => 'Sara K.', 'role' => 'Restaurant owner — Dammam', 'quote' => 'Professional team and transparent pricing. They removed our old kitchen appliances and paid a fair price.', 'rating' => 5],
+                ['name' => 'Muhammad R.', 'role' => 'Facility manager — Dammam', 'quote' => 'Very convenient scrap collection service. Same-day pickup for our factory cable scrap. Highly recommended.', 'rating' => 5],
             ];
             $note = 'Demo reviews — replace these with verified customer reviews at any time from the admin panel.';
         }

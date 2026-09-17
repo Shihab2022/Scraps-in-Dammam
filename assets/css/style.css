@@ -129,7 +129,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .hero p.lead{color:#cbd5d1;font-size:1.14rem;max-width:560px;margin-bottom:30px}
 .hero__actions{display:flex;flex-wrap:wrap;gap:12px}
 .hero__media{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--charcoal-2)}
-.hero__media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.hero__media img,.hero__media .hero__media-video{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
 .hero__media-card{position:absolute;left:16px;bottom:16px;right:16px;background:rgba(22,24,29,.82);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.14);
   border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:14px;color:#e2e8e8;font-size:.9rem}
 .hero__media-card i{color:var(--accent);font-size:1.5rem}

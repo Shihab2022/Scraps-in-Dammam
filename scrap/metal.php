@@ -36,7 +36,7 @@ include __DIR__ . '/../includes/header.php';
             </ul>
             <a class="btn btn--primary" href="<?= e(url('contact-us')) ?>">Contact Us for Free Pickup</a>
         </div>
-        <img src="<?= e(asset('images/scrap/metal.svg')) ?>" alt="Assorted metal scrap pile ready for grading and weighing" loading="lazy" width="560" height="420">
+        <img src="<?= e(asset('images/metal-scrap.jpg')) ?>" alt="Assorted metal scrap pile ready for grading and weighing" loading="lazy" width="560" height="420">
     </div>
 </section>
 

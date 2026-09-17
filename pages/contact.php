@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../includes/contact-form.php';
 
 $pageTitle       = 'Contact Us';
-$pageDescription = 'Contact our scrap buying team in Dammam. Call, WhatsApp, email or send a request — free scrap pickup across Dammam, Khobar, Jubail, Al-Ahsa and the Eastern Province.';
+$pageDescription = 'Contact our scrap buying team in Dammam. Call, WhatsApp, email or send a request — free scrap pickup in Dammam, Eastern, Saudi Arabia.';
 
 include __DIR__ . '/../includes/header.php';
 ?>

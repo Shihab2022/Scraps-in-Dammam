@@ -3,7 +3,7 @@
  * Terms & Conditions
  * ============================================================ */
 $pageTitle       = 'Terms & Conditions';
-$pageDescription = 'Terms and conditions for using our scrap buying website and services in Dammam and the Eastern Province, Saudi Arabia.';
+$pageDescription = 'Terms and conditions for using our scrap buying website and services in Dammam, Eastern, Saudi Arabia.';
 
 include __DIR__ . '/../includes/header.php';
 ?>

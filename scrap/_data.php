@@ -33,7 +33,7 @@ $scrapCategories = [
         'name'        => 'Copper',
         'short'       => 'Bare bright, #1, #2 and insulated copper. The highest-value metal we buy.',
         'icon'        => 'fa-fire-burner',
-        'image'       => 'images/scrap/copper.svg',
+        'image'       => 'images/copper.jpg',
         'alt'         => 'Copper wire and copper pipe scrap',
     ],
     'aluminum' => [
@@ -43,7 +43,7 @@ $scrapCategories = [
         'name'        => 'Aluminum',
         'short'       => 'Cans, sheets, extrusion, window frames and AC aluminum.',
         'icon'        => 'fa-cubes',
-        'image'       => 'images/scrap/aluminum.svg',
+        'image'       => 'images/aluminum.jpg',
         'alt'         => 'Aluminum scrap sheets and profiles',
     ],
     'cable-wire' => [
@@ -53,7 +53,7 @@ $scrapCategories = [
         'name'        => 'Old Cable',
         'short'         => 'Old copper cables, aluminum cables, insulated wire and industrial cable drums.',
         'icon'        => 'fa-plug-circle-bolt',
-        'image'       => 'images/scrap/cable.svg',
+        'image'       => 'images/old-cable.jpg',
         'alt'         => 'Coils of old cable and wire scrap in Dammam',
     ],
     'ac-appliances' => [
@@ -103,7 +103,7 @@ $scrapCategories = [
         'name'        => 'Used Battery',
         'short'       => 'Car, truck, UPS and solar used batteries — safe pickup and instant cash.',
         'icon'        => 'fa-car-battery',
-        'image'       => 'images/scrap/wire.svg',
+        'image'       => 'images/used-battery.avif',
         'alt'         => 'Used car and UPS batteries collected for recycling in Dammam',
     ],
     'stainless-steel' => [
@@ -113,7 +113,7 @@ $scrapCategories = [
         'name'        => 'S.S. Steel',
         'short'       => 'Stainless steel sheets, pipes, kitchen equipment and industrial S.S. scrap.',
         'icon'        => 'fa-layer-group',
-        'image'       => 'images/scrap/steel.svg',
+        'image'       => 'images/ss-steel.avif',
         'alt'         => 'Stainless steel scrap sheets and pipes in Dammam',
     ],
     'wood' => [
@@ -123,7 +123,7 @@ $scrapCategories = [
         'name'        => 'Wood',
         'short'       => 'Wooden pallets, doors, furniture wood and construction timber waste.',
         'icon'        => 'fa-tree',
-        'image'       => 'images/scrap/wood.svg',
+        'image'       => 'images/wood.avif',
         'alt'         => 'Wood scrap pallets and timber collected in Dammam',
     ],
     'mix-scrap' => [
@@ -133,7 +133,7 @@ $scrapCategories = [
         'name'        => 'All Mix Scrap',
         'short'       => 'Any mixed load — metal, cable, battery, wood and steel graded fairly.',
         'icon'        => 'fa-recycle',
-        'image'       => 'images/scrap/scrap-yard.svg',
+        'image'       => 'images/mix-scrap.avif',
         'alt'         => 'Mixed scrap load sorted and weighed in Dammam',
     ],
 ];

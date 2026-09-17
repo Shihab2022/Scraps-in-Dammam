@@ -35,7 +35,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Free removal from any floor — we lift and carry</li>
             </ul>
         </div>
-        <img src="<?= e(asset('images/scrap/ac.svg')) ?>" alt="Old split air-conditioning unit ready for removal" loading="lazy" width="560" height="420">
+        <img src="<?= e(asset('images/ac-appliances.avif')) ?>" alt="Old split air-conditioning unit ready for removal" loading="lazy" width="560" height="420">
     </div>
 </section>
 

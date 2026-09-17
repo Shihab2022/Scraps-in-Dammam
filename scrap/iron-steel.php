@@ -34,7 +34,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Cash or bank transfer immediately after weighing</li>
             </ul>
         </div>
-        <img src="<?= e(asset('images/scrap/iron-steel.svg')) ?>" alt="Stacked iron and steel structural steel scrap beams" loading="lazy" width="560" height="420">
+        <img src="<?= e(asset('images/iron-steel.jpg')) ?>" alt="Stacked iron and steel structural steel scrap beams" loading="lazy" width="560" height="420">
     </div>
 </section>
 

@@ -14,7 +14,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="container">
         <?php render_breadcrumbs([['label' => 'We Buy', 'url' => url('services')], ['label' => 'Industrial & Factory']]); ?>
         <h1>Industrial &amp; Factory Scrap Buyer in <?= e(site('city')) ?></h1>
-        <p>A dedicated B2B scrap purchasing service for factories, warehouses and contractors in the Eastern Province. Site inspections, scheduled collection, certified weighing and transparent bulk pricing.</p>
+        <p>A dedicated B2B scrap purchasing service for factories, warehouses and contractors in Dammam, Eastern, Saudi Arabia. Site inspections, scheduled collection, certified weighing and transparent bulk pricing.</p>
         <div class="page-hero__cta">
             <a class="btn btn--wa" href="<?= e(whatsapp_link('Hello, we have industrial scrap to sell. Can we schedule a site visit?')) ?>" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Our Team</a>
             <a class="btn btn--outline" href="<?= e(phone_href()) ?>"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now</a>
@@ -37,7 +37,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Site inspections and recurring collection contracts</li>
             </ul>
         </div>
-        <img src="<?= e(asset('images/scrap/industrial.svg')) ?>" alt="Factory scrap yard with heavy industrial metal scrap loads" loading="lazy" width="560" height="420">
+        <img src="<?= e(asset('images/industrial-factory.avif')) ?>" alt="Factory scrap yard with heavy industrial metal scrap loads" loading="lazy" width="560" height="420">
     </div>
 </section>
 

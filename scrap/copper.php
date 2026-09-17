@@ -33,7 +33,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Free pickup, certified weighing, instant payment</li>
             </ul>
         </div>
-        <img src="<?= e(asset('images/scrap/copper.svg')) ?>" alt="Copper wire, pipes and cable scrap ready for grading" loading="lazy" width="560" height="420">
+        <img src="<?= e(asset('images/copper.jpg')) ?>" alt="Copper wire, pipes and cable scrap ready for grading" loading="lazy" width="560" height="420">
     </div>
 </section>
 
@@ -62,7 +62,7 @@ include __DIR__ . '/../includes/header.php';
 </section>
 <section class="section">
     <div class="container split split--reverse">
-        <img src="<?= e(asset('images/scrap/cable.svg')) ?>" alt="Bundle of insulated copper cable prepared for recycling" loading="lazy" width="560" height="420">
+        <img src="<?= e(asset('images/old-cable.jpg')) ?>" alt="Bundle of insulated copper cable prepared for recycling" loading="lazy" width="560" height="420">
         <div class="split__body">
             <p class="section-eyebrow">Why Grade Matters</p>
             <h2>Why Copper Grade Matters</h2>

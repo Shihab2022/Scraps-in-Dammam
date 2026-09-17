@@ -25,7 +25,11 @@ include __DIR__ . '/../includes/header.php';
             </div>
         </div>
         <figure class="hero__media">
-            <img src="<?= e(asset('images/hero/hero.svg')) ?>" alt="Scrap yard in Dammam with metal, copper and aluminum ready for pickup" width="640" height="480" fetchpriority="high">
+            <video class="hero__media-video" autoplay muted loop playsinline preload="metadata"
+                   poster="<?= e(asset('images/hero/hero.svg')) ?>" width="640" height="480"
+                   aria-label="Scrap yard in Dammam with metal, copper and aluminum ready for pickup">
+                <source src="<?= e(asset('images/hero/hero.mp4')) ?>" type="video/mp4">
+            </video>
             <figcaption class="hero__media-card">
                 <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
                 <span><strong>Certified weighing</strong> on every pickup · Payment on the spot</span>

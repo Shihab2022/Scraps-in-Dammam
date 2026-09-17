@@ -33,7 +33,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Wheels/rims and mixed aluminum</li>
             </ul>
         </div>
-        <img src="<?= e(asset('images/scrap/aluminum.svg')) ?>" alt="Stacked aluminum profiles and sheet scrap" loading="lazy" width="560" height="420">
+        <img src="<?= e(asset('images/aluminum.jpg')) ?>" alt="Stacked aluminum profiles and sheet scrap" loading="lazy" width="560" height="420">
     </div>
 </section>
 

@@ -33,7 +33,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Cash or bank transfer paid at pickup</li>
             </ul>
         </div>
-        <img src="<?= e(asset('images/scrap/car.svg')) ?>" alt="Junk car being prepared for scrap collection" loading="lazy" width="560" height="420">
+        <img src="<?= e(asset('images/cars-vehicles.avif')) ?>" alt="Junk car being prepared for scrap collection" loading="lazy" width="560" height="420">
     </div>
 </section>
 

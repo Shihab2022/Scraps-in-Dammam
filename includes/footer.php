@@ -40,8 +40,8 @@ $year = date('Y');
                 <nav class="footer-col" aria-label="Scrap categories">
                     <h2 class="footer__heading">We Buy</h2>
                     <ul class="footer__links footer__links--two-col">
-                        <?php foreach ($GLOBALS['scrapCategories'] as $cat): ?>
-                        <li><a href="<?= e(url($cat['slug'])) ?>"><?= e($cat['name']) ?></a></li>
+                        <?php foreach ($GLOBALS['scrapCategories'] as $navCat): ?>
+                        <li><a href="<?= e(url($navCat['slug'])) ?>"><?= e($navCat['name']) ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </nav>
