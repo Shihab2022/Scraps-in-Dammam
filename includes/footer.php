@@ -13,7 +13,7 @@ $year = date('Y');
             <div class="footer-grid">
                 <div class="footer-col footer-col--brand">
                     <a class="brand brand--footer" href="<?= e(url('/')) ?>">
-                        <img class="brand__mark" src="<?= e(asset('images/logo.svg')) ?>" alt="" width="42" height="42">
+                        <img class="brand__mark" src="<?= e(asset('images/logo.svg')) ?>" alt="" width="38" height="38">
                         <span class="brand__text"><?= e($siteName) ?></span>
                     </a>
                     <p class="footer__about">
@@ -23,6 +23,8 @@ $year = date('Y');
                     <ul class="social-links">
                         <li><a href="https://www.linkedin.com/in/scrap-buyer-in-dammam-787970290/" target="_blank" rel="noopener" aria-label="LinkedIn">
                             <i class="fa-brands fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="<?= e(whatsapp_link()) ?>" target="_blank" rel="noopener" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
 
@@ -37,19 +39,13 @@ $year = date('Y');
                     </ul>
                 </nav>
 
-                <nav class="footer-col" aria-label="Scrap categories">
-                    <h2 class="footer__heading">We Buy</h2>
-                    <ul class="footer__links footer__links--two-col">
-                        <?php foreach ($GLOBALS['scrapCategories'] as $navCat): ?>
-                        <li><a href="<?= e(url($navCat['slug'])) ?>"><?= e($navCat['name']) ?></a></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </nav>
-
-                <nav class="footer-col" aria-label="Location">
-                    <h2 class="footer__heading">Location</h2>
+                <nav class="footer-col" aria-label="Locations">
+                    <h2 class="footer__heading">Locations</h2>
                     <ul class="footer__links">
-                        <li><a href="<?= e(url('contact-us')) ?>">Dammam, Eastern, Saudi Arabia</a></li>
+                        <?php foreach (site('locations', []) as $loc): ?>
+                        <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                            <a href="<?= e(url($loc['slug'])) ?>"><?= e($loc['name']) ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </nav>
 
@@ -62,19 +58,19 @@ $year = date('Y');
                             <a href="<?= e(whatsapp_link()) ?>" target="_blank" rel="noopener">WhatsApp Us</a></li>
                         <li><i class="fa-solid fa-envelope" aria-hidden="true"></i>
                             <a href="mailto:<?= e(site('email')) ?>"><?= e(site('email')) ?></a></li>
-                        <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                            <?= e(site('address')) ?></li>
-                        <li><i class="fa-regular fa-clock" aria-hidden="true"></i>
-                            <?= e(site('hours_short')) ?></li>
                     </ul>
                 </div>
             </div>
+
+            <div class="footer-legal">
+                <p class="footer-copy">© <?= e($year) ?> <?= e(site('company')) ?>. All Rights Reserved.</p>
                 <div class="footer-legal__links">
                     <a href="<?= e(url('privacy-policy')) ?>">Privacy Policy</a>
+                    <span class="footer-legal__sep" aria-hidden="true">·</span>
                     <a href="<?= e(url('terms')) ?>">Terms &amp; Conditions</a>
+                    <span class="footer-legal__sep" aria-hidden="true">·</span>
                     <a href="<?= e(url('services')) ?>">Services</a>
                 </div>
-                <p class="footer-copy">© <?= e($year) ?> <?= e(site('company')) ?>. All Rights Reserved.</p>
             </div>
         </div>
     </footer>

@@ -5,7 +5,7 @@
 require_once __DIR__ . '/../includes/pickup-form.php';
 
 $pageTitle       = 'Scrap Pickup';
-$pageDescription = 'Free same-day scrap pickup in Dammam, Eastern, Saudi Arabia. Residential, commercial and industrial collection with on-site certified weighing and instant payment.';
+$pageDescription = 'Free same-day scrap pickup in Mecca, Jeddah & Taif, Saudi Arabia. Residential, commercial and industrial collection with on-site certified weighing and instant payment.';
 
 include __DIR__ . '/../includes/header.php';
 ?>

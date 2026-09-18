@@ -1,5 +1,5 @@
 @echo off
-title Gulf Scrap Buyer - Local Dev Server
+title Scraps Buyer in Saudi Arabia - Local Dev Server
 cd /d "%~dp0"
 
 rem ---- Locate PHP (PATH first, then common XAMPP location) ----
@@ -17,7 +17,7 @@ if errorlevel 1 (
 )
 
 echo ============================================
-echo  Gulf Scrap Buyer - local development server
+echo  Scraps Buyer in Saudi Arabia - local development server
 echo ============================================
 echo  PHP:  %PHP_CMD%
 echo  URL:  http://localhost:8000

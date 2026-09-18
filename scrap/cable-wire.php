@@ -1,9 +1,9 @@
 <?php
 /* ============================================================
- * Cable & Wire Scrap Buyer in Dammam
+ * Cable & Wire Scrap Buyer in Saudi Arabia
  * ============================================================ */
-$pageTitle       = 'Cable & Wire Scrap Buyer in Dammam';
-$pageDescription = 'We buy cable and wire scrap in Dammam — copper cables, aluminum cables, insulated wire, electrical and communication cable, and industrial cable drums. Free pickup and instant payment.';
+$pageTitle       = 'Cable & Wire Scrap Buyer in Saudi Arabia';
+$pageDescription = 'We buy cable and wire scrap in Saudi Arabia — copper cables, aluminum cables, insulated wire, electrical and communication cable, and industrial cable drums. Free pickup and instant payment.';
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -118,5 +118,5 @@ $faqs = [
 render_faq($faqs, 'Cable & Wire FAQ');
 ?>
 
-<?php render_cta('Selling Surplus Cable?', 'Message us photos of your cable for today’s rate per kilogram. Bulk pickup with certified weighing available in Dammam, Eastern, Saudi Arabia.'); ?>
+<?php render_cta('Selling Surplus Cable?', 'Message us photos of your cable for today’s rate per kilogram. Bulk pickup with certified weighing available in Mecca, Jeddah & Taif, Saudi Arabia.'); ?>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

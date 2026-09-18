@@ -1,9 +1,9 @@
 <?php
 /* ============================================================
- * Construction & Demolition Scrap Buyer in Dammam
+ * Construction & Demolition Scrap Buyer in Saudi Arabia
  * ============================================================ */
-$pageTitle       = 'Construction & Demolition Scrap Buyer in Dammam';
-$pageDescription = 'We buy construction and demolition scrap in Dammam — rebar, structural steel, pipes, metal frames and site leftovers. Site clearance and scheduled pickup for contractors and builders.';
+$pageTitle       = 'Construction & Demolition Scrap Buyer in Saudi Arabia';
+$pageDescription = 'We buy construction and demolition scrap in Saudi Arabia — rebar, structural steel, pipes, metal frames and site leftovers. Site clearance and scheduled pickup for contractors and builders.';
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -117,7 +117,7 @@ include __DIR__ . '/../includes/header.php';
 <?php
 $faqs = [
     ['question' => 'Do you buy scrap from active construction sites?', 'answer' => 'Yes — we work around site access rules, shift hours and handover dates, and coordinate loading with your crane and safety team.'],
-    ['question' => 'How quickly can you clear a demolished site?', 'answer' => 'For sites in Dammam and nearby cities we can usually collect within 24–48 hours, and larger clearances are scheduled with your project timeline.'],
+    ['question' => 'How quickly can you clear a demolished site?', 'answer' => 'For sites in Saudi Arabia and nearby cities we can usually collect within 24–48 hours, and larger clearances are scheduled with your project timeline.'],
     ['question' => 'Can you cut steel beams for removal?', 'answer' => 'Where cutting is required for loading, our team uses safe cutting practices and debris management — always coordinated with the site supervisor.'],
     ['question' => 'Do you take mixed demolition waste or only metal?', 'answer' => 'We purchase the metal fraction (steel, aluminum, copper, brass) of demolition waste. Mixed construction debris such as concrete or wood is the contractor’s responsibility, though we can advise on removal.'],
     ['question' => 'How are large quantities weighed?', 'answer' => 'Each truckload is weighed on certified scales — either our mobile scales on site or a weighbridge — and the tickets are added together for the final total.'],

@@ -3,7 +3,7 @@
  * Homepage
  * ============================================================ */
 $pageTitle       = site('site_name') . ' — ' . site('tagline');
-$pageDescription = 'Professional scrap metal buyer in Dammam. Free pickup, certified weighing, fair prices and instant payment for metal, copper, aluminum, cables, AC units, cars and industrial scrap.';
+$pageDescription = 'Professional scrap metal buyer in Mecca, Jeddah & Taif. Free pickup, certified weighing, fair prices and instant payment for metal, copper, aluminum, cables, AC units, cars and industrial scrap.';
 $businessSchema  = true;
 
 include __DIR__ . '/../includes/header.php';
@@ -27,7 +27,7 @@ include __DIR__ . '/../includes/header.php';
         <figure class="hero__media">
             <video class="hero__media-video" autoplay muted loop playsinline preload="metadata"
                    poster="<?= e(asset('images/hero/hero.svg')) ?>" width="640" height="480"
-                   aria-label="Scrap yard in Dammam with metal, copper and aluminum ready for pickup">
+                   aria-label="Scrap yard with metal, copper and aluminum ready for pickup">
                 <source src="<?= e(asset('images/hero/hero.mp4')) ?>" type="video/mp4">
             </video>
             <figcaption class="hero__media-card">
@@ -70,10 +70,10 @@ include __DIR__ . '/../includes/header.php';
 <!-- ================= ABOUT ================= -->
 <section class="section section--surface" id="about">
     <div class="container split">
-        <img src="<?= e(asset('images/scrap/scrap-yard.svg')) ?>" alt="Modern scrap yard with sorted metal bales" loading="lazy" width="560" height="420">
+        <img class="reveal" src="<?= e(asset('images/about-us.png')) ?>" alt="Our scrap buying team weighing and loading scrap metal in Mecca, Jeddah and Taif" loading="lazy" width="560" height="420">
         <div class="split__body">
             <p class="section-eyebrow">About Us</p>
-            <h2>Trusted Scrap Buyer in <?= e(site('city')) ?></h2>
+            <h2>Trusted Scrap Buyer in Mecca, Jeddah &amp; Taif</h2>
             <p>We are a professional scrap buying company serving <?= e(site('service_area')) ?>. For more than
             <?= e(site('stats.years_experience')) ?> years we have helped homeowners, businesses and factories turn
             unwanted metal, appliances and vehicles into instant cash.</p>
@@ -144,7 +144,7 @@ include __DIR__ . '/../includes/header.php';
             <?php
             $reasons = [
                 ['fa-sack-dollar',  'Best Market Rates',       'Competitive, transparent pricing based on current market rates.'],
-                ['fa-truck-fast',   'Free Pickup',             'Doorstep collection in Dammam, Eastern, Saudi Arabia.'],
+                ['fa-truck-fast',   'Free Pickup',             'Doorstep collection in Mecca, Jeddah & Taif.'],
                 ['fa-bolt',         'Same-Day Service',        'Fast response and pickup whenever same-day service is available.'],
                 ['fa-money-bill-wave','Instant Payment',       'Payment immediately after weighing and price confirmation.'],
                 ['fa-scale-balanced','Certified Weighing',     'Accurate digital scales, calibrated and verified.'],
@@ -168,15 +168,11 @@ include __DIR__ . '/../includes/header.php';
     <div class="container">
         <header class="section-head">
             <p class="section-eyebrow">Service Areas</p>
-            <h2>Free Scrap Pickup in Dammam</h2>
-            <p class="section-sub">Our base location: Dammam, Eastern, Saudi Arabia.</p>
+            <h2>Free Scrap Pickup in Mecca, Jeddah &amp; Taif</h2>
+            <p class="section-sub">Our service locations: Mecca, Jeddah and Taif, Saudi Arabia — select a city to see its map.</p>
         </header>
-        <div class="map-card">
-            <iframe src="<?= e(site('map_embed')) ?>" title="Map — <?= e(site('service_area')) ?>"
-                    loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-            <ul class="map-card__list">
-                <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Dammam, Eastern, Saudi Arabia</li>
-            </ul>
+        <div class="map-card reveal">
+            <?php render_location_tabs(); ?>
         </div>
     </div>
 </section>
@@ -188,9 +184,9 @@ $faqs = [
     ['question' => 'Who is the best scrap buyer in the area?',
      'answer'   => 'A reliable scrap buyer offers free pickup, certified weighing, transparent market-based pricing and immediate payment — which is exactly what we provide. Check our WhatsApp or call us for a same-day quotation and compare for yourself.'],
     ['question' => 'Do you offer same-day scrap pickup?',
-     'answer'   => 'Yes, in most cases we can arrange same-day pickup in Dammam when slots are available. Call or WhatsApp us in the morning with your scrap type and address and we will confirm the earliest loading time.'],
+     'answer'   => 'Yes, in most cases we can arrange same-day pickup in Mecca, Jeddah and Taif when slots are available. Call or WhatsApp us in the morning with your scrap type and address and we will confirm the earliest loading time.'],
     ['question' => 'What types of scrap do you buy?',
-     'answer'   => 'We Buy All Types Scrap Metal — Copper, Old Cable, Used Battery, Aluminum, Iron Steel, Wood, S.S. Steel & All Mix Scrap. If you are unsure, send us a photo on WhatsApp.'],
+     'answer'   => 'We Buy All Types of Scrap Metal — Copper, Old Cable, Used Battery, Aluminum, Iron Steel, Wood, S.S. Steel & All Mix Scrap. If you are unsure, send us a photo on WhatsApp.'],
     ['question' => 'How is the scrap price calculated?',
      'answer'   => 'Prices are based on the current international market rates, the material grade, weight and cleanliness. We confirm the rate per kilogram before pickup, then weigh the material with certified scales on site.'],
     ['question' => 'Do you pay cash on the same day?',
@@ -198,7 +194,7 @@ $faqs = [
     ['question' => 'Is there a minimum quantity?',
      'answer'   => 'No. We buy everything from a few kilograms of copper wire to complete factory loads. Pricing per kilogram is the same regardless of quantity.'],
     ['question' => 'Which areas do you serve?',
-     'answer'   => 'Our base location is Dammam, Eastern, Saudi Arabia with free pickup.'],
+     'answer'   => 'We serve Mecca, Jeddah and Taif, Saudi Arabia with free pickup.'],
     ['question' => 'Can I send photos through WhatsApp?',
      'answer'   => 'Absolutely — this is the fastest way to get a quote. Send clear photos of your scrap and we will assess the material type and approximate value quickly.'],
     ['question' => 'Do you buy mixed scrap?',
@@ -206,7 +202,7 @@ $faqs = [
     ['question' => 'Do you buy industrial scrap?',
      'answer'   => 'Yes. We purchase factory production waste, offcuts, HMS 1 and 2, machinery scrap, industrial cables and more, with site inspections and scheduled bulk collection for factories and warehouses.'],
 ];
-render_faq($faqs, 'Scrap Buyer FAQ', 'Answers to the questions we hear most often from sellers in Dammam, Eastern, Saudi Arabia.');
+render_faq($faqs, 'Scrap Buyer FAQ', 'Answers to the questions we hear most often from sellers in Mecca, Jeddah & Taif.');
 ?>
 
 <?php render_cta(); ?>

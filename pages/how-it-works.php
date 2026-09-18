@@ -29,7 +29,7 @@ include __DIR__ . '/../includes/header.php';
                 <h3>Contact Us</h3>
                 <p>Call <?= e(site('phone')) ?> or message us on
                     <a href="<?= e(whatsapp_link()) ?>" target="_blank" rel="noopener">WhatsApp</a>.
-                    Tell us what scrap you have and where you are in Dammam. You can also use the
+                    Tell us what scrap you have and where you are in Saudi Arabia. You can also use the
                     <a href="<?= e(url('contact-us')) ?>">contact form</a> on this website.</p>
             </article>
             <article class="step-card reveal">
@@ -85,7 +85,7 @@ include __DIR__ . '/../includes/header.php';
 <?php
 $faqs = [
     ['question' => 'How quickly can you pick up my scrap?',
-     'answer'   => 'In most cases we can arrange same-day or next-day pickup in Dammam and nearby cities. Call or WhatsApp us in the morning and we will confirm the earliest available slot.'],
+     'answer'   => 'In most cases we can arrange same-day or next-day pickup in Saudi Arabia and nearby cities. Call or WhatsApp us in the morning and we will confirm the earliest available slot.'],
     ['question' => 'Do I need to sort my scrap before pickup?',
      'answer'   => 'Sorting is helpful but not required. We grade material on site by type — ferrous, non-ferrous, copper, aluminum and so on — and price each type fairly.'],
     ['question' => 'How will I know the price before pickup?',

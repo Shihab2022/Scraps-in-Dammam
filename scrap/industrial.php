@@ -1,11 +1,11 @@
 <?php
 /* ============================================================
- * Industrial & Factory Scrap Buyer in Dammam
+ * Industrial & Factory Scrap Buyer in Saudi Arabia
  * ============================================================ */
 require_once __DIR__ . '/../includes/industrial-form.php';
 
-$pageTitle       = 'Industrial & Factory Scrap Buyer in Dammam';
-$pageDescription = 'B2B industrial scrap buying in Dammam — HMS 1 & 2, LMS, cast iron, stainless steel, machinery, production waste and industrial cables. Site inspections, scheduled collection and bulk pricing.';
+$pageTitle       = 'Industrial & Factory Scrap Buyer in Saudi Arabia';
+$pageDescription = 'B2B industrial scrap buying in Saudi Arabia — HMS 1 & 2, LMS, cast iron, stainless steel, machinery, production waste and industrial cables. Site inspections, scheduled collection and bulk pricing.';
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -14,7 +14,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="container">
         <?php render_breadcrumbs([['label' => 'We Buy', 'url' => url('services')], ['label' => 'Industrial & Factory']]); ?>
         <h1>Industrial &amp; Factory Scrap Buyer in <?= e(site('city')) ?></h1>
-        <p>A dedicated B2B scrap purchasing service for factories, warehouses and contractors in Dammam, Eastern, Saudi Arabia. Site inspections, scheduled collection, certified weighing and transparent bulk pricing.</p>
+        <p>A dedicated B2B scrap purchasing service for factories, warehouses and contractors in Mecca, Jeddah & Taif, Saudi Arabia. Site inspections, scheduled collection, certified weighing and transparent bulk pricing.</p>
         <div class="page-hero__cta">
             <a class="btn btn--wa" href="<?= e(whatsapp_link('Hello, we have industrial scrap to sell. Can we schedule a site visit?')) ?>" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Our Team</a>
             <a class="btn btn--outline" href="<?= e(phone_href()) ?>"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now</a>

@@ -3,7 +3,7 @@
  * About Us
  * ============================================================ */
 $pageTitle       = 'About Us';
-$pageDescription = 'Learn about our scrap buying company in Dammam — our story, the scrap we buy, how we work, who we serve, and why customers choose us in Dammam, Eastern, Saudi Arabia.';
+$pageDescription = 'Learn about our scrap buying company — our story, the scrap we buy, how we work, who we serve, and why customers choose us in Mecca, Jeddah & Taif, Saudi Arabia.';
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -12,7 +12,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="container">
         <?php render_breadcrumbs([['label' => 'About Us']]); ?>
         <h1>About Us</h1>
-        <p>We are a professional scrap buying company based in <?= e(site('city')) ?>, helping homeowners, businesses and factories turn scrap metal into instant cash — with transparent pricing, certified weighing and fast pickup.</p>
+        <p>We are a professional scrap buying company based in Mecca and serving Mecca, Jeddah and Taif, helping homeowners, businesses and factories turn scrap metal into instant cash — with transparent pricing, certified weighing and fast pickup.</p>
         <div class="page-hero__cta">
             <a class="btn btn--wa" href="<?= e(whatsapp_link()) ?>" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
             <a class="btn btn--outline" href="<?= e(phone_href()) ?>"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now</a>
@@ -25,11 +25,11 @@ include __DIR__ . '/../includes/header.php';
         <div>
             <p class="section-eyebrow">Our Story</p>
             <h2>Built on Trust, Fast Payment &amp; Recycling</h2>
-            <p>What started as a small family trading business in Dammam more than <?= e(site('stats.years_experience')) ?> years ago is today a full-service scrap buying operation in Dammam, Eastern, Saudi Arabia. We grew by doing one thing consistently: paying fairly, weighing transparently and picking up fast.</p>
-            <p>Today we serve residential customers, shops, maintenance workshops, contractors, warehouses and factories in Dammam, Eastern, Saudi Arabia. Every kilogram we buy is graded honestly, weighed on certified scales and processed responsibly with licensed recycling partners.</p>
+            <p>What started as a small family trading business in Mecca more than <?= e(site('stats.years_experience')) ?> years ago is today a full-service scrap buying operation in Mecca, Jeddah and Taif, Saudi Arabia. We grew by doing one thing consistently: paying fairly, weighing transparently and picking up fast.</p>
+            <p>Today we serve residential customers, shops, maintenance workshops, contractors, warehouses and factories in Mecca, Jeddah and Taif. Every kilogram we buy is graded honestly, weighed on certified scales and processed responsibly with licensed recycling partners.</p>
             <p>We believe that selling scrap should be simple, transparent and profitable for the seller. That is why we confirm the price before we arrive, pay immediately after weighing, and never ask you to transport heavy material yourself.</p>
         </div>
-        <img src="<?= e(asset('images/scrap/scrap-yard.svg')) ?>" alt="Our team sorting scrap at the yard in Dammam" loading="lazy" width="560" height="420">
+        <img class="reveal" src="<?= e(asset('images/about-us.png')) ?>" alt="Our team weighing and sorting scrap at our yard in Saudi Arabia" loading="lazy" width="560" height="420">
     </div>
 </section>
 
@@ -106,15 +106,11 @@ include __DIR__ . '/../includes/header.php';
     <div class="container">
         <header class="section-head">
             <p class="section-eyebrow">Service Area</p>
-            <h2>Proudly Serving Dammam, Eastern, Saudi Arabia</h2>
+            <h2>Proudly Serving Mecca, Jeddah &amp; Taif</h2>
+            <p class="section-sub">Select a city to see its service map — default is Mecca.</p>
         </header>
-        <div class="map-card">
-            <iframe src="<?= e(site('map_embed')) ?>" title="Service area map of <?= e(site('service_area')) ?>" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-            <ul class="map-card__list">
-                <?php foreach (site('service_areas', []) as $area): ?>
-                <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <?= e($area) ?></li>
-                <?php endforeach; ?>
-            </ul>
+        <div class="map-card reveal">
+            <?php render_location_tabs(); ?>
         </div>
     </div>
 </section>

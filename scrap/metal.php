@@ -1,10 +1,10 @@
 <?php
 /* ============================================================
- * Metal Scrap Buyer in Dammam
+ * Metal Scrap Buyer in Saudi Arabia
  * ============================================================ */
 $cat = scrap_category('metal');
-$pageTitle       = 'Metal Scrap Buyer in Dammam';
-$pageDescription = 'We buy metal scrap in Dammam — iron, steel, copper, aluminum, brass and stainless steel — with free pickup, certified weighing and instant payment. Get a quote on WhatsApp today.';
+$pageTitle       = 'Metal Scrap Buyer in Saudi Arabia';
+$pageDescription = 'We buy metal scrap in Saudi Arabia — iron, steel, copper, aluminum, brass and stainless steel — with free pickup, certified weighing and instant payment. Get a quote on WhatsApp today.';
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -126,7 +126,7 @@ include __DIR__ . '/../includes/header.php';
             <div class="split__body">
                 <p class="section-eyebrow">Service Areas</p>
                 <h2>Where We Collect Metal Scrap</h2>
-                <p>Our trucks collect mixed and single-grade metal scrap in Dammam, Eastern, Saudi Arabia — including homes, shops, warehouses and construction sites.</p>
+                <p>Our trucks collect mixed and single-grade metal scrap in Mecca, Jeddah & Taif, Saudi Arabia — including homes, shops, warehouses and construction sites.</p>
             </div>
             <ul class="check-list">
                 <?php foreach (site('service_areas', []) as $area): ?>

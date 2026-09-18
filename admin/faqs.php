@@ -68,7 +68,7 @@ admin_header('FAQs');
 ?>
 <div class="admin__panel">
     <h2><?= $edit ? 'Edit FAQ' : 'Add FAQ' ?></h2>
-    <p class="muted" style="margin-bottom:12px">Scope = page route (e.g. <code>copper-scrap-buyer-dammam</code>) or <code>global</code> to show everywhere.</p>
+    <p class="muted" style="margin-bottom:12px">Scope = page route (e.g. <code>copper-scrap-buyer</code>) or <code>global</code> to show everywhere.</p>
     <form method="post" action="<?= e(url('admin/faqs')) ?>">
         <?= csrf_field() ?>
         <input type="hidden" name="action" value="<?= $edit ? 'update' : 'create' ?>">
@@ -77,7 +77,7 @@ admin_header('FAQs');
             <div class="field"><label>Scope</label>
                 <select name="scope">
                     <?php
-                    $scopes = ['global', 'home', 'metal-scrap-buyer-dammam', 'iron-steel-scrap-buyer-dammam', 'copper-scrap-buyer-dammam', 'aluminum-scrap-buyer-dammam', 'cable-wire-scrap-buyer-dammam', 'ac-appliance-scrap-buyer-dammam', 'industrial-scrap-buyer-dammam', 'car-scrap-buyer-dammam', 'construction-demolition-scrap-buyer-dammam', 'scrap-buyer-jubail', 'scrap-buyer-khobar', 'scrap-buyer-in-al-ahsa'];
+                    $scopes = ['global', 'home', 'metal-scrap-buyer', 'iron-steel-scrap-buyer', 'copper-scrap-buyer', 'aluminum-scrap-buyer', 'cable-wire-scrap-buyer', 'ac-appliance-scrap-buyer', 'industrial-scrap-buyer', 'car-scrap-buyer', 'construction-demolition-scrap-buyer', 'scrap-buyer-mecca', 'scrap-buyer-jeddah', 'scrap-buyer-taif'];
                     foreach ($scopes as $s):
                         $val = $edit['scope'] ?? 'global';
                         ?><option value="<?= e($s) ?>" <?= $val === $s ? 'selected' : '' ?>><?= e($s) ?></option><?php endforeach; ?>
@@ -96,7 +96,7 @@ admin_header('FAQs');
     <div class="pill-nav">
         <a href="<?= e(url('admin/faqs')) ?>" class="<?= $filter === '' ? 'active' : '' ?>">All</a>
         <a href="<?= e(url('admin/faqs?scope=global')) ?>" class="<?= $filter === 'global' ? 'active' : '' ?>">Global</a>
-        <?php foreach (['home', 'copper-scrap-buyer-dammam', 'scrap-buyer-jubail'] as $s): ?>
+        <?php foreach (['home', 'copper-scrap-buyer', 'scrap-buyer-mecca'] as $s): ?>
         <a href="<?= e(url('admin/faqs?scope=' . $s)) ?>" class="<?= $filter === $s ? 'active' : '' ?>"><?= e($s) ?></a>
         <?php endforeach; ?>
     </div>

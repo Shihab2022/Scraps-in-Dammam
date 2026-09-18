@@ -1,9 +1,9 @@
 <?php
 /* ============================================================
- * Aluminum Scrap Buyer in Dammam
+ * Aluminum Scrap Buyer in Saudi Arabia
  * ============================================================ */
-$pageTitle       = 'Aluminum Scrap Buyer in Dammam';
-$pageDescription = 'We buy aluminum scrap in Dammam — cans, sheets, extrusion, window frames, profiles, AC aluminum, wheels and mixed aluminum. Free pickup, certified weighing and instant payment.';
+$pageTitle       = 'Aluminum Scrap Buyer in Saudi Arabia';
+$pageDescription = 'We buy aluminum scrap in Saudi Arabia — cans, sheets, extrusion, window frames, profiles, AC aluminum, wheels and mixed aluminum. Free pickup, certified weighing and instant payment.';
 
 include __DIR__ . '/../includes/header.php';
 ?>

@@ -10,7 +10,7 @@ $siteName = site('site_name');
 $company  = site('company');
 
 $pageTitle       ??= $siteName;
-$pageDescription ??= 'We Buy All Types Scrap Metal in Dammam, Eastern, Saudi Arabia — Copper, Old Cable, Used Battery, Aluminum, Iron Steel, Wood, S.S. Steel & All Mix Scrap. Free pickup, certified weighing and instant payment.';
+$pageDescription ??= 'We Buy All Types of Scrap Metal in Mecca, Jeddah & Taif, Saudi Arabia — Copper, Old Cable, Used Battery, Aluminum, Iron Steel, Wood, S.S. Steel & All Mix Scrap. Free pickup, certified weighing and instant payment.';
 $pageImage       ??= asset('images/og-default.svg');
 $current          = current_path();
 $pageCanonical   ??= url($current === '' ? '/' : $current . '/');
@@ -67,8 +67,8 @@ $desc = function_exists('mb_substr')
             'telephone'=> site('phone'),
             'email'    => site('email'),
             'priceRange' => '$$',
-            'address'  => ['@type'=>'PostalAddress','streetAddress'=>site('address','Dammam, Saudi Arabia'),'addressLocality'=>site('city'),'addressCountry'=>'SA'],
-            'geo'      => ['@type'=>'GeoCoordinates','latitude'=>26.4207,'longitude'=>50.0888],
+            'address'  => ['@type'=>'PostalAddress','streetAddress'=>site('address','Mecca, Saudi Arabia'),'addressLocality'=>site('city'),'addressCountry'=>'SA'],
+            'geo'      => ['@type'=>'GeoCoordinates','latitude'=>21.4225,'longitude'=>39.8262],
             'areaServed' => array_map(function($a){return ['@type'=>'City','name'=>$a];}, site('service_areas',[])),
             'openingHoursSpecification' => [
                 ['@type'=>'OpeningHoursSpecification','dayOfWeek'=>['Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday'],'opens'=>'08:00','closes'=>'20:00'],

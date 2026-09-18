@@ -49,6 +49,15 @@ $waMsg = 'Hello, I would like to sell my scrap. Can you provide a quote?';
                     <a href="<?= e(url('about-us')) ?>">About Us</a></li>
                 <li class="has-dropdown">
                     <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                        Locations <i class="fa-solid fa-chevron-down nav-caret" aria-hidden="true"></i></button>
+                    <ul class="nav-dropdown nav-dropdown--locations">
+                        <?php foreach (site('locations', []) as $locKey => $loc): ?>
+                        <li><a href="<?= e(url($loc['slug'])) ?>"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span>Scrap Buyer in <?= e($loc['name']) ?></span></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
                         We Buy <i class="fa-solid fa-chevron-down nav-caret" aria-hidden="true"></i></button>
                     <ul class="nav-dropdown">
                         <?php foreach ($GLOBALS['scrapCategories'] as $navCat): ?>

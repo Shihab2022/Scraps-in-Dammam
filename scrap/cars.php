@@ -1,9 +1,9 @@
 <?php
 /* ============================================================
- * Car & Vehicle Scrap Buyer in Dammam
+ * Car & Vehicle Scrap Buyer in Saudi Arabia
  * ============================================================ */
-$pageTitle       = 'Car & Vehicle Scrap Buyer in Dammam';
-$pageDescription = 'We buy junk cars and scrap vehicles in Dammam — cars, engines, gearboxes, batteries, radiators and vehicle metal — with free towing, fair assessment and instant payment.';
+$pageTitle       = 'Car & Vehicle Scrap Buyer in Saudi Arabia';
+$pageDescription = 'We buy junk cars and scrap vehicles in Saudi Arabia — cars, engines, gearboxes, batteries, radiators and vehicle metal — with free towing, fair assessment and instant payment.';
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -113,39 +113,16 @@ include __DIR__ . '/../includes/header.php';
             <p class="section-eyebrow">Vehicle Inquiry</p>
             <h2>Tell Us About Your Vehicle</h2>
         </header>
-        <form class="form-card" action="<?= e(url('actions/contact')) ?>" method="post" enctype="multipart/form-data" data-validate novalidate>
-            <?= csrf_field() ?>
-            <?= honeypot_field() ?>
-            <div class="form-grid">
-                <div class="field">
-                    <label for="veh-name">Your Name <span class="req" aria-hidden="true">*</span></label>
-                    <input type="text" id="veh-name" name="name" required maxlength="100">
-                </div>
-                <div class="field">
-                    <label for="veh-phone">Phone <span class="req" aria-hidden="true">*</span></label>
-                    <input type="tel" id="veh-phone" name="phone" required pattern="[0-9+ ]{7,15}">
-                </div>
-                <div class="field field--full">
-                    <label for="veh-message">Vehicle Details <span class="req" aria-hidden="true">*</span></label>
-                    <textarea id="veh-message" name="message" required maxlength="2000" placeholder="Make, model, year, condition, location, and any parts that make it special…"></textarea>
-                </div>
-                <div class="field field--full">
-                    <label>Vehicle Photos</label>
-                    <div class="file-drop" data-dropzone>
-                        <i class="fa-solid fa-images" aria-hidden="true"></i>
-                        Drop photos here or click to choose (JPG, PNG, WEBP)
-                        <input type="file" name="photos[]" accept=".jpg,.jpeg,.png,.webp" multiple data-files="[data-dropzone]" hidden>
-                        <div class="file-list" aria-live="polite"></div>
-                    </div>
-                </div>
+        <div class="form-card reveal" style="text-align:center">
+            <p style="font-size:1.05rem;margin-bottom:8px">Send us the make, model, year, condition and location of your vehicle —
+                <strong>plus photos on WhatsApp</strong> — and we will quote the true value before towing.</p>
+            <p style="color:var(--muted);margin-bottom:22px">Reach us the fast way: WhatsApp, a phone call, or email us from your own Gmail
+                (<a href="mailto:<?= e(site('email')) ?>"><?= e(site('email')) ?></a>).</p>
+            <div class="form-actions" style="justify-content:center">
+                <a class="btn btn--wa" href="<?= e(whatsapp_link('Hello, I have a scrap vehicle to sell.')) ?>" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp a Photo</a>
+                <a class="btn btn--outline" style="border-color:var(--deep-green);color:var(--deep-green)" href="<?= e(phone_href()) ?>"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now</a>
             </div>
-            <input type="hidden" name="scrap_type" value="Cars & Vehicles">
-            <input type="hidden" name="location" value="Dammam">
-            <div class="form-actions">
-                <button class="btn btn--primary" type="submit"><i class="fa-solid fa-car-burst" aria-hidden="true"></i> Sell Your Scrap Car</button>
-                <a class="btn btn--text" href="<?= e(whatsapp_link('Hello, I have a scrap vehicle to sell.')) ?>" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
-            </div>
-        </form>
+        </div>
     </div>
 </section>
 <?php
@@ -154,7 +131,7 @@ $faqs = [
     ['question' => 'Do I need the car’s registration documents?', 'answer' => 'You must be the legal owner of the vehicle. Saudi vehicle registration (Istimara) or equivalent ownership documents are required before scrapping, and we guide you through it.'],
     ['question' => 'Can you pick up vehicles from inside compounds or buildings?', 'answer' => 'Yes, we routinely recover vehicles from compounds and underground parking, provided we have vehicle access.'],
     ['question' => 'How is the price of a scrap car calculated?', 'answer' => 'The price is based on the vehicle weight, the current metal market, and any high-value parts such as batteries, radiators, engines and catalytic converters.'],
-    ['question' => 'How fast can you tow the vehicle?', 'answer' => 'In most cases within 24 hours, and often the same day for vehicles in Dammam and nearby cities.'],
+    ['question' => 'How fast can you tow the vehicle?', 'answer' => 'In most cases within 24 hours, and often the same day for vehicles in Saudi Arabia and nearby cities.'],
 ];
 render_faq($faqs, 'Vehicle Scrap FAQ');
 ?>

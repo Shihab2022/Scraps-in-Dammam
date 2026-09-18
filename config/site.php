@@ -5,24 +5,47 @@
  * so nothing is hardcoded in templates or components.
  */
 return [
-    'site_name'   => 'Gulf Scrap Buyer',
+    'site_name'   => 'Scraps Buyer in Saudi Arabia',
     'company'     => 'Gulf Scrap Trading Est.',
-    'tagline'     => 'We Buy All Types Scrap Metal in Dammam, Eastern, Saudi Arabia',
+    'tagline'     => 'We Buy All Types of Scrap Metal in Mecca, Jeddah & Taif, Saudi Arabia',
 
-    'phone'       => '+966 53 151 9554',
-    'phone_tel'   => '+966531519554',
-    'whatsapp'    => '966570196678',          // WhatsApp: +966570196678
-    'email'       => 'scrapbuyerindammam@gmail.com',
-    'address'     => 'Dammam, Eastern, Saudi Arabia',
-    'city'        => 'Dammam',
+    'phone'       => '+966 57 035 2909',
+    'phone_tel'   => '+966570352909',
+    'whatsapp'    => '966570352909',          // WhatsApp: +966 57 035 2909
+    'email'       => 'atozscrapbuyersa@gmail.com',
+    'address'     => 'Mecca, Jeddah & Taif, Saudi Arabia',
+    'city'        => 'Mecca',
     'country'     => 'Saudi Arabia',
     'currency'    => 'SAR',
     'language'    => 'en',
 
-    'service_area' => 'Dammam, Eastern, Saudi Arabia',
+    'service_area' => 'Mecca, Jeddah & Taif, Saudi Arabia',
 
     'service_areas' => [
-        'Dammam',
+        'Mecca',
+        'Jeddah',
+        'Taif',
+    ],
+
+    'locations' => [
+        'mecca' => [
+            'name'  => 'Mecca',
+            'slug'  => 'scrap-buyer-mecca',
+            'city'  => 'Mecca, Saudi Arabia',
+            'embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14871.086561603104!2d39.8101212!3d21.4224874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c21b4bec8a167b%3A0xe6148a35d5c5b4d1!2sMecca%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1690000000000!5m2!1sen!2ssa',
+        ],
+        'jeddah' => [
+            'name'  => 'Jeddah',
+            'slug'  => 'scrap-buyer-jeddah',
+            'city'  => 'Jeddah, Saudi Arabia',
+            'embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d951957.5737348373!2d38.4912472!3d21.5434665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d48fb611bea7%3A0xe306162773f1397e!2sJeddah%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1690000000000!5m2!1sen!2ssa',
+        ],
+        'taif' => [
+            'name'  => 'Taif',
+            'slug'  => 'scrap-buyer-taif',
+            'city'  => 'Taif, Saudi Arabia',
+            'embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92725.84897531588!2d40.3651058!3d21.2854663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15bb8b3ea94c3b2d%3A0x7f1e0c1bbbcbb3d3!2sTaif%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1690000000000!5m2!1sen!2ssa',
+        ],
     ],
 
     'business_hours' => [
@@ -47,12 +70,12 @@ return [
         'linkedin'  => 'https://www.linkedin.com/in/scrap-buyer-in-dammam-787970290/',
     ],
 
-    'map_embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57109.94356739492!2d50.05833109248621!3d26.420779032205943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49fa2552e5c0bb%3A0x59ed3e9c6be20333!2sDammam%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1690000000000!5m2!1sen!2ssa',
+    'map_embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14871.086561603104!2d39.8101212!3d21.4224874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c21b4bec8a167b%3A0xe6148a35d5c5b4d1!2sMecca%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1690000000000!5m2!1sen!2ssa',
 
     'hero' => [
-        'eyebrow'   => 'Scrap Buyer in Dammam',
-        'heading'   => 'We Buy All Types Scrap Metal &amp; Get Paid Instantly',
-        'subtext'   => 'We Buy All Types Scrap Metal — Copper, Old Cable, Used Battery, Aluminum, Iron Steel, Wood, S.S. Steel & All Mix Scrap in Dammam, Eastern, Saudi Arabia. Free pickup, certified weighing and instant payment.',
+        'eyebrow'   => 'Scrap Buyer in Mecca, Jeddah & Taif',
+        'heading'   => 'We Buy All Types of Scrap Metal &amp; Pay Instantly',
+        'subtext'   => 'We Buy All Types of Scrap Metal — Copper, Old Cable, Used Battery, Aluminum, Iron Steel, Wood, S.S. Steel & All Mix Scrap in Mecca, Jeddah & Taif of Saudi Arabia. Free pickup, certified weighing and instant payment.',
         'primary_cta'   => 'WhatsApp Us',
         'primary_url'   => 'whatsapp', // special value -> built from whatsapp number
         'secondary_cta' => 'Call Now',
@@ -60,10 +83,10 @@ return [
     ],
 
     'badges' => [
-        ['icon' => 'fa-truck-fast',      'title' => 'Free Pickup',       'text' => 'Doorstep collection in Dammam, Eastern, Saudi Arabia.'],
+        ['icon' => 'fa-truck-fast',      'title' => 'Free Pickup',       'text' => 'Doorstep collection in Mecca, Jeddah & Taif.'],
         ['icon' => 'fa-scale-balanced',  'title' => 'Fair Price',        'text' => 'Transparent market-based rates confirmed up front.'],
         ['icon' => 'fa-money-bill-wave', 'title' => 'Instant Payment',   'text' => 'Cash or bank transfer right after weighing.'],
     ],
 
-    'admin_email' => 'scrapbuyerindammam@gmail.com',
+    'admin_email' => 'atozscrapbuyersa@gmail.com',
 ];

@@ -1,9 +1,9 @@
 <?php
 /* ============================================================
- * AC & Appliances Scrap Buyer in Dammam
+ * AC & Appliances Scrap Buyer in Saudi Arabia
  * ============================================================ */
-$pageTitle       = 'AC & Appliance Scrap Buyer in Dammam';
-$pageDescription = 'We buy old AC units and appliances in Dammam — split and window ACs, refrigerators, washing machines, dryers, motors and compressors — with free pickup and instant payment.';
+$pageTitle       = 'AC & Appliance Scrap Buyer in Saudi Arabia';
+$pageDescription = 'We buy old AC units and appliances in Saudi Arabia — split and window ACs, refrigerators, washing machines, dryers, motors and compressors — with free pickup and instant payment.';
 
 include __DIR__ . '/../includes/header.php';
 ?>

@@ -56,7 +56,7 @@ admin_header('Locations');
 <div class="admin__panel">
     <h2><?= $edit ? 'Edit Location Block' : 'Add Location Block' ?></h2>
     <p class="muted" style="margin-bottom:12px">Blocks appear on the location page matching the slug
-        (<code>scrap-buyer-jubail</code>, <code>scrap-buyer-khobar</code>, <code>scrap-buyer-in-al-ahsa</code>).</p>
+        (<code>scrap-buyer-mecca</code>, <code>scrap-buyer-jeddah</code>, <code>scrap-buyer-taif</code>).</p>
     <form method="post" action="<?= e(url('admin/locations')) ?>">
         <?= csrf_field() ?>
         <input type="hidden" name="action" value="<?= $edit ? 'update' : 'create' ?>">
@@ -64,7 +64,7 @@ admin_header('Locations');
         <div class="field--half">
             <div class="field"><label>Page Slug</label>
                 <select name="slug">
-                    <?php foreach (['scrap-buyer-jubail', 'scrap-buyer-khobar', 'scrap-buyer-in-al-ahsa'] as $s): ?>
+                    <?php foreach (['scrap-buyer-mecca', 'scrap-buyer-jeddah', 'scrap-buyer-taif'] as $s): ?>
                     <option value="<?= e($s) ?>" <?= ($edit['slug'] ?? '') === $s ? 'selected' : '' ?>><?= e($s) ?></option>
                     <?php endforeach; ?>
                 </select>

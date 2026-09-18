@@ -43,7 +43,7 @@ if (!function_exists('render_breadcrumbs')) {
 
 /* -------------------- CTA section -------------------- */
 if (!function_exists('render_cta')) {
-    function render_cta(string $heading = 'Ready to Sell Your Scrap?', string $subtext = 'Send us a WhatsApp photo for an instant quote, or call us now for free pickup in Dammam, Eastern, Saudi Arabia.'): void
+    function render_cta(string $heading = 'Ready to Sell Your Scrap?', string $subtext = 'Send us a WhatsApp photo for an instant quote, or call us now for free pickup in Mecca, Jeddah & Taif.'): void
     {
         ?>
         <section class="cta-band">
@@ -129,9 +129,9 @@ if (!function_exists('render_testimonials')) {
             $note = 'Customer reviews shown are collected from verified sellers.';
         } else {
             $testimonials = [
-                ['name' => 'Ahmed Al-M.', 'role' => 'Homeowner — Dammam', 'quote' => 'Excellent service and very fast pickup. They weighed the copper on the spot and paid immediately.', 'rating' => 5],
-                ['name' => 'Sara K.', 'role' => 'Restaurant owner — Dammam', 'quote' => 'Professional team and transparent pricing. They removed our old kitchen appliances and paid a fair price.', 'rating' => 5],
-                ['name' => 'Muhammad R.', 'role' => 'Facility manager — Dammam', 'quote' => 'Very convenient scrap collection service. Same-day pickup for our factory cable scrap. Highly recommended.', 'rating' => 5],
+                ['name' => 'Ahmed Al-M.', 'role' => 'Homeowner — Mecca', 'quote' => 'Excellent service and very fast pickup. They weighed the copper on the spot and paid immediately.', 'rating' => 5],
+                ['name' => 'Sara K.', 'role' => 'Restaurant owner — Jeddah', 'quote' => 'Professional team and transparent pricing. They removed our old kitchen appliances and paid a fair price.', 'rating' => 5],
+                ['name' => 'Muhammad R.', 'role' => 'Facility manager — Taif', 'quote' => 'Very convenient scrap collection service. Same-day pickup for our factory cable scrap. Highly recommended.', 'rating' => 5],
             ];
             $note = 'Demo reviews — replace these with verified customer reviews at any time from the admin panel.';
         }
@@ -182,6 +182,46 @@ if (!function_exists('render_scrap_card')) {
                     <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
         </article>
+        <?php
+    }
+}
+
+/* -------------------- Location tabs (map switcher, default Mecca) -------------------- */
+if (!function_exists('render_location_tabs')) {
+    /**
+     * Tabbed map: one tab per service area (Mecca, Jeddah, Taif).
+     * Switching a tab swaps the Google Maps embed; Mecca is the default.
+     */
+    function render_location_tabs(): void
+    {
+        $locations = site('locations', []);
+        if (empty($locations)) return;
+        $first = array_key_first($locations);
+        ?>
+        <div class="loc-tabs" data-loc-tabs>
+            <div class="loc-tabs__bar" role="tablist" aria-label="Our service locations">
+                <?php foreach ($locations as $key => $loc): ?>
+                <button type="button" role="tab" class="loc-tabs__btn<?= $key === $first ? ' is-active' : '' ?>"
+                        id="loc-tab-<?= e($key) ?>" aria-controls="loc-panel-<?= e($key) ?>"
+                        aria-selected="<?= $key === $first ? 'true' : 'false' ?>"
+                        data-loc-tab="<?= e($key) ?>">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i> <?= e($loc['name']) ?>
+                </button>
+                <?php endforeach; ?>
+            </div>
+            <?php foreach ($locations as $key => $loc): ?>
+            <div class="loc-tabs__panel<?= $key === $first ? ' is-active' : '' ?>"
+                 id="loc-panel-<?= e($key) ?>" role="tabpanel" aria-labelledby="loc-tab-<?= e($key) ?>"
+                 <?= $key === $first ? '' : 'hidden' ?>>
+                <iframe <?= $key === $first ? 'src="' . e($loc['embed']) . '"' : '' ?>
+                        data-src="<?= e($loc['embed']) ?>"
+                        title="Map — Scrap Buyer in <?= e($loc['name']) ?>"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                <p class="loc-tabs__note"><i class="fa-solid fa-truck-fast" aria-hidden="true"></i>
+                    Free scrap pickup in <?= e($loc['name']) ?> — <a href="<?= e(url($loc['slug'])) ?>">learn more</a></p>
+            </div>
+            <?php endforeach; ?>
+        </div>
         <?php
     }
 }

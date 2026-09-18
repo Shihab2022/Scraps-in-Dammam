@@ -1,5 +1,5 @@
 /* ============================================================
- * Gulf Scrap Buyer — front-end behaviour (vanilla JS)
+ * Scraps Buyer in Saudi Arabia — front-end behaviour (vanilla JS)
  * ============================================================ */
 (function () {
     'use strict';
@@ -87,9 +87,11 @@
     /* ---------- Reveal on scroll ---------- */
     if (!prefersReduced && 'IntersectionObserver' in window) {
         var io = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
+            entries.forEach(function (entry, idx) {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    // stagger siblings slightly for a nicer cascade
+                    var delay = Math.min(idx * 90, 360);
+                    setTimeout(function () { entry.target.classList.add('visible'); }, delay);
                     io.unobserve(entry.target);
                 }
             });
@@ -98,6 +100,34 @@
     } else {
         document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
     }
+
+    /* ---------- Location tabs (Mecca / Jeddah / Taif map switcher) ---------- */
+    document.querySelectorAll('[data-loc-tabs]').forEach(function (tabs) {
+        var btns = tabs.querySelectorAll('[data-loc-tab]');
+        btns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var key = btn.getAttribute('data-loc-tab');
+                btns.forEach(function (b) {
+                    var active = b === btn;
+                    b.classList.toggle('is-active', active);
+                    b.setAttribute('aria-selected', String(active));
+                });
+                tabs.querySelectorAll('.loc-tabs__panel').forEach(function (panel) {
+                    var match = panel.id === 'loc-panel-' + key;
+                    panel.classList.toggle('is-active', match);
+                    if (match) {
+                        panel.hidden = false;
+                        var frame = panel.querySelector('iframe');
+                        if (frame && !frame.getAttribute('src')) {
+                            frame.setAttribute('src', frame.getAttribute('data-src') || '');
+                        }
+                    } else {
+                        panel.hidden = true;
+                    }
+                });
+            });
+        });
+    });
 
     /* ---------- Sticky header shadow ---------- */
     var header = document.getElementById('siteHeader');

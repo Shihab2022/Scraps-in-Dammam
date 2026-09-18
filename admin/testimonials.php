@@ -70,7 +70,7 @@ admin_header('Testimonials');
         <?php if ($edit): ?><input type="hidden" name="id" value="<?= (int) $edit['id'] ?>"><?php endif; ?>
         <div class="field--half">
             <div class="field"><label>Customer Name</label><input type="text" name="name" required maxlength="100" value="<?= e($edit['name'] ?? '') ?>"></div>
-            <div class="field"><label>Role / City</label><input type="text" name="role" maxlength="100" value="<?= e($edit['role'] ?? '') ?>" placeholder="Homeowner — Dammam"></div>
+            <div class="field"><label>Role / City</label><input type="text" name="role" maxlength="100" value="<?= e($edit['role'] ?? '') ?>" placeholder="Homeowner — Mecca"></div>
         </div>
         <div class="field"><label>Quote</label><textarea name="quote" required maxlength="600"><?= e($edit['quote'] ?? '') ?></textarea></div>
         <div class="field"><label>Rating (1–5)</label>

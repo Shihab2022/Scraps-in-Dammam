@@ -1,11 +1,11 @@
-# Gulf Scrap Buyer — Scrap Buying Website (PHP)
+# Scraps Buyer in Saudi Arabia — Scrap Buying Website (PHP)
 
 A complete, production-ready scrap-buying business website for a scrap metal company operating in
-**Dammam and the Eastern Province, Saudi Arabia** — built with **PHP 8.2+, MySQL/MariaDB, HTML5, CSS3
+**Mecca, Jeddah and Taif, Saudi Arabia** — built with **PHP 8.2+, MySQL/MariaDB, HTML5, CSS3
 and vanilla JavaScript**.
 
 The information architecture, conversion flow and professional quality follow the reference pattern of
-`scrapsindammam.com`, but with **100% original branding, original placeholder images (SVG), original
+`atozscrapbuyersa.com`, but with **100% original branding, original placeholder images (SVG), original
 content and no third-party assets**.
 
 ---
@@ -16,9 +16,9 @@ content and no third-party assets**.
 |---|---|
 | Pages | Home, About, Contact, Services, Pickup, How It Works, FAQ, Privacy, Terms, Thank-You, 404 |
 | Scrap pages | Metal, Iron & Steel, Copper, Aluminum, Cable & Wire, AC & Appliances, Industrial, Cars, Construction (9 SEO landing pages) |
-| Location pages | Jubail, Khobar, Al-Ahsa / Hofuf (unique content per city) |
+| Location pages | Mecca, Jeddah, Taif (unique content per city) |
 | Conversion | Call button, floating + sticky WhatsApp, photo-quote CTAs, pickup & industrial forms |
-| Forms | Contact, Pickup, Industrial — with CSRF, honeypot, server-side validation, rate limiting and multi-photo uploads |
+| Forms | Pickup, Industrial — with CSRF, honeypot, server-side validation, rate limiting and multi-photo uploads |
 | Database | MySQL via PDO prepared statements, with **JSON fallback** when the DB is unavailable |
 | Email | `log`, `mail` or SMTP (PHPMailer) drivers via `.env` |
 | Admin | Login, dashboard, request inbox, photo gallery, status updates, delete, FAQ/testimonial/service/location managers, company settings |
@@ -256,7 +256,7 @@ This powers the floating button, mobile CTA bar, header button and every pre-fil
 ├── actions/             contact.php · pickup-request.php · industrial-request.php
 ├── pages/               home, about, contact, services, pickup, how-it-works, faq, privacy, terms, thank-you, 404
 ├── scrap/               _data.php + 9 category pages
-├── locations/           jubail · khobar · al-ahsa
+├── locations/           mecca · jeddah · taif
 ├── admin/               _layout + dashboard, requests, request-view, testimonials, faqs, services, locations, settings, login, install, logout
 ├── assets/              css (style, responsive, admin) · js/app.js · images (original SVG set)
 ├── database/            schema.sql

@@ -6,7 +6,7 @@ declare(strict_types=1);
 function render_industrial_form(): void
 {
     $scrapTypes = ['Copper','Old Cable','Used Battery','Aluminum','Iron Steel','Wood','S.S. Steel','All Mix Scrap','Factory Scrap','HMS 1','HMS 2','Light Metal Scrap (LMS)','Cast Iron','Machinery Scrap','Production Waste','Industrial Cables','Metal Offcuts','Mixed Industrial','Other / Not Sure'];
-    $locations = ['Dammam'];
+    $locations = ['Mecca','Jeddah','Taif'];
     ?>
     <form class="form-card" action="<?= e(url('actions/industrial-request')) ?>" method="post"
           enctype="multipart/form-data" data-validate novalidate>
@@ -43,9 +43,12 @@ function render_industrial_form(): void
                 <input type="text" id="if-qty" name="estimated_quantity" required maxlength="80" placeholder="e.g. 20 tonnes / monthly 40 tonnes">
             </div>
             <div class="field">
-                <label for="if-location">Pickup Location</label>
-                <input type="text" id="if-location" value="Dammam, Eastern, Saudi Arabia" disabled>
-                <input type="hidden" name="pickup_location" value="Dammam">
+                <label for="if-location">City <span class="req" aria-hidden="true">*</span></label>
+                <select id="if-location" name="pickup_location" required>
+                    <?php foreach ($locations as $loc): ?>
+                    <option value="<?= e($loc) ?>" <?= $loc === 'Mecca' ? 'selected' : '' ?>><?= e($loc) ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
             <div class="field">
                 <label for="if-date">Preferred Visit Date</label>

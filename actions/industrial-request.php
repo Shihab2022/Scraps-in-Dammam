@@ -12,13 +12,13 @@ $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !csrf_verify(post('csrf_token'))) {
     flash_set('error', 'Invalid or expired form token. Please try again.');
-    redirect('industrial-scrap-buyer-dammam');
+    redirect('industrial-scrap-buyer');
 }
 
 $rl = rate_limit_allowed('industrial', 4, 900);
 if (!$rl['allowed']) {
     flash_set('error', 'Too many requests. Try again in ' . ceil($rl['retry_after'] / 60) . ' minutes.');
-    redirect('industrial-scrap-buyer-dammam');
+    redirect('industrial-scrap-buyer');
 }
 
 if (!honeypot_verified()) redirect('thank-you');
@@ -48,7 +48,7 @@ if (!$uploadResult['ok']) foreach ($uploadResult['errors'] as $err) $errors[] = 
 
 if ($errors) {
     flash_set('error', 'Please fix the following and resubmit: ' . implode(' · ', array_slice($errors, 0, 3)));
-    redirect('industrial-scrap-buyer-dammam');
+    redirect('industrial-scrap-buyer');
 }
 
 $leadId = store_request('industrial', [

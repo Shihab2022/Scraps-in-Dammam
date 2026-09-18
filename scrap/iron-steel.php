@@ -1,9 +1,9 @@
 <?php
 /* ============================================================
- * Iron & Steel Scrap Buyer in Dammam
+ * Iron & Steel Scrap Buyer in Saudi Arabia
  * ============================================================ */
-$pageTitle       = 'Iron & Steel Scrap Buyer in Dammam';
-$pageDescription = 'We buy iron and steel scrap in Dammam — rebar, structural steel, beams, pipes, sheet metal and cast iron. Free pickup, certified weighing and instant payment in Dammam, Eastern, Saudi Arabia.';
+$pageTitle       = 'Iron & Steel Scrap Buyer in Saudi Arabia';
+$pageDescription = 'We buy iron and steel scrap in Saudi Arabia — rebar, structural steel, beams, pipes, sheet metal and cast iron. Free pickup, certified weighing and instant payment in Mecca, Jeddah & Taif, Saudi Arabia.';
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -127,8 +127,8 @@ include __DIR__ . '/../includes/header.php';
     <div class="container split mb-3">
         <div class="split__body">
             <p class="section-eyebrow">Service Areas</p>
-            <h2>Iron Steel Scrap Pickup in Dammam</h2>
-            <p>We collect iron and steel scrap anywhere in Dammam, Eastern, Saudi Arabia — including active construction sites, warehouses and industrial zones.</p>
+            <h2>Iron Steel Scrap Pickup in Saudi Arabia</h2>
+            <p>We collect iron and steel scrap anywhere in Mecca, Jeddah & Taif, Saudi Arabia — including active construction sites, warehouses and industrial zones.</p>
         </div>
         <ul class="check-list">
             <?php foreach (site('service_areas', []) as $area): ?>

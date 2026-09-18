@@ -10,21 +10,21 @@ $cat = $key ? scrap_category($key) : null;
 
 $content = [
     'used-battery' => [
-        'h1'       => 'Used Battery Scrap Buyer in Dammam',
-        'intro'    => 'We buy all types of used batteries in Dammam — car batteries, truck and UPS batteries, solar and inverter batteries — at fair per-kilogram rates with free pickup and instant cash.',
+        'h1'       => 'Used Battery Scrap Buyer in Saudi Arabia',
+        'intro'    => 'We buy all types of used batteries in Saudi Arabia — car batteries, truck and UPS batteries, solar and inverter batteries — at fair per-kilogram rates with free pickup and instant cash.',
         'lead'     => 'Dead batteries contain lead, acid and plastic that must be recycled responsibly. We collect them from homes, workshops, garages and shops, weigh them on certified scales and pay on the spot.',
         'items'    => ['Car & SUV batteries', 'Truck & heavy-vehicle batteries', 'UPS & inverter batteries', 'Solar & tubular batteries', 'Bulk lots from workshops and fleets'],
         'bullets'  => ['Safe handling — we never leave batteries behind', 'Free pickup from home, garage or workshop', 'Certified weighing and instant cash or transfer', 'Environmentally licensed recycling partners'],
         'faqs'     => [
             ['question' => 'How are used batteries priced?', 'answer' => 'Batteries are priced per kilogram based on lead content and current market rates. We confirm the rate before pickup and weigh on certified scales in front of you.'],
             ['question' => 'Do you buy just one battery?', 'answer' => 'Yes — there is no minimum. A single car battery or a pallet of UPS batteries, we collect and pay for both.'],
-            ['question' => 'Is battery pickup really free?', 'answer' => 'Yes. Pickup is free anywhere in Dammam, Eastern, Saudi Arabia for batteries and all other scrap we buy.'],
+            ['question' => 'Is battery pickup really free?', 'answer' => 'Yes. Pickup is free anywhere in Mecca, Jeddah & Taif, Saudi Arabia for batteries and all other scrap we buy.'],
             ['question' => 'Do leaking batteries get accepted?', 'answer' => 'Yes, with care. Keep leaking batteries upright in a tray or box and inform us on WhatsApp so our crew brings the right handling equipment.'],
         ],
     ],
     'stainless-steel' => [
-        'h1'       => 'S.S. Steel Scrap Buyer in Dammam',
-        'intro'    => 'We buy all grades of stainless steel scrap in Dammam — 304, 316, 430 and 202 — from kitchens, restaurants, workshops and factories, with magnetic testing and honest grading.',
+        'h1'       => 'S.S. Steel Scrap Buyer in Saudi Arabia',
+        'intro'    => 'We buy all grades of stainless steel scrap in Saudi Arabia — 304, 316, 430 and 202 — from kitchens, restaurants, workshops and factories, with magnetic testing and honest grading.',
         'lead'     => 'Stainless steel pays significantly more than regular steel when graded correctly. We verify the grade on site, weigh transparently and pay immediately.',
         'items'    => ['S.S. 304 & 316 sheets, pipes and fittings', 'Kitchen & restaurant equipment', 'Sinks, counters and fabrication offcuts', 'Industrial tanks and sanitary pipes', 'Mixed S.S. loads graded on site'],
         'bullets'  => ['Grade verified with you before weighing', 'Higher rates for clean 304/316 material', 'Free pickup for restaurants and workshops', 'Instant payment by cash or bank transfer'],
@@ -36,8 +36,8 @@ $content = [
         ],
     ],
     'wood' => [
-        'h1'       => 'Wood Scrap Buyer in Dammam',
-        'intro'    => 'We buy wood scrap in Dammam — pallets, crates, doors, furniture wood and construction timber — with free pickup for homes, shops and sites.',
+        'h1'       => 'Wood Scrap Buyer in Saudi Arabia',
+        'intro'    => 'We buy wood scrap in Saudi Arabia — pallets, crates, doors, furniture wood and construction timber — with free pickup for homes, shops and sites.',
         'lead'     => 'Leftover timber and pallets take up valuable space. We collect, sort and route reusable wood to recycling instead of landfill, and we pay fair rates for reusable grades.',
         'items'    => ['Wooden pallets & crates', 'Doors, frames & panels', 'Furniture & office wood', 'Construction timber & formwork', 'Bulk site-clearance wood loads'],
         'bullets'  => ['Free pickup for single items or full loads', 'Reusable pallets earn the best rates', 'Fast site clearance for contractors', 'Responsible recycling and reuse'],
@@ -49,15 +49,15 @@ $content = [
         ],
     ],
     'mix-scrap' => [
-        'h1'       => 'All Mix Scrap Buyer in Dammam',
-        'intro'    => 'We buy all mix scrap in Dammam — copper, old cable, used battery, aluminum, iron steel, wood, S.S. steel and everything in between — graded fairly and paid on the spot.',
+        'h1'       => 'All Mix Scrap Buyer in Saudi Arabia',
+        'intro'    => 'We buy all mix scrap in Saudi Arabia — copper, old cable, used battery, aluminum, iron steel, wood, S.S. steel and everything in between — graded fairly and paid on the spot.',
         'lead'     => 'One call clears everything: garages, store rooms, renovations and factory leftovers. We load mixed scrap ourselves, sort it by material on site and pay the correct rate for each type.',
         'items'    => ['Mixed household & store-room scrap', 'Garage & workshop clear-outs', 'Renovation and demolition mixed loads', 'Factory production waste', 'Everything in our We Buy list'],
         'bullets'  => ['One pickup for every material type', 'On-site sorting so each metal gets its own rate', 'Certified weighing in front of you', 'Cash or bank transfer immediately'],
         'faqs'     => [
             ['question' => 'Do you pay less for mixed scrap?', 'answer' => 'No — we sort the load on site and pay each material its own per-kilogram rate, so copper in a mixed load still earns the copper rate.'],
             ['question' => 'What counts as mix scrap?', 'answer' => 'Any combination of our categories — metal, cable, batteries, wood, steel, appliances and more. If you are unsure, send photos on WhatsApp for a free assessment.'],
-            ['question' => 'How fast can you collect a mixed load?', 'answer' => 'In most cases same-day or next-day within Dammam. Message your location and photos and we will confirm the earliest pickup slot.'],
+            ['question' => 'How fast can you collect a mixed load?', 'answer' => 'In most cases same-day or next-day within Saudi Arabia. Message your location and photos and we will confirm the earliest pickup slot.'],
             ['question' => 'Is there a minimum quantity for mixed loads?', 'answer' => 'No minimum. From a few bags to full truck loads, we buy it all with the same transparent process.'],
         ],
     ],
@@ -108,7 +108,7 @@ include __DIR__ . '/../includes/header.php';
     <div class="container">
         <header class="section-head">
             <p class="section-eyebrow">What We Buy</p>
-            <h2><?= e($cat['name']) ?> We Collect in Dammam</h2>
+            <h2><?= e($cat['name']) ?> We Collect in Saudi Arabia</h2>
         </header>
         <div class="material-grid">
             <?php foreach ($c['items'] as $item): ?>
@@ -136,7 +136,7 @@ include __DIR__ . '/../includes/header.php';
             <article class="step-card reveal">
                 <span class="step-card__icon" aria-hidden="true"><i class="fa-solid fa-truck-fast"></i></span>
                 <h3>2. Free Pickup</h3>
-                <p>We come to you in Dammam, load everything ourselves and sort mixed materials on site.</p>
+                <p>We come to you in Saudi Arabia, load everything ourselves and sort mixed materials on site.</p>
             </article>
             <article class="step-card reveal">
                 <span class="step-card__icon" aria-hidden="true"><i class="fa-solid fa-scale-balanced"></i></span>

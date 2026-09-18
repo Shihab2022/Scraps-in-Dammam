@@ -1,9 +1,9 @@
 <?php
 /* ============================================================
- * Copper Scrap Buyer in Dammam
+ * Copper Scrap Buyer in Saudi Arabia
  * ============================================================ */
-$pageTitle       = 'Copper Scrap Buyer in Dammam';
-$pageDescription = 'We buy copper scrap in Dammam — bare bright, #1 and #2 copper, insulated wire, pipes, motors and cable at top grade-based rates. Free pickup, certified weighing and instant payment.';
+$pageTitle       = 'Copper Scrap Buyer in Saudi Arabia';
+$pageDescription = 'We buy copper scrap in Saudi Arabia — bare bright, #1 and #2 copper, insulated wire, pipes, motors and cable at top grade-based rates. Free pickup, certified weighing and instant payment.';
 
 include __DIR__ . '/../includes/header.php';
 ?>

@@ -3,7 +3,7 @@
  * FAQ
  * ============================================================ */
 $pageTitle       = 'FAQ — Frequently Asked Questions';
-$pageDescription = 'Frequently asked questions about selling scrap in Dammam, Eastern, Saudi Arabia — pricing, pickup, weighing, payment, minimums and service area.';
+$pageDescription = 'Frequently asked questions about selling scrap in Mecca, Jeddah & Taif, Saudi Arabia — pricing, pickup, weighing, payment, minimums and service area.';
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -21,7 +21,7 @@ include __DIR__ . '/../includes/header.php';
 $faqs = [
     ['question' => 'What scrap do you buy?', 'answer' => 'We buy all types scrap metal — copper, old cable, used battery, aluminum, iron steel, wood, S.S. steel and all mix scrap — plus AC units, appliances, industrial scrap and junk cars.'],
     ['question' => 'How do you determine the price?', 'answer' => 'We use current international market rates adjusted for material grade, cleanliness and weight. You receive a per-kilogram rate before pickup, and the exact total is calculated from the certified on-site weight.'],
-    ['question' => 'Is pickup really free?', 'answer' => 'Yes. Pickup is free anywhere in Dammam, Eastern, Saudi Arabia. There are no loading fees and no minimum quantity.'],
+    ['question' => 'Is pickup really free?', 'answer' => 'Yes. Pickup is free anywhere in Mecca, Jeddah & Taif, Saudi Arabia. There are no loading fees and no minimum quantity.'],
     ['question' => 'Can you pick up the same day?', 'answer' => 'Whenever slots are available, yes. Call or WhatsApp us early and we will do our best to arrange same-day collection.'],
     ['question' => 'How do I get paid?', 'answer' => 'Immediately after weighing you can choose cash or bank transfer. Transfers are arranged on the spot.'],
     ['question' => 'Do I need to clean or sort my scrap?', 'answer' => 'No. We grade and sort on site. Clean, sorted material simply earns a higher grade rate.'],

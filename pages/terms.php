@@ -3,7 +3,7 @@
  * Terms & Conditions
  * ============================================================ */
 $pageTitle       = 'Terms & Conditions';
-$pageDescription = 'Terms and conditions for using our scrap buying website and services in Dammam, Eastern, Saudi Arabia.';
+$pageDescription = 'Terms and conditions for using our scrap buying website and services in Mecca, Jeddah & Taif, Saudi Arabia.';
 
 include __DIR__ . '/../includes/header.php';
 ?>
@@ -45,7 +45,7 @@ include __DIR__ . '/../includes/header.php';
         <p>You agree not to misuse this website, including attempting to disrupt it, gaining unauthorised access, or submitting false or harmful content.</p>
 
         <h2>10. Governing Law</h2>
-        <p>These terms are governed by the laws of the Kingdom of Saudi Arabia. Any dispute shall be subject to the exclusive jurisdiction of the courts of Dammam.</p>
+        <p>These terms are governed by the laws of the Kingdom of Saudi Arabia. Any dispute shall be subject to the exclusive jurisdiction of the courts of Mecca.</p>
     </div>
 </section>
 <?php include __DIR__ . '/../includes/footer.php'; ?>
