@@ -10,7 +10,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'We Buy', 'url' => url('services')], ['label' => 'Construction & Demolition']]); ?>
         <h1>Construction &amp; Demolition Scrap Buyer in <?= e(site('city')) ?></h1>
         <p>Rebar, structural steel, pipes, metal frames and demolition scrap — we buy it all from contractors, builders, demolition companies and site managers, with on-site assessment and bulk collection.</p>
         <div class="page-hero__cta">

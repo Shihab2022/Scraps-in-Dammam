@@ -78,7 +78,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'We Buy', 'url' => url('services')], ['label' => $cat['name']]]); ?>
         <h1><?= e($c['h1']) ?></h1>
         <p><?= e($c['intro']) ?></p>
         <div class="page-hero__cta">

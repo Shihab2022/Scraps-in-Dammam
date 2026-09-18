@@ -9,7 +9,6 @@ include __DIR__ . '/../includes/header.php';
 ?>
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'Privacy Policy']]); ?>
         <h1>Privacy Policy</h1>
         <p>Last updated: January 2026</p>
     </div>

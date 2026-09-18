@@ -10,7 +10,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'Locations'], ['label' => 'Mecca']]); ?>
         <h1>Scrap Buyer in Mecca</h1>
         <p>Mecca is our home base. From the central districts to the surrounding neighbourhoods, we buy
            all types of scrap metal — copper, old cable, used battery, aluminum, iron steel, wood,

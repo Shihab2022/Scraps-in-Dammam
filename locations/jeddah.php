@@ -10,7 +10,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'Locations'], ['label' => 'Jeddah']]); ?>
         <h1>Scrap Buyer in Jeddah</h1>
         <p>Jeddah is Saudi Arabia's busiest port city — and we buy scrap all across it. Copper, old cable,
            used battery, aluminum, iron steel, wood, S.S. steel and all mix scrap, with free pickup,

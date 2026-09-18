@@ -10,7 +10,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'About Us']]); ?>
         <h1>About Us</h1>
         <p>We are a professional scrap buying company based in Mecca and serving Mecca, Jeddah and Taif, helping homeowners, businesses and factories turn scrap metal into instant cash — with transparent pricing, certified weighing and fast pickup.</p>
         <div class="page-hero__cta">

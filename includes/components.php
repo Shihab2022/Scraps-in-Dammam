@@ -1,45 +1,14 @@
 <?php
 /**
  * Reusable components:
- *  - breadcrumbs
  *  - CTA sections
  *  - FAQ accordion
  *  - testimonials
  *  - scrap cards
  *  - location cards
+ *  - location map tabs
  */
 declare(strict_types=1);
-
-/* -------------------- Breadcrumbs + BreadcrumbList JSON-LD -------------------- */
-if (!function_exists('render_breadcrumbs')) {
-    /**
-     * @param array<int,array{label:string,url?:string}> $crumbs
-     */
-    function render_breadcrumbs(array $crumbs): void
-    {
-        $items = array_merge([['label' => 'Home', 'url' => url('/')]], $crumbs);
-        $itemList = [];
-        echo '<nav class="breadcrumbs" aria-label="Breadcrumb">';
-        echo '<ol class="breadcrumbs__list">';
-        foreach ($items as $i => $item) {
-            $last = $i === count($items) - 1;
-            $itemList[] = [
-                '@type'    => 'ListItem',
-                'position' => $i + 1,
-                'name'     => $item['label'],
-                'item'     => (string) ($item['url'] ?? url('/')),
-            ];
-            if (!$last && !empty($item['url'])) {
-                echo '<li><a href="' . e($item['url']) . '">' . e($item['label']) . '</a></li>';
-                echo '<li class="breadcrumbs__sep" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></li>';
-            } else {
-                echo '<li aria-current="page">' . e($item['label']) . '</li>';
-            }
-        }
-        echo '</ol></nav>';
-        echo jsonld(['@context' => 'https://schema.org', '@type' => 'BreadcrumbList', 'itemListElement' => $itemList]);
-    }
-}
 
 /* -------------------- CTA section -------------------- */
 if (!function_exists('render_cta')) {

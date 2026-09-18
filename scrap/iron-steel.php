@@ -10,7 +10,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'We Buy', 'url' => url('services')], ['label' => 'Iron & Steel']]); ?>
         <h1>Iron &amp; Steel Scrap Buyer in <?= e(site('city')) ?></h1>
         <p>We buy rebar, structural steel, sheet metal, pipes, cast iron, beams, angles and channels — from single household items to complete building demolitions. Fair per-kilogram pricing, free pickup and certified weighing.</p>
         <div class="page-hero__cta">

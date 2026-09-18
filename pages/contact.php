@@ -10,7 +10,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'Contact Us']]); ?>
         <h1>Contact Us</h1>
         <p>Have scrap to sell? Reach us by phone, WhatsApp or email us from your own Gmail. We usually respond within minutes during business hours.</p>
         <div class="page-hero__cta">

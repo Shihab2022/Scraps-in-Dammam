@@ -10,7 +10,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'Services']]); ?>
         <h1>Our Scrap Buying Services</h1>
         <p>From a single bag of copper to a complete factory load — we make selling scrap fast, fair and effortless with free pickup in Mecca, Jeddah & Taif, Saudi Arabia.</p>
         <div class="page-hero__cta">

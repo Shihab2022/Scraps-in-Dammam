@@ -10,7 +10,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'How It Works']]); ?>
         <h1>How Selling Scrap Works</h1>
         <p>A simple, transparent process designed to get you paid the same day — no paperwork, no waiting, no transport hassle.</p>
         <div class="page-hero__cta">

@@ -10,7 +10,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'We Buy', 'url' => url('services')], ['label' => 'Aluminum']]); ?>
         <h1>Aluminum Scrap Buyer in <?= e(site('city')) ?></h1>
         <p>Aluminum is lightweight, everywhere, and worth recycling. We buy cans, sheets, extrusion, window frames, AC parts, wheels and mixed aluminum at competitive per-kilogram rates with free pickup.</p>
         <div class="page-hero__cta">

@@ -10,7 +10,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'Locations'], ['label' => 'Taif']]); ?>
         <h1>Scrap Buyer in Taif</h1>
         <p>Taif completes our service triangle in the region. Homes, farms, workshops and contractors in
            Taif sell us copper, old cable, used battery, aluminum, iron steel, wood, S.S. steel and all

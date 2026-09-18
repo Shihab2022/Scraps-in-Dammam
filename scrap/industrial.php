@@ -12,7 +12,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'We Buy', 'url' => url('services')], ['label' => 'Industrial & Factory']]); ?>
         <h1>Industrial &amp; Factory Scrap Buyer in <?= e(site('city')) ?></h1>
         <p>A dedicated B2B scrap purchasing service for factories, warehouses and contractors in Mecca, Jeddah & Taif, Saudi Arabia. Site inspections, scheduled collection, certified weighing and transparent bulk pricing.</p>
         <div class="page-hero__cta">

@@ -63,7 +63,7 @@ $year = date('Y');
             </div>
 
             <div class="footer-legal">
-                <p class="footer-copy">© <?= e($year) ?> <?= e(site('company')) ?>. All Rights Reserved.</p>
+                <p class="footer-copy">© <?= e($year) ?> <?= e($siteName) ?>. All Rights Reserved.</p>
                 <div class="footer-legal__links">
                     <a href="<?= e(url('privacy-policy')) ?>">Privacy Policy</a>
                     <span class="footer-legal__sep" aria-hidden="true">·</span>

@@ -12,7 +12,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'Scrap Pickup']]); ?>
         <h1>Free Scrap Pickup</h1>
         <p>We come to you anywhere in <?= e(site('service_area')) ?> — home, shop, warehouse or factory — load the scrap ourselves and pay you on the spot.</p>
         <div class="page-hero__cta">

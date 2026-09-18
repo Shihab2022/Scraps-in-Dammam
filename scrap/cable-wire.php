@@ -10,7 +10,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'We Buy', 'url' => url('services')], ['label' => 'Cable & Wire']]); ?>
         <h1>Cable &amp; Wire Scrap Buyer in <?= e(site('city')) ?></h1>
         <p>Old wiring, communication cable, electrical offcuts and industrial drums — we buy them all. Copper content drives the value, and we grade it fairly with you before weighing.</p>
         <div class="page-hero__cta">

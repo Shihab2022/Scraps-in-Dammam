@@ -11,7 +11,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'We Buy', 'url' => url('services')], ['label' => 'Metal Scrap']]); ?>
         <h1>Metal Scrap Buyer in <?= e(site('city')) ?></h1>
         <p>We purchase all kinds of metal scrap — iron, steel, copper, aluminum, brass and stainless steel — and pay the best rates per kilogram on the spot. Free pickup, certified weighing and instant payment across <?= e(site('service_area')) ?>.</p>
         <div class="page-hero__cta">

@@ -10,7 +10,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'We Buy', 'url' => url('services')], ['label' => 'Copper']]); ?>
         <h1>Copper Scrap Buyer in <?= e(site('city')) ?></h1>
         <p>Copper is the highest-value scrap metal we buy. Bare bright, #1 and #2 copper, insulated wire, pipes, motors and cable — all purchased at fair, transparent grade-based rates across <?= e(site('service_area')) ?>.</p>
         <div class="page-hero__cta">

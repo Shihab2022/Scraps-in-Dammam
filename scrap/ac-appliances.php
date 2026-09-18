@@ -10,7 +10,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'We Buy', 'url' => url('services')], ['label' => 'AC & Appliances']]); ?>
         <h1>AC &amp; Appliance Scrap Buyer in <?= e(site('city')) ?></h1>
         <p>Old air conditioners and appliances are bulky, heavy and full of recoverable metal. We remove them for free — including the lifting and loading — and pay you on the spot after weighing.</p>
         <div class="page-hero__cta">

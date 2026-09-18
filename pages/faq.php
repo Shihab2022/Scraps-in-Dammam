@@ -10,7 +10,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'FAQ']]); ?>
         <h1>Frequently Asked Questions</h1>
         <p>Straight answers about pricing, pickup, weighing and payment. Can’t find your question?
             <a class="btn btn--wa btn--sm" href="<?= e(whatsapp_link()) ?>" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Ask on WhatsApp</a></p>

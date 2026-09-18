@@ -60,7 +60,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .flash--error{background:#fee2e2;color:#b91c1c}
 .faq-more{margin-top:26px;text-align:center;color:var(--muted)}
 /* ============================================================
-   Part 2/3a — topbar, navbar, dropdowns, drawer, breadcrumbs */
+   Part 2/3a — topbar, navbar, dropdowns, drawer */
 .topbar{background:var(--charcoal);color:#cbd5d1;font-size:.82rem}
 .topbar__inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:7px}
 .topbar__info{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
@@ -107,18 +107,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .mobile-cta__wa{background:#22c55e}
 .mobile-cta__btn:hover{color:#fff;filter:brightness(1.08)}
 
-.breadcrumbs{padding-block:16px}
-.breadcrumbs__list{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:.86rem;color:var(--muted)}
-.breadcrumbs__list a{color:var(--deep-green);font-weight:600}
-.breadcrumbs__sep{color:#a3b0aa;font-size:.7em}
-.breadcrumbs__list [aria-current="page"]{font-weight:700;color:var(--charcoal)}
-
-/* breadcrumbs on dark page heroes */
-.page-hero .breadcrumbs{padding-block:0 18px}
-.page-hero .breadcrumbs__list{color:#9fb0a7}
-.page-hero .breadcrumbs__list a{color:var(--accent)}
-.page-hero .breadcrumbs__sep{color:#6d7f75}
-.page-hero .breadcrumbs__list [aria-current="page"]{color:#fff}
 /* ============================================================
    Part 2/3b — hero, trust badges, stats band */
 .hero{position:relative;background:linear-gradient(135deg,var(--charcoal) 0%,var(--charcoal-2) 45%,#14261a 100%);color:#fff;overflow:hidden;padding-block:96px}

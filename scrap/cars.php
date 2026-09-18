@@ -10,7 +10,6 @@ include __DIR__ . '/../includes/header.php';
 
 <section class="page-hero">
     <div class="container">
-        <?php render_breadcrumbs([['label' => 'We Buy', 'url' => url('services')], ['label' => 'Cars & Vehicles']]); ?>
         <h1>Car &amp; Vehicle Scrap Buyer in <?= e(site('city')) ?></h1>
         <p>That damaged or abandoned vehicle is still worth money. We buy junk cars, scrap vehicles, engines, gearboxes, batteries, radiators and vehicle metal — with free towing and payment on the spot.</p>
         <div class="page-hero__cta">
