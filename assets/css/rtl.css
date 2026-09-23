@@ -1,0 +1,63 @@
+/* ============================================================
+   RTL overrides — loaded only when <html dir="rtl"> (Arabic).
+   Mirrors directional physical properties (left/right margins,
+   paddings, borders, text-align) that logical properties don't
+   cover in the base sheet. LTR never loads this file.
+   ============================================================ */
+
+/* Arabic type — the header loads Cairo for RTL; fall back cleanly. */
+:root,
+body {
+    --font-head:'Cairo','Segoe UI',system-ui,sans-serif;
+    --font-body:'Cairo','Segoe UI',system-ui,sans-serif;
+}
+body{font-family:var(--font-body);letter-spacing:0}
+.section-eyebrow{letter-spacing:.06em}
+
+/* Topbar / footer icon spacing flips side */
+.topbar__info i{margin-right:0;margin-left:6px}
+.footer__links i{margin-right:0;margin-left:6px;font-size:.8rem}
+.loc-tabs__note i{margin-right:0;margin-left:6px}
+
+/* Nav CTA gap sits on the opposite side in RTL */
+.nav-cta-wrap{margin-left:0;margin-right:12px}
+
+/* Off-screen helpers stay off-screen from the right */
+.skip-link{left:auto;right:-999px}
+.skip-link:focus{left:auto;right:0}
+.hp-field{left:auto;right:-9999px}
+
+/* Card icon mirrors to the top-left corner */
+.scrap-card__icon{right:auto;left:20px}
+
+/* Check-mark list items: bullet on the right, padding on the right */
+.material-card li{padding-left:0;padding-right:18px}
+.material-card li::before{left:auto;right:0}
+.bullets li::before{left:auto;right:0}
+
+/* Info panel accent bar flips to the right edge */
+.info-panel{border-left:0;border-right:4px solid var(--green)}
+
+/* FAQ button text aligns right; caret swaps to the left */
+.faq-item__btn{text-align:right}
+.faq-item__btn .faq-item__caret{order:-1}
+
+/* Tables and form text */
+.data th,.data td{text-align:right}
+input,textarea,select{text-align:right}
+
+/* Breadcrumb separator points the other way */
+.breadcrumbs li+li::before{content:"‹"}
+
+/* Floating WhatsApp button mirrors to the left */
+.wa-float{right:auto;left:22px}
+@media (max-width:560px){
+    .wa-float{right:auto;left:16px}
+}
+
+/* Mobile slide-in menu enters from the left */
+@media (max-width:980px){
+    .nav-menu{right:auto;left:0;border-radius:10px 0 0 10px}
+    .nav-menu>li>a,.nav-dropdown-toggle{text-align:right}
+    .nav-menu .has-dropdown.open>.nav-dropdown{left:auto;right:0}
+}

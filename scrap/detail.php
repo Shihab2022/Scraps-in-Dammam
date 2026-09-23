@@ -70,19 +70,19 @@ if (!$cat || !isset($content[$key])) {
 }
 
 $c        = $content[$key];
-$pageTitle       = $c['h1'];
-$pageDescription = $c['intro'];
+$pageTitle       = tr($c['h1']);
+$pageDescription = tr($c['intro']);
 
 include __DIR__ . '/../includes/header.php';
 ?>
 
 <section class="page-hero">
     <div class="container">
-        <h1><?= e($c['h1']) ?></h1>
-        <p><?= e($c['intro']) ?></p>
+        <h1><?= e(tr($c['h1'])) ?></h1>
+        <p><?= e(tr($c['intro'])) ?></p>
         <div class="page-hero__cta">
-            <a class="btn btn--wa" href="<?= e(whatsapp_link('Hello, I have ' . mb_strtolower((string) $cat['name']) . ' scrap to sell. Can you give me a quote?')) ?>" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp a Photo</a>
-            <a class="btn btn--outline" href="<?= e(phone_href()) ?>"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now</a>
+            <a class="btn btn--wa" href="<?= e(whatsapp_link(tr('Hello, I have :material scrap to sell. Can you give me a quote?', [':material' => mb_strtolower((string) $cat['name'])]))) ?>" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> <?= e(tr('WhatsApp a Photo')) ?></a>
+            <a class="btn btn--outline" href="<?= e(phone_href()) ?>"><i class="fa-solid fa-phone" aria-hidden="true"></i> <?= e(tr('Call Now')) ?></a>
         </div>
     </div>
 </section>
@@ -90,30 +90,30 @@ include __DIR__ . '/../includes/header.php';
 <section class="section">
     <div class="container split">
         <div class="split__body">
-            <p class="section-eyebrow"><?= e($cat['name']) ?> Buying</p>
-            <h2>Free Pickup, Fair Rates, Instant Payment</h2>
-            <p><?= e($c['lead']) ?></p>
+            <p class="section-eyebrow"><?= e(tr(':material Buying', [':material' => $cat['name']])) ?></p>
+            <h2><?= e(tr('Free Pickup, Fair Rates, Instant Payment')) ?></h2>
+            <p><?= e(tr($c['lead'])) ?></p>
             <ul class="check-list mb-2">
                 <?php foreach ($c['bullets'] as $b): ?>
-                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <?= e($b) ?></li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <?= e(tr($b)) ?></li>
                 <?php endforeach; ?>
             </ul>
         </div>
-        <img src="<?= e(asset($cat['image'])) ?>" alt="<?= e($cat['alt']) ?>" loading="lazy" width="560" height="420">
+        <img src="<?= e(asset($cat['image'])) ?>" alt="<?= e(tr($cat['alt'])) ?>" loading="lazy" width="560" height="420">
     </div>
 </section>
 
 <section class="section section--surface">
     <div class="container">
         <header class="section-head">
-            <p class="section-eyebrow">What We Buy</p>
-            <h2><?= e($cat['name']) ?> We Collect in Saudi Arabia</h2>
+            <p class="section-eyebrow"><?= e(tr('What We Buy')) ?></p>
+            <h2><?= e(tr(':material We Collect in Saudi Arabia', [':material' => $cat['name']])) ?></h2>
         </header>
         <div class="material-grid">
             <?php foreach ($c['items'] as $item): ?>
             <article class="material-card">
-                <h3><i class="fa-solid <?= e($cat['icon']) ?>" aria-hidden="true"></i> <?= e($item) ?></h3>
-                <p>Collected free anywhere in <?= e(site('service_area')) ?> — weighed on certified scales and paid on the spot.</p>
+                <h3><i class="fa-solid <?= e($cat['icon']) ?>" aria-hidden="true"></i> <?= e(tr($item)) ?></h3>
+                <p><?= e(tr('Collected free anywhere in :area — weighed on certified scales and paid on the spot.', [':area' => ts('service_area')])) ?></p>
             </article>
             <?php endforeach; ?>
         </div>
@@ -123,29 +123,32 @@ include __DIR__ . '/../includes/header.php';
 <section class="section">
     <div class="container">
         <header class="section-head">
-            <p class="section-eyebrow">How It Works</p>
-            <h2>Selling Your <?= e($cat['name']) ?> Is Simple</h2>
+            <p class="section-eyebrow"><?= e(tr('How It Works')) ?></p>
+            <h2><?= e(tr('Selling Your :material Is Simple', [':material' => $cat['name']])) ?></h2>
         </header>
         <div class="steps-grid">
             <article class="step-card reveal">
                 <span class="step-card__icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-dollar"></i></span>
-                <h3>1. Free Quote</h3>
-                <p>Send a photo or description on WhatsApp and we confirm today's rate for your material.</p>
+                <h3><?= e(tr('1. Free Quote')) ?></h3>
+                <p><?= e(tr('Send a photo or description on WhatsApp and we confirm today\'s rate for your material.')) ?></p>
             </article>
             <article class="step-card reveal">
                 <span class="step-card__icon" aria-hidden="true"><i class="fa-solid fa-truck-fast"></i></span>
-                <h3>2. Free Pickup</h3>
-                <p>We come to you in Saudi Arabia, load everything ourselves and sort mixed materials on site.</p>
+                <h3><?= e(tr('2. Free Pickup')) ?></h3>
+                <p><?= e(tr('We come to you in Saudi Arabia, load everything ourselves and sort mixed materials on site.')) ?></p>
             </article>
             <article class="step-card reveal">
                 <span class="step-card__icon" aria-hidden="true"><i class="fa-solid fa-scale-balanced"></i></span>
-                <h3>3. Weigh &amp; Pay</h3>
-                <p>Certified weighing in front of you, then instant cash or bank transfer — same visit.</p>
+                <h3><?= e(tr('3. Weigh & Pay')) ?></h3>
+                <p><?= e(tr('Certified weighing in front of you, then instant cash or bank transfer — same visit.')) ?></p>
             </article>
         </div>
     </div>
 </section>
 
-<?php render_faq($c['faqs'], $cat['name'] . ' FAQ'); ?>
+<?php
+foreach ($c['faqs'] as &$fq) { $fq['question'] = tr($fq['question']); $fq['answer'] = tr($fq['answer']); }
+unset($fq);
+render_faq($c['faqs'], tr(':material FAQ', [':material' => $cat['name']])); ?>
 <?php render_cta(); ?>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

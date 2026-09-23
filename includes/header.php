@@ -8,13 +8,13 @@
  */
 declare(strict_types=1);
 
-$siteName = site('site_name');
-$company  = site('company');
+$siteName = ts('site_name');
+$company  = ts('company');
 
 $pageTitle       ??= $siteName;
-$pageDescription ??= 'We Buy All Types of Scrap Metal in Mecca, Jeddah & Taif, Saudi Arabia — Copper, Old Cable, Used Battery, Aluminum, Iron Steel, Wood, S.S. Steel & All Mix Scrap. Free pickup, certified weighing and instant payment.';
+$pageDescription ??= tr('We Buy All Types of Scrap Metal in Mecca, Jeddah & Taif, Saudi Arabia — Copper, Old Cable, Used Battery, Aluminum, Iron Steel, Wood, S.S. Steel & All Mix Scrap. Free pickup, certified weighing and instant payment.');
 $pageImage       ??= null;
-$pageImageAlt    ??= $siteName . ' — scrap buying, certified weighing and free pickup in ' . site('service_area');
+$pageImageAlt    ??= $siteName . ' — ' . tr('scrap buying, certified weighing and free pickup in') . ' ' . ts('service_area');
 $pageType        ??= 'website';
 $current          = current_path();
 $route            = trim($current, '/');
@@ -25,6 +25,7 @@ foreach ((array) site('locations', []) as $loc) {
     if (($loc['slug'] ?? '') === $route) { $currentLocation = $loc; break; }
 }
 $geo = $currentLocation['geo'] ?? site('geo', ['lat' => 21.4225, 'lng' => 39.8262]);
+$locName = $currentLocation ? tr((string) $currentLocation['name']) : '';
 
 /* -------------------- Social share image -------------------- */
 // A scrap landing page shares its own category photo; everything else uses the
@@ -78,16 +79,12 @@ $ogMime      = [
     'gif' => 'image/gif', 'svg' => 'image/svg+xml', 'avif' => 'image/avif',
 ][$ogExt] ?? '';
 
-/* -------------------- Loading screen -------------------- */
-$preloaderCfg = (array) site('preloader', []);
-$preloaderOn  = (bool) site('preloader_enabled', true) && !$noindex;
-
 /* ==================== Structured data (JSON-LD @graph) ==================== */
 $graph = [];
 $orgId  = app_url() . '/#business';
 $cities = [];
 foreach (array_values(array_filter((array) site('service_areas', []))) as $area) {
-    $cities[] = ['@type' => 'City', 'name' => $area];
+    $cities[] = ['@type' => 'City', 'name' => tr($area)];
 }
 $hours = [
     ['@type' => 'OpeningHoursSpecification', 'dayOfWeek' => ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'], 'opens' => '08:00', 'closes' => '20:00'],
@@ -102,8 +99,8 @@ if (!$noindex) {
         '@id'         => app_url() . '/#website',
         'url'         => url('/'),
         'name'        => $siteName,
-        'description' => site('tagline'),
-        'inLanguage'  => site('language', 'en'),
+        'description' => ts('tagline'),
+        'inLanguage'  => current_lang(),
         'publisher'   => $businessSchema ? ['@id' => $orgId] : ['@type' => 'Organization', 'name' => $siteName, 'url' => url('/')],
     ];
 
@@ -114,8 +111,8 @@ if (!$noindex) {
             '@id'                => $orgId,
             'name'               => $siteName,
             'legalName'          => $company,
-            'description'        => site('tagline'),
-            'slogan'             => site('tagline'),
+            'description'        => ts('tagline'),
+            'slogan'             => ts('tagline'),
             'url'                => url('/'),
             'logo'               => asset('images/logo.svg'),
             'image'              => social_image(),
@@ -123,11 +120,11 @@ if (!$noindex) {
             'email'              => site('email'),
             'priceRange'         => '$$',
             'currenciesAccepted' => site('currency', 'SAR'),
-            'paymentAccepted'    => 'Cash, Bank Transfer',
+            'paymentAccepted'    => tr('Cash, Bank Transfer'),
             'address'            => [
                 '@type'           => 'PostalAddress',
-                'streetAddress'   => site('address', 'Mecca, Saudi Arabia'),
-                'addressLocality' => site('city'),
+                'streetAddress'   => ts('address'),
+                'addressLocality' => ts('city'),
                 'addressCountry'  => 'SA',
             ],
             'geo'                => ['@type' => 'GeoCoordinates', 'latitude' => (float) ($geo['lat'] ?? 21.4225), 'longitude' => (float) ($geo['lng'] ?? 39.8262)],
@@ -136,17 +133,17 @@ if (!$noindex) {
             'contactPoint'       => [[
                 '@type'             => 'ContactPoint',
                 'telephone'         => site('phone'),
-                'contactType'       => 'customer service',
+                'contactType'       => tr('customer service'),
                 'areaServed'        => 'SA',
                 'availableLanguage' => ['en', 'ar'],
             ]],
             'hasOfferCatalog'    => [
                 '@type'           => 'OfferCatalog',
-                'name'            => 'Scrap buying services',
+                'name'            => tr('Scrap buying services'),
                 'itemListElement' => array_map(static function (array $cat): array {
                     return ['@type' => 'Offer', 'itemOffered' => [
                         '@type' => 'Service',
-                        'name'  => $cat['title'] . ' Scrap Buying',
+                        'name'  => tr(':material Scrap Buying', [':material' => (string) $cat['title']]),
                         'url'   => url($cat['slug']),
                     ]];
                 }, array_values((array) ($GLOBALS['scrapCategories'] ?? []))),
@@ -163,7 +160,7 @@ if (!$noindex) {
         $cityBiz = [
             '@type'              => 'LocalBusiness',
             '@id'                => $providerId,
-            'name'               => $siteName . ' — ' . $currentLocation['name'],
+            'name'               => $siteName . ' — ' . $locName,
             'parentOrganization' => ['@id' => $orgId],
             'url'                => url($currentLocation['slug']),
             'image'              => social_image(),
@@ -173,11 +170,11 @@ if (!$noindex) {
             'currenciesAccepted' => site('currency', 'SAR'),
             'address'            => [
                 '@type'           => 'PostalAddress',
-                'streetAddress'   => site('address', 'Mecca, Saudi Arabia'),
-                'addressLocality' => $currentLocation['name'],
+                'streetAddress'   => ts('address'),
+                'addressLocality' => $locName,
                 'addressCountry'  => 'SA',
             ],
-            'areaServed'         => ['@type' => 'City', 'name' => $currentLocation['name']],
+            'areaServed'         => ['@type' => 'City', 'name' => $locName],
             'openingHoursSpecification' => $hours,
         ];
         if (isset($currentLocation['geo'])) {
@@ -197,8 +194,8 @@ if (!$noindex) {
             $graph[] = [
                 '@type'       => 'Service',
                 '@id'         => url($cat['slug']) . '#service',
-                'name'        => $cat['title'] . ' Scrap Buying Service',
-                'serviceType' => $cat['title'] . ' scrap purchase & collection',
+                'name'        => tr(':material Scrap Buying Service', [':material' => (string) $cat['title']]),
+                'serviceType' => tr(':material scrap purchase & collection', [':material' => (string) $cat['title']]),
                 'description' => $cat['short'],
                 'url'         => url($cat['slug']),
                 'image'       => social_image($cat['image'] ?? null),
@@ -210,12 +207,12 @@ if (!$noindex) {
         $graph[] = [
             '@type'       => 'Service',
             '@id'         => url($currentLocation['slug']) . '#service',
-            'name'        => 'Scrap Buying & Free Pickup in ' . $currentLocation['name'],
-            'serviceType' => 'Scrap metal purchase, weighing and collection',
-            'description' => 'Free scrap pickup, certified weighing and instant payment for homes, shops, workshops and factories in ' . $currentLocation['name'] . ', Saudi Arabia.',
+            'name'        => tr('Scrap Buying & Free Pickup in :city', [':city' => $locName]),
+            'serviceType' => tr('Scrap metal purchase, weighing and collection'),
+            'description' => tr('Free scrap pickup, certified weighing and instant payment for homes, shops, workshops and factories in :city, Saudi Arabia.', [':city' => $locName]),
             'url'         => url($currentLocation['slug']),
             'provider'    => ['@id' => $providerId],
-            'areaServed'  => ['@type' => 'City', 'name' => $currentLocation['name']],
+            'areaServed'  => ['@type' => 'City', 'name' => $locName],
         ];
     }
 }
@@ -235,7 +232,7 @@ foreach ($extraSchemas as $extra) {
 
 ?>
 <!DOCTYPE html>
-<html lang="<?= e(site('language', 'en')) ?>" dir="ltr"<?= $preloaderOn ? ' class="is-loading"' : '' ?>>
+<html lang="<?= e(current_lang()) ?>" dir="<?= e(lang_dir()) ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -247,7 +244,7 @@ foreach ($extraSchemas as $extra) {
     <?php // Local SEO signals (city, yard coordinates). ?>
     <meta name="theme-color" content="<?= e(site('seo.theme_color', '#16181d')) ?>">
     <meta name="geo.region" content="SA">
-    <meta name="geo.placename" content="<?= e($currentLocation['name'] ?? site('city')) ?>">
+    <meta name="geo.placename" content="<?= e($currentLocation ? tr($currentLocation['name']) : ts('city')) ?>">
     <meta name="geo.position" content="<?= e(($geo['lat'] ?? '') . ';' . ($geo['lng'] ?? '')) ?>">
     <meta name="ICBM" content="<?= e(($geo['lat'] ?? '') . ', ' . ($geo['lng'] ?? '')) ?>">
 
@@ -277,7 +274,8 @@ foreach ($extraSchemas as $extra) {
     <meta property="og:image:height" content="<?= (int) site('seo.og_image_height', 630) ?>">
     <?php endif; ?>
     <meta property="og:image:alt" content="<?= e($pageImageAlt) ?>">
-    <meta property="og:locale" content="en_US">
+    <meta property="og:locale" content="<?= e(lang_is_rtl() ? 'ar_SA' : 'en_US') ?>">
+    <meta property="og:locale:alternate" content="<?= e(lang_is_rtl() ? 'en_US' : 'ar_SA') ?>">
 
     <!-- Twitter / X card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -301,36 +299,22 @@ foreach ($extraSchemas as $extra) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+    <?php // Arabic gets a font that actually covers the script; Latin keeps the brand pair. ?>
+    <link rel="stylesheet" href="<?= e(lang_is_rtl()
+        ? 'https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap'
+        : 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap') ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <link rel="stylesheet" href="<?= e(asset('css/style.css')) ?>">
     <link rel="stylesheet" href="<?= e(asset('css/responsive.css')) ?>">
+    <?php // Right-to-left overrides — Arabic only, so LTR keeps the exact same CSS. ?>
+    <?php if (lang_is_rtl()): ?>
+    <link rel="stylesheet" href="<?= e(asset('css/rtl.css')) ?>">
+    <?php endif; ?>
     <?php // Structured data: one @graph per page (WebSite, LocalBusiness, Service, Breadcrumbs). ?>
     <?php if ($graph): echo jsonld(['@context' => 'https://schema.org', '@graph' => $graph]); endif; ?>
-
-    <?php if ($preloaderOn && !empty($preloaderCfg['skip_after_first'])): ?>
-    <script>/* Loading screen: skip it after the first view in this browser session. */
-    (function () { try { if (sessionStorage.getItem('scrap_preloader_done') === '1') { document.documentElement.classList.remove('is-loading'); } } catch (e) {} })();</script>
-    <?php endif; ?>
-    <?php if ($preloaderOn): ?>
-    <noscript><style>html.is-loading,html.is-loading body{overflow:auto}html.is-loading .site-loader{display:none}</style></noscript>
-    <?php endif; ?>
 </head>
 <body>
-<?php if ($preloaderOn): ?>
-<div class="site-loader" id="siteLoader" role="status" aria-live="polite"
-     data-max-wait="<?= (int) ($preloaderCfg['max_wait_ms'] ?? 6000) ?>"
-     data-video-wait="<?= (int) ($preloaderCfg['video_wait_ms'] ?? 4000) ?>"
-     data-min-show="<?= (int) ($preloaderCfg['min_show_ms'] ?? 500) ?>">
-    <div class="site-loader__inner">
-        <img class="site-loader__logo" src="<?= e(asset('images/logo.svg')) ?>" alt="" width="64" height="64">
-        <span class="site-loader__ring" aria-hidden="true"></span>
-        <p class="site-loader__text">Loading <?= e($siteName) ?>…</p>
-        <span class="site-loader__bar" aria-hidden="true"><span class="site-loader__bar-fill" id="siteLoaderBar"></span></span>
-    </div>
-</div>
-<?php endif; ?>
 <?php require __DIR__ . '/navbar.php'; ?>
 <?php $flash = flash_get(); if ($flash): ?>
 <div class="flash flash--<?= e($flash['type']) ?>" role="alert">

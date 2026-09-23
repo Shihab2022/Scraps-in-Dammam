@@ -106,17 +106,5 @@ return [
         'max_title_length' => 65,            // brand suffix is dropped when a title would exceed this
     ],
 
-    /* -------------------- Loading screen (preloader) -------------------- */
-    // The loading screen stays up until every critical image — plus the first
-    // frame of the hero video — is ready, then fades away. All values are
-    // milliseconds and act as hard caps, so a slow file can never block the site.
-    'preloader_enabled' => true,
-    'preloader' => [
-        'max_wait_ms'      => 6000,  // absolute ceiling for the whole loading screen
-        'video_wait_ms'    => 4000,  // how long to wait for the hero video's first frame
-        'min_show_ms'      => 500,   // avoids a flicker on very fast connections
-        'skip_after_first' => false, // true = show it once per browser session only
-    ],
-
     'admin_email' => 'atozscrapbuyersa@gmail.com',
 ];

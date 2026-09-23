@@ -1,0 +1,37 @@
+<?php
+/**
+ * Arabic translations — Construction & Demolition page (scrap/construction.php), part 2.
+ */
+return [
+    'Scheduled Pickup' => 'توصيل مجدول',
+    'Collection dates coordinated with your programme — including weekend clearances before handover.' => 'تواريخ الجمع منسقة مع برنامجك — بما في ذلك عمليات التفريغ في عطلة نهاية الأسبوع قبل التسليم.',
+    'On-Site Assessment' => 'تقييم في الموقع',
+    'We measure, photograph and quote your scrap in place, so you know the value before we load a single bar.' => 'نقيس ونصور ونسعّر سكرابك في مكانه، لتعرف القيمة قبل أن نحمل حتى قضيبًا واحدًا.',
+    'Site Process' => 'عملية الموقع',
+    'From Site Photos to Paid Collection' => 'من صور الموقع إلى الجمع المدفوع',
+    '1. Share Site Photos' => '1. شارك صور الموقع',
+    'Send photos of the scrap piles and site access on WhatsApp for a fast indicative quote.' => 'أرسل صورًا لكميات السكراب ومدخل الموقع على واتساب للحصول على عرض سعر سريع توضيحي.',
+    '2. On-Site Assessment' => '2. تقييم في الموقع',
+    'For larger sites we visit, confirm the quantities by grade and agree the rate in writing.' => 'للمواقع الكبيرة نزور ونؤكد الكميات حسب الدرجة ونتفق على السعر كتابيًا.',
+    '3. Collection & Weight' => '3. الجمع والوزن',
+    'Our trucks load the metal — using site cranes where helpful — and each load is weighed.' => 'شاحناتنا تحمل المعدن — مع استخدام رافعات الموقع عند الحاجة — ويُوزن كل حمولة.',
+    '4. Payment & Documents' => '4. الدفع والمستندات',
+    'Payment is made on the spot and you receive weight tickets and a receipt for your accounts.' => 'يُدفع في الموقع وتستلم قسائم الوزن وإيصالًا لحساباتك.',
+    'Sorted construction scrap metals stacked ready for collection' => 'معادن سكراب بناء مرتّبة ومكدسة جاهزة للجمع',
+    'Who We Support' => 'من ندعم',
+    'Built for Everyone on Site' => 'مصمم للجميع في الموقع',
+    'From a single villa demolition to an industrial estate strip-out, our construction scrap service covers contractors, builders, demolition companies, construction firms and site managers — staying compliant with site safety rules and project timelines.' => 'من هدم فيلا واحدة إلى تفريغ حي صناعي، خدمة سكراب البناء لدينا تغطي المقاولين وشركات البناء وشركات الهدم وشركات الإنشاء ومديري المواقع — مع الالتزام بقواعد سلامة الموقع وجداول المشاريع.',
+    'For Procurement & Project Teams' => 'لفرق المشتريات والمشاريع',
+    'Fixed-rate quotations, scheduled collections after handover, clean sites for inspectors and documented payments. Ask about our recurring site-clearance packages.' => 'عروض أسعار ثابتة، جمع مجدول بعد التسليم، مواقع نظيفة للمفتشين ومدفوعات موثقة. اسأل عن باقات تفريغ المواقع المتكررة لدينا.',
+    'Construction Scrap FAQ' => 'أسئلة شائعة عن سكراب البناء',
+    'Do you buy scrap from active construction sites?' => 'هل تشترون السكراب من مواقع البناء الجارية؟',
+    'Yes — we work around site access rules, shift hours and handover dates, and coordinate loading with your crane and safety team.' => 'نعم — نعمل وفق قواعد وصول الموقع وساعات الورديات وتواريخ التسليم، وننسق التحميل مع رافعتك وفريق السلامة.',
+    'How quickly can you clear a demolished site?' => 'كم سرعة تفريغ موقع مهدوم؟',
+    'For sites in Saudi Arabia and nearby cities we can usually collect within 24–48 hours, and larger clearances are scheduled with your project timeline.' => 'للمواقع في المملكة العربية السعودية والمدن القريبة عادةً نجمع خلال 24–48 ساعة، والتفريغ الأكبر يُجدول وفق جدول مشروعك.',
+    'Can you cut steel beams for removal?' => 'هل تستطيعون قطع العوارض الفولاذية للإزالة؟',
+    'Where cutting is required for loading, our team uses safe cutting practices and debris management — always coordinated with the site supervisor.' => 'عند الحاجة إلى القطع للتحميل، يستخدم فريقنا أساليب قطع آمنة وإدارة للنفايات — دائمًا بالتنسيق مع مشرف الموقع.',
+    'Do you take mixed demolition waste or only metal?' => 'هل تأخذون نفايات الهدم المختلطة أم المعدن فقط؟',
+    'We purchase the metal fraction (steel, aluminum, copper, brass) of demolition waste. Mixed construction debris such as concrete or wood is the contractor’s responsibility, though we can advise on removal.' => 'نشتري الجزء المعدني (فولاذ، ألومنيوم، نحاس، نحاس أصفر) من نفايات الهدم. نفايات البناء المختلطة مثل الخرسانة أو الخشب من مسؤولية المقاول، رغم أننا يمكننا النصح بشأن الإزالة.',
+    'How are large quantities weighed?' => 'كيف تُوزن الكميات الكبيرة؟',
+    'Each truckload is weighed on certified scales — either our mobile scales on site or a weighbridge — and the tickets are added together for the final total.' => 'كل حمولة شاحنة تُوزن على مقاييس معتمدة — إما مقاييسنا المتنقلة في الموقع أو الميزان الجسرى — وتُجمع القسائم للحصول على المجموع النهائي.',
+];

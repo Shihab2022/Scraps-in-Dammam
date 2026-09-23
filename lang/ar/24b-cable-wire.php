@@ -1,0 +1,37 @@
+<?php
+/**
+ * Arabic translations — Cable & Wire page (scrap/cable-wire.php), part 2.
+ */
+return [
+    'Insulation Percentage' => 'نسبة العزل',
+    'The thicker the insulation, the lower the recoverable copper content — we explain the calculation.' => 'كلما سماك العزل، قلّت نسبة النحاس القابل للاسترجاع — نشرح لك الحساب.',
+    'Cable Grade' => 'درجة الكابل',
+    'Heavy power cable, strands, and fine communication wire each carry different rates.' => 'كابلات الطاقة الثقيلة والمواويل والأسلاك الدقيقة للتواصل لكل منها أسعار مختلفة.',
+    'Industrial Drums' => 'أسطوانات صناعية',
+    'Full or partial cable drums from contractors and factories — collected in bulk.' => 'أسطوانات كابل كاملة أو جزئية من المقاولين والمصانع — تُجمع بالجملة.',
+    'Photo Quote' => 'عرض سعر بالصور',
+    'Wait, Don’t Strip Anything Yet' => 'انتظر، لا تقشر شيئًا بعد',
+    'Unstripped insulated wire coil on a spool' => 'لفة سلك معزول غير مقشّر على بكرة',
+    'Before you spend hours stripping cable, send us a photo. We will tell you exactly what the stripped versus insulated rate is and whether stripping is worth your time for the volume you have.' => 'قبل أن تقضي ساعات في تقشير الكابل، أرسل لنا صورة. سنخبرك بالضبط بفرق سعر المقشّر عن المعزول وما إذا كان التقشير يستحق وقتك للكمية التي لديك.',
+    'WhatsApp Photo Quote' => 'عرض سعر بصورة واتساب',
+    'Step 1: Photograph the cable drum, cut a short sample or show the reels.' => 'الخطوة 1: صوّر أسطوانة الكابل، أو اقطع عينة قصيرة أو أظهر البكرات.',
+    'Step 2: Send it to' => 'الخطوة 2: أرسلها إلى',
+    'Step 3: Receive today’s rate per kilogram for each grade — usually within minutes.' => 'الخطوة 3: استلم سعر اليوم للكيلوجرام لكل درجة — عادةً خلال دقائق.',
+    'Hello, please quote my cable and wire scrap.' => 'مرحبًا، يرجى تسعير سكراب الكابلات والأسلاك الخاص بي.',
+    'Bulk & Industrial' => 'جملة وصناعي',
+    'Industrial Cable Collection' => 'جمع الكابلات الصناعية',
+    'Contractors and electricians regularly end a project with kilometers of surplus cable. We provide bulk collection with certified weighing at the site, transparent insulation deductions and immediate payment — plus receipts for your records.' => 'غالبًا ما ينتهي المشروع لدى المقاولين والكهربائيين بكميات كيلومترات من الكابلات الزائدة. نوفر جمعًا بالجملة مع وزن معتمد في الموقع وخصومات عزل شفافة ودفع فوري — بالإضافة إلى إيصالات لسجلاتك.',
+    'Contact Us for Collection' => 'اتصل بنا للجمع',
+    'Industrial cable drums collected from a worksite' => 'أسطوانات كابلات صناعية تُجمع من موقع عمل',
+    'How do you price insulated cable?' => 'كيف تسعّرون الكابل المعزول؟',
+    'We weigh the cable, then estimate the copper content based on the insulation thickness and construction, and pay the copper rate on that content. The deduction is explained clearly on site.' => 'نوزن الكابل، ثم نقدّر نسبة النحاس بناءً على سماكة العزل والتركيب، وندفع سعر النحاس على تلك النسبة. يُشرح الخصم بوضوح في الموقع.',
+    'Is it better to strip cable before selling?' => 'هل من الأفضل تقشير الكابل قبل البيع؟',
+    'Sometimes. Stripped copper pays more per kilogram, but stripping takes time. Send us photos first and we will tell you whether it is worth it for your volume.' => 'أحيانًا. النحاس المقشّر يدفع أكثر للكيلوجرام، لكن التقشير يستهلك وقتًا. أرسل لنا صورًا أولًا وسنقول لك ما إذا كان يستحق لحجمك.',
+    'Do you buy aluminum power cable?' => 'هل تشترون كابلات الطاقة الألومنيومية؟',
+    'Yes — aluminum transmission and feeder cable is bought at the aluminum cable rate, which is lower than copper cable but still valuable.' => 'نعم — كابلات النقل والتغذية الألومنيومية تُشترى بسعر كابل الألومنيوم، وهو أقل من كابل النحاس لكنه ما زال ذا قيمة.',
+    'Can you take cable drums?' => 'هل تأخذون أسطوانات الكابلات؟',
+    'Yes. Wooden and steel drums are collected during bulk pickups; steel drums are valuable on their own.' => 'نعم. الأسطوانات الخشبية والفولاذية تُجمع أثناء التوصيل الجماعي؛ والأسطوانات الفولاذية قيمة بذاتها.',
+    'Do you buy fiber-optic and communication cable?' => 'هل تشترون كابلات الألياف الضوئية والتواصل؟',
+    'We buy communication and co-axial cable for their copper content. Pure fiber-optic cable without copper has limited scrap value — send a photo and we will confirm.' => 'نشتري كابلات التواصل والمحوري لمحتواها النحاسي. كابل الألياف الضوئية الخالص بدون نحاس قيمته محدودة كسكراب — أرسل صورة وسنؤكد.',
+    'Cable & Wire FAQ' => 'أسئلة شائعة عن الكابلات والأسلاك',
+];

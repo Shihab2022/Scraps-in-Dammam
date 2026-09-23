@@ -1,0 +1,35 @@
+<?php
+/**
+ * Arabic translations — Copper page (scrap/copper.php), part 2.
+ */
+return [
+    'Insulated Copper Wire' => 'سلك نحاس معزول',
+    'Copper wire still covered with insulation. Value depends on the copper content (insulation percentage).' => 'سلك نحاس ما زال مغطى بالعزل. القيمة تعتمد على نسبة النحاس (نسبة العزل).',
+    'Medium' => 'متوسط',
+    'Copper Motors' => 'محركات نحاسية',
+    'Electric motors — paid on weight and recoverable copper, with the casing deducted.' => 'محركات كهربائية — تُدفع بالوزن والنحاس القابل للاسترجاع، مع خصم الغلاف.',
+    'Prices change with the market. We confirm today’s rate per kilogram for your exact grade before any pickup —' => 'الأسعار تتغير مع السوق. نؤكد سعر اليوم للكيلوجرام لدرجتك الدقيقة قبل أي توصيل —',
+    'message us for a current quote' => 'راسلنا للحصول على عرض سعر حالي',
+    'Bundle of insulated copper cable prepared for recycling' => 'حزمة كابل نحاس معزول مجهزة لإعادة التدوير',
+    'Why Grade Matters' => 'لماذا الدرجة مهمة',
+    'Why Copper Grade Matters' => 'لماذا درجة النحاس مهمة',
+    'Five factors determine what your copper is worth:' => 'خمسة عوامل تحدد قيمة نحاسك:',
+    'Insulation' => 'العزل',
+    'free of solder, steel, plastic and other metals' => 'خالٍ من اللحام والفولاذ والبلاستيك ومعادن أخرى',
+    'stripping wire raises its grade and value' => 'تقشير السلك يرفع درجته وقيمته',
+    'Oxidation' => 'أكسدة التآكل',
+    'tarnished, burnt or weathered copper drops a grade' => 'النحاس المشوّه أو المحروق أو المتأثر بالطقس ينخفضت درجته',
+    'Contamination' => 'التلوث',
+    'oil, glue or attached fittings reduce the usable weight' => 'الزيت أو الغلوت أو الوصلات الملتصقة تقلل الوزن القابل للاستغلال',
+    'bare bright, #1 and #2 each have distinct market rates' => 'العاري اللامع و #1 و #2 لكل منها أسعار سوقية محددة',
+    'Unsure of the grade? Send a clear photo on WhatsApp — we identify the grade and quote you within minutes.' => 'غير متأكد من الدرجة؟ أرسل صورة واضحة على واتساب — نحدد الدرجة ونسعّرك خلال دقائق.',
+    'Simple, Transparent Copper Sales' => 'بيع نحاس بسيط وشفاف',
+    'Grade Check' => 'فحص الدرجة',
+    'We verify the copper grade with you, either from photos or on site before weighing.' => 'نتحقق من درجة النحاس معك، إما بالصور أو في الموقع قبل الوزن.',
+    'Certified scales — you watch the reading and the calculation.' => 'ميزان معتمد — تشاهد القراءة والحساب.',
+    'Cash or bank transfer immediately after the total is agreed.' => 'نقدًا أو تحويل بنكي فورًا بعد الاتفاق على المجموع.',
+    'WhatsApp Quote CTA' => 'عرض سعر عبر واتساب',
+    'Photograph your copper and send it to' => 'صوّر نحاسك وأرسله إلى',
+    'our WhatsApp' => 'واتسابنا',
+    'tell us whether it is wire, pipe, motors or cable, and we will reply with today’s rate per kilogram.' => 'أخبرنا هل هو سلك أم أنابيب أم محركات أم كابلات، وسنرد بسعر اليوم للكيلوجرام.',
+];

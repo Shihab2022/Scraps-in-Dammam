@@ -1,0 +1,35 @@
+<?php
+/**
+ * Arabic translations — Privacy Policy (pages/privacy.php).
+ */
+return [
+    'Privacy Policy' => 'سياسة الخصوصية',
+    'Our privacy policy — how we collect, use, store and protect personal information submitted through our scrap buying website.' => 'سياسة الخصوصية — كيف نجمع، نستخدم، نخزن ونحمي المعلومات الشخصية المرسلة عبر موقعنا لشراء السكراب.',
+    'Last updated: January 2026' => 'آخر تحديث: يناير 2026',
+    '1. Who We Are' => '1. من نحن',
+        'is the data controller for the personal information you provide through this website.' => 'هو مسؤول البيانات للمعلومات الشخصية التي تقدّمها عبر هذا الموقع.',
+    'Contact us at' => 'اتصل بنا على',
+    'or' => 'أو',
+    'for any privacy question.' => 'لأي سؤال خصوصية.',
+    '2. Information We Collect' => '2. المعلومات التي نجمعها',
+    'When you submit a contact, pickup or industrial request form we collect the information you enter: name, phone number, WhatsApp number, email address, scrap type, location, address, dates, message text, and any photos you upload. We also collect basic technical data such as your IP address and requested pages to maintain security and prevent abuse.' => 'عند إرسال نموذج طلب اتصال أو توصيل أو صناعي، نجمع المعلومات التي تدخلها: الاسم، رقم الهاتف، رقم الواتساب، عنوان البريد الإلكتروني، نوع السكراب، الموقع، العنوان، التواريخ، نص الرسالة، والصور التي ترفعها. كما نجمع بيانات تقنية أساسية مثل عنوان IP وصفحات طلبتها للحفاظ على الأمان والوقاية من إساءة الاستخدام.',
+    '3. Why We Use Your Information' => '3. لماذا نستخدم معلوماتك',
+    'To respond to your scrap quote or pickup request.' => 'للرد على عرض السعر أو طلب التوصيل الخاص بك.',
+    'To arrange weighing, pickup and payment.' => 'لترتيب الوزن والتوصيل والدفع.',
+    'For security, fraud prevention and spam control.' => 'للأمان ومنع الاحتيال والتحكم في الرسائل غير المرغوب فيها.',
+    'Where you ask us to, to contact you by phone, WhatsApp or email about our services.' => 'حيث تطلبون منا التواصل معك هاتفيًا أو عبر واتساب أو بريد إلكتروني بشأن خدماتنا.',
+    '4. Legal Basis' => '4. الأساس القانوني',
+    'We rely on your consent (you submit the form), on the performance of a contract or pre-contractual steps (fulfilling your pickup request), and on legitimate interests (security and record keeping) as legal bases for processing.' => 'نعتمد على موافقتك (ترسل النموذج)، وأداء العقد أو الخطوات قبل العقد (توفيق طلب التوصيل)، والمصالح المشروعة (الأمان والحفاظ على السجلات) كقواعد قانونية للمعالجة.',
+    '5. Storage and Retention' => '5. التخزين والاحتفاظ',
+    'Request data is stored in our secure database (or, if a database is not configured, in protected log files) and is retained for as long as needed to fulfil your request and to comply with legal obligations. Uploaded photos are stored in a protected directory accessible only to our team.' => 'يتم تخزين بيانات الطلب في قاعدة بياناتنا الآمنة (أو، إذا لم تكن قاعدة بيانات مهيأة، في ملفات سجل محمية) وتُحتفظ بها طالما هو مطلوب لتوفيق طلبك والامتثال للالتزامات القانونية. تُخزن الصور المرفوعة في دليل محمي يمكن الوصول إليه فقط من قبل فريقنا.',
+    '6. Who We Share Data With' => '6. مع من نشارك البيانات',
+    'We do not sell personal information. Data is shared only with our own team members and trusted service providers (such as email transmission or hosting providers) who process data on our behalf and under our instructions.' => 'نحن لا نبيع المعلومات الشخصية. تُشارك البيانات فقط مع أعضاء فريقنا ومزودي خدمات موثوقين (مثل مزودي البريد الإلكتروني أو الاستضافة) الذين يعالجون البيانات نيابة عنا وعلى مدى تعليماتنا.',
+    '7. Third-Party Services' => '7. خدمات الطرف الثالث',
+    'This website may load Google Maps embeds, fonts and icon libraries from third-party providers. Those providers may process technical data under their own privacy policies.' => 'قد يقوم هذا الموقع بتحميل تضمينات خرائط جوجل، خطوط ومكتبات أيقونات من مزودي خدمات خارجيين. قد تعالج هذه المزوّدات بيانات تقنية بموجب سياسات الخصوصية الخاصة بها.',
+    '8. Cookies' => '8. ملفات تعريف الارتباط',
+    'We use only essential session cookies to keep you logged into the admin panel and to protect forms from abuse. We do not use advertising or analytics tracking cookies.' => 'نحن نستخدم ملفات تعريف ارتباط جلسة أساسية فقط للحفاظ على تسجيل دخولك إلى لوحة الإدارة وحماية النماذج من إساءة الاستخدام. نحن لا نستخدم ملفات تعريف ارتباط إعلانية أو تحليلية.',
+    '9. Your Rights' => '9. حقوقك',
+        'You may request access to, correction of, or deletion of your personal data.' => 'يمكنك طلب الوصول إلى بياناتك الشخصية، تصحيحها أو حذفها.',
+    'To exercise these rights, contact us at' => 'لممارسة هذه الحقوق، اتصل بنا على',
+    'We respond to verified requests within 30 days.' => 'نرد على الطلبات الموثقة خلال 30 يومًا.',
+];

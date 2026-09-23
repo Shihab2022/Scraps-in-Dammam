@@ -91,6 +91,10 @@ if (!function_exists('site')) {
     }
 }
 
+/* -------------------- Language (English / Arabic + RTL) -------------------- */
+require_once __DIR__ . '/i18n.php';
+lang_boot();
+
 /* -------------------- Core helpers -------------------- */
 if (!function_exists('e')) {
     function e($value): string
