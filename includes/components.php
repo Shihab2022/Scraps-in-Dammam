@@ -223,3 +223,83 @@ if (!function_exists('render_location_card')) {
         <?php
     }
 }
+
+/* -------------------- Breadcrumbs (visible trail + BreadcrumbList JSON-LD) -------------------- */
+if (!function_exists('breadcrumb_trail')) {
+    /**
+     * Build the breadcrumb trail for the current route.
+     * Scrap category and pickup pages sit under "Services"; everything else is
+     * a two-level trail (Home › Page).
+     *
+     * @return array<int,array{label:string,url:?string}>
+     */
+    function breadcrumb_trail(string $currentLabel): array
+    {
+        $trail = [['label' => 'Home', 'url' => url('/')]];
+        $route = trim(current_path(), '/');
+        if ($route === '') return $trail;
+
+        // Routes that belong to the "Services" section of the site.
+        $grouped = ['scrap-pickup' => true];
+        foreach (($GLOBALS['scrapCategories'] ?? []) as $cat) {
+            if (isset($cat['slug'])) $grouped[(string) $cat['slug']] = true;
+        }
+        if (isset($grouped[$route])) {
+            $trail[] = ['label' => 'Services', 'url' => url('services')];
+        }
+
+        $trail[] = ['label' => $currentLabel, 'url' => null];
+        return $trail;
+    }
+}
+if (!function_exists('breadcrumb_schema')) {
+    /**
+     * Convert a breadcrumb trail into a BreadcrumbList schema node.
+     * @param array<int,array{label:string,url:?string}> $trail
+     * @return array<string,mixed>
+     */
+    function breadcrumb_schema(array $trail): array
+    {
+        $items = [];
+        foreach (array_values($trail) as $i => $crumb) {
+            $item = ['@type' => 'ListItem', 'position' => $i + 1, 'name' => $crumb['label']];
+            if (!empty($crumb['url'])) $item['item'] = $crumb['url'];
+            $items[] = $item;
+        }
+        return [
+            '@context'        => 'https://schema.org',
+            '@type'           => 'BreadcrumbList',
+            'itemListElement' => $items,
+        ];
+    }
+}
+if (!function_exists('render_breadcrumbs')) {
+    /**
+     * Render the visible breadcrumb bar. The matching BreadcrumbList JSON-LD is
+     * emitted from the <head> by includes/header.php.
+     *
+     * @param array<int,array{label:string,url:?string}> $trail
+     */
+    function render_breadcrumbs(array $trail): void
+    {
+        if (count($trail) < 2) return;
+        $last = count($trail) - 1;
+        ?>
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <div class="container">
+                <ol>
+                    <?php foreach (array_values($trail) as $i => $crumb): ?>
+                    <li>
+                        <?php if ($i === $last || empty($crumb['url'])): ?>
+                        <span aria-current="page"><?= e($crumb['label']) ?></span>
+                        <?php else: ?>
+                        <a href="<?= e($crumb['url']) ?>"><?= e($crumb['label']) ?></a>
+                        <?php endif; ?>
+                    </li>
+                    <?php endforeach; ?>
+                </ol>
+            </div>
+        </nav>
+        <?php
+    }
+}

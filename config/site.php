@@ -27,23 +27,29 @@ return [
         'Taif',
     ],
 
+    /* Main yard coordinates — used for LocalBusiness schema + geo meta tags. */
+    'geo' => ['lat' => 21.4225, 'lng' => 39.8262],
+
     'locations' => [
         'mecca' => [
             'name'  => 'Mecca',
             'slug'  => 'scrap-buyer-mecca',
             'city'  => 'Mecca, Saudi Arabia',
+            'geo'   => ['lat' => 21.4225, 'lng' => 39.8262],
             'embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14871.086561603104!2d39.8101212!3d21.4224874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c21b4bec8a167b%3A0xe6148a35d5c5b4d1!2sMecca%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1690000000000!5m2!1sen!2ssa',
         ],
         'jeddah' => [
             'name'  => 'Jeddah',
             'slug'  => 'scrap-buyer-jeddah',
             'city'  => 'Jeddah, Saudi Arabia',
+            'geo'   => ['lat' => 21.5433, 'lng' => 39.1728],
             'embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d951957.5737348373!2d38.4912472!3d21.5434665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d48fb611bea7%3A0xe306162773f1397e!2sJeddah%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1690000000000!5m2!1sen!2ssa',
         ],
         'taif' => [
             'name'  => 'Taif',
             'slug'  => 'scrap-buyer-taif',
             'city'  => 'Taif, Saudi Arabia',
+            'geo'   => ['lat' => 21.2854, 'lng' => 40.4183],
             'embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92725.84897531588!2d40.3651058!3d21.2854663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15bb8b3ea94c3b2d%3A0x7f1e0c1bbbcbb3d3!2sTaif%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1690000000000!5m2!1sen!2ssa',
         ],
     ],
@@ -86,6 +92,30 @@ return [
         ['icon' => 'fa-truck-fast',      'title' => 'Free Pickup',       'text' => 'Doorstep collection in Mecca, Jeddah & Taif.'],
         ['icon' => 'fa-scale-balanced',  'title' => 'Fair Price',        'text' => 'Transparent market-based rates confirmed up front.'],
         ['icon' => 'fa-money-bill-wave', 'title' => 'Instant Payment',   'text' => 'Cash or bank transfer right after weighing.'],
+    ],
+
+    /* -------------------- SEO defaults (header + sitemap) -------------------- */
+    'seo' => [
+        // Default Open Graph / Twitter image. Must be a raster format
+        // (jpg, png, webp or gif) — link previewers cannot render SVG or AVIF.
+        'default_og_image' => 'images/about-us.png',
+        'og_image_width'   => 1672,
+        'og_image_height'  => 941,
+        'twitter_site'     => '',            // e.g. '@yourbrand' — leave empty to omit
+        'theme_color'      => '#16181d',
+        'max_title_length' => 65,            // brand suffix is dropped when a title would exceed this
+    ],
+
+    /* -------------------- Loading screen (preloader) -------------------- */
+    // The loading screen stays up until every critical image — plus the first
+    // frame of the hero video — is ready, then fades away. All values are
+    // milliseconds and act as hard caps, so a slow file can never block the site.
+    'preloader_enabled' => true,
+    'preloader' => [
+        'max_wait_ms'      => 6000,  // absolute ceiling for the whole loading screen
+        'video_wait_ms'    => 4000,  // how long to wait for the hero video's first frame
+        'min_show_ms'      => 500,   // avoids a flicker on very fast connections
+        'skip_after_first' => false, // true = show it once per browser session only
     ],
 
     'admin_email' => 'atozscrapbuyersa@gmail.com',

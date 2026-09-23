@@ -1,5 +1,5 @@
 # Apache configuration — clean URLs + security basics
-Options -Indexes
+Options -Indexes -MultiViews
 DirectoryIndex index.php
 
 <IfModule mod_rewrite.c>
@@ -14,6 +14,11 @@ DirectoryIndex index.php
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.+)/$ /$1 [L,R=301]
 
+    # robots.txt and sitemap.xml are always rendered by the front controller so
+    # the absolute URLs are injected (never served as the raw template files).
+    RewriteRule ^robots\.txt$ index.php [L]
+    RewriteRule ^sitemap\.xml$ index.php [L]
+
     # Route everything else through the front controller
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
@@ -23,11 +28,14 @@ DirectoryIndex index.php
 <FilesMatch "^(\.env|\.env\.example)$">
     Require all denied
 </FilesMatch>
-<FilesMatch "\.(sql|log|md)$">
+<FilesMatch "\.(sql|log|md|bat|sh)$">
     Require all denied
 </FilesMatch>
 
 # Deny direct access to application internals (the front controller serves everything)
+<FilesMatch "^(router|sitemap)\.php$">
+    Require all denied
+</FilesMatch>
 RedirectMatch 403 ^/(includes|config|scrap|pages|locations|actions|database|admin)/.*\.php$
 
 # Security headers
@@ -36,17 +44,34 @@ RedirectMatch 403 ^/(includes|config|scrap|pages|locations|actions|database|admi
     Header set X-Frame-Options "SAMEORIGIN"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
     Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+    # Customer-uploaded photos stay out of the search index
+    SetEnvIf Request_URI "^/uploads/" NOINDEX_UPLOADS
+    Header set X-Robots-Tag "noindex, nofollow" env=NOINDEX_UPLOADS
+
+    # Static assets are immutable — cache them hard
+    <FilesMatch "\.(css|js|jpe?g|png|webp|avif|gif|svg|ico|mp4|woff2?)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
 </IfModule>
 
 # Compression
 <IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml application/javascript application/json image/svg+xml
 </IfModule>
 
 # Browser caching for static assets
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
     ExpiresByType text/css "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
 </IfModule>

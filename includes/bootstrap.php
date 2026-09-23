@@ -120,6 +120,26 @@ if (!function_exists('asset')) {
         return url('assets/' . ltrim($path, '/'));
     }
 }
+if (!function_exists('social_image')) {
+    /**
+     * Return a link-preview-friendly image URL (absolute).
+     * SVG and AVIF are not rendered by most previewers (WhatsApp, Facebook,
+     * X, LinkedIn), so anything that is not a raster photo falls back to
+     * the default Open Graph image from config/site.php.
+     */
+    function social_image(?string $relativePath = null): string
+    {
+        $default   = (string) site('seo.default_og_image', 'images/about-us.png');
+        $candidate = ltrim((string) $relativePath, '/');
+        if ($candidate !== '') {
+            $ext = strtolower((string) pathinfo($candidate, PATHINFO_EXTENSION));
+            if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp', 'gif'], true)) {
+                return asset($candidate);
+            }
+        }
+        return asset($default);
+    }
+}
 if (!function_exists('redirect')) {
     function redirect(string $path): void
     {

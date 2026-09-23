@@ -1,9 +1,20 @@
+# Scraps Buyer in Saudi Arabia - crawler rules
+# The Sitemap URL below is generated from the configured site URL (see index.php).
+
 User-agent: *
 Allow: /
+
+# Application internals
 Disallow: /admin/
 Disallow: /actions/
 Disallow: /includes/
 Disallow: /config/
-Disallow: /uploads/files/
+Disallow: /database/
+Disallow: /router.php
+Disallow: /sitemap.php
 
-Sitemap: /sitemap.xml
+# Customer submissions and private uploads
+Disallow: /uploads/
+Disallow: /thank-you
+
+Sitemap: {APP_URL}/sitemap.xml

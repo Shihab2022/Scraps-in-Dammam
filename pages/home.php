@@ -2,9 +2,10 @@
 /* ============================================================
  * Homepage
  * ============================================================ */
-$pageTitle       = site('site_name') . ' — ' . site('tagline');
+$pageTitle       = site('site_name') . ' | Scrap Metal Buyer in Mecca, Jeddah & Taif';
 $pageDescription = 'Professional scrap metal buyer in Mecca, Jeddah & Taif. Free pickup, certified weighing, fair prices and instant payment for metal, copper, aluminum, cables, AC units, cars and industrial scrap.';
 $businessSchema  = true;
+$preloadImages   = ['images/hero/hero.svg'];  // hero poster — the largest contentful paint element
 
 include __DIR__ . '/../includes/header.php';
 ?>

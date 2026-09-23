@@ -184,4 +184,105 @@
             }
         });
     });
+
+    /* ---------- Loading screen (preloader) ----------
+     * The overlay is already on screen (the server puts `is-loading` on <html>),
+     * so this only measures progress and lifts it once the critical assets —
+     * images above the fold plus the first frame of the hero video — are ready.
+     * Every wait has a hard cap so a slow file can never block the site.
+     */
+    var loader = document.getElementById('siteLoader');
+    if (loader) {
+        (function () {
+            var root = document.documentElement;
+            var bar = document.getElementById('siteLoaderBar');
+            var maxWait = parseInt(loader.getAttribute('data-max-wait'), 10) || 6000;
+            var videoWait = parseInt(loader.getAttribute('data-video-wait'), 10) || 4000;
+            var minShow = parseInt(loader.getAttribute('data-min-show'), 10) || 500;
+            var startedAt = Date.now();
+            var revealed = false;
+            var settled = 0;
+            var watched = [];
+
+            /* Lazy (below-the-fold) images and the loader artwork itself are never
+             * tracked — the first would not load while the overlay is up. */
+            Array.prototype.forEach.call(document.querySelectorAll('img'), function (img) {
+                if (img.closest('#siteLoader')) return;
+                if (img.getAttribute('loading') === 'lazy') return;
+                watched.push(img);
+            });
+
+            var video = document.querySelector('video');
+            var total = watched.length + 1; // +1 for the document itself
+
+            function paintProgress() {
+                if (!bar) return;
+                var pct = Math.round((settled / total) * 100);
+                bar.style.width = Math.min(100, pct) + '%';
+            }
+
+            function reveal() {
+                if (revealed) return;
+                revealed = true;
+                var hold = Math.max(0, minShow - (Date.now() - startedAt));
+                window.setTimeout(function () {
+                    loader.classList.add('is-hidden');
+                    root.classList.remove('is-loading');
+                    window.setTimeout(function () {
+                        loader.hidden = true;
+                        if (loader.parentNode) loader.parentNode.removeChild(loader);
+                    }, 500);
+                    try { sessionStorage.setItem('scrap_preloader_done', '1'); } catch (e) {}
+                }, hold);
+            }
+
+            function settle() {
+                settled++;
+                paintProgress();
+                if (settled >= total) reveal();
+            }
+
+            watched.forEach(function (img) {
+                if (img.complete) { settle(); return; }  // cached or already failed
+                img.addEventListener('load', settle, { once: true });
+                img.addEventListener('error', settle, { once: true });
+            });
+
+            /* Hero video — first decoded frame, or videoWait ms, whichever is first. */
+            if (video) {
+                var videoSettled = false;
+                var settleVideo = function () {
+                    if (videoSettled) return;
+                    videoSettled = true;
+                    settle();
+                };
+                if (video.readyState >= 2) {
+                    settleVideo();
+                } else {
+                    ['loadeddata', 'canplay', 'error'].forEach(function (eventName) {
+                        video.addEventListener(eventName, settleVideo, { once: true });
+                    });
+                    window.setTimeout(settleVideo, videoWait);
+                }
+            } else {
+                settle();
+            }
+
+            /* The document itself — stylesheets, fonts and the rest of the markup. */
+            if (document.readyState === 'complete') settle();
+            else window.addEventListener('load', settle, { once: true });
+
+            /* Hard caps: reveal on maxWait, and a last-resort safety net that
+             * releases the scroll lock even if a resource never reports back. */
+            window.setTimeout(reveal, maxWait);
+            window.setTimeout(function () {
+                root.classList.remove('is-loading');
+                loader.hidden = true;
+            }, maxWait + 4000);
+
+            paintProgress();
+        })();
+    } else if (document.documentElement.classList.contains('is-loading')) {
+        document.documentElement.classList.remove('is-loading');
+    }
 })();
