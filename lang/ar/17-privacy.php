@@ -32,4 +32,7 @@ return [
         'You may request access to, correction of, or deletion of your personal data.' => 'يمكنك طلب الوصول إلى بياناتك الشخصية، تصحيحها أو حذفها.',
     'To exercise these rights, contact us at' => 'لممارسة هذه الحقوق، اتصل بنا على',
     'We respond to verified requests within 30 days.' => 'نرد على الطلبات الموثقة خلال 30 يومًا.',
+
+    // ---- "(operating as …)" sentence fragment ----
+    '(operating as “:site”, :address)' => '(تعمل باسم “:site”، :address)',
 ];

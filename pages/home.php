@@ -28,7 +28,7 @@ include __DIR__ . '/../includes/header.php';
         <figure class="hero__media">
             <video class="hero__media-video" autoplay muted loop playsinline preload="metadata"
                    poster="<?= e(asset('images/hero/hero.svg')) ?>" width="640" height="480"
-                   aria-label="Scrap yard with metal, copper and aluminum ready for pickup">
+                   aria-label="<?= e(tr('Scrap yard with metal, copper and aluminum ready for pickup')) ?>">
                 <source src="<?= e(asset('images/hero/hero.mp4')) ?>" type="video/mp4">
             </video>
             <figcaption class="hero__media-card">
@@ -71,7 +71,7 @@ include __DIR__ . '/../includes/header.php';
 <!-- ================= ABOUT ================= -->
 <section class="section section--surface" id="about">
     <div class="container split">
-        <img class="reveal" src="<?= e(asset('images/about-us.png')) ?>" alt="Our scrap buying team weighing and loading scrap metal in Mecca, Jeddah and Taif" loading="lazy" width="560" height="420">
+        <img class="reveal" src="<?= e(asset('images/about-us.jpg')) ?>" alt="<?= e(tr('Our scrap buying team weighing and loading scrap metal in Mecca, Jeddah and Taif')) ?>" loading="lazy" width="560" height="420">
         <div class="split__body">
             <p class="section-eyebrow"><?= e(tr('About Us')) ?></p>
             <h2><?= e(tr('Trusted Scrap Buyer in Mecca, Jeddah & Taif')) ?></h2>

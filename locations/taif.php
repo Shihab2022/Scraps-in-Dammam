@@ -32,7 +32,7 @@ include __DIR__ . '/../includes/header.php';
                 <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <?= e(tr('Instant cash or bank transfer after weighing')) ?></li>
             </ul>
         </div>
-        <img class="reveal" src="<?= e(asset('images/about-us.png')) ?>" alt="<?= e(tr('Scrap buying team at work in Taif')) ?>" loading="lazy" width="560" height="420">
+        <img class="reveal" src="<?= e(asset('images/about-us.jpg')) ?>" alt="<?= e(tr('Scrap buying team at work in Taif')) ?>" loading="lazy" width="560" height="420">
     </div>
 </section>
 

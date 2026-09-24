@@ -285,7 +285,7 @@ if (!function_exists('render_breadcrumbs')) {
         if (count($trail) < 2) return;
         $last = count($trail) - 1;
         ?>
-        <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <nav class="breadcrumbs" aria-label="<?= e(tr('Breadcrumb')) ?>">
             <div class="container">
                 <ol>
                     <?php foreach (array_values($trail) as $i => $crumb): ?>

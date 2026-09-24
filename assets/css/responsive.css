@@ -42,6 +42,8 @@
     .nav-dropdown li a i{width:22px;flex:none}
     .nav-dropdown li a span{min-width:0;flex:1}
     .nav-menu .nav-cta-wrap{display:flex;flex-direction:column;margin:20px 0 0}
+    /* Language switcher becomes a full-width row inside the drawer */
+    .nav-menu .lang-switch{width:100%;justify-content:center;text-align:center;padding:13px 16px;margin-top:12px}
 
     .scrap-grid,.loc-grid,.why-grid,.testimonial-grid,.steps-grid,.contact-grid{grid-template-columns:repeat(2,1fr)}
     .hero__inner{grid-template-columns:1fr;gap:32px}

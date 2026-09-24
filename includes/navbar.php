@@ -28,7 +28,7 @@ $waMsg = tr('Hello, I would like to sell my scrap. Can you provide a quote?');
     </div>
 
     <!-- Main navigation -->
-    <nav class="navbar" aria-label="Main navigation">
+    <nav class="navbar" aria-label="<?= e(tr('Main navigation')) ?>">
         <div class="container navbar__inner">
             <a class="brand" href="<?= e(url('/')) ?>" aria-label="<?= e($siteName) ?> — <?= e(tr('Home')) ?>">
                 <img class="brand__mark" src="<?= e(asset('images/logo.svg')) ?>" alt="" width="42" height="42">
@@ -36,7 +36,8 @@ $waMsg = tr('Hello, I would like to sell my scrap. Can you provide a quote?');
             </a>
 
             <button class="nav-toggle" id="navToggle" type="button"
-                    aria-expanded="false" aria-controls="navMenu" aria-label="<?= e(tr('Open menu')) ?>">
+                    aria-expanded="false" aria-controls="navMenu" aria-label="<?= e(tr('Open menu')) ?>"
+                    data-label-open="<?= e(tr('Open menu')) ?>" data-label-close="<?= e(tr('Close menu')) ?>">
                 <span class="nav-toggle__bar" aria-hidden="true"></span>
                 <span class="nav-toggle__bar" aria-hidden="true"></span>
                 <span class="nav-toggle__bar" aria-hidden="true"></span>

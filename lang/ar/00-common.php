@@ -88,4 +88,22 @@ return [
     'Map of :city'               => 'خريطة :city',
     'Free scrap pickup in :city' => 'توصيل مجاني للسكراب في :city',
     'Free scrap pickup in :area. Fair prices, official weighing and instant payment.' => 'توصيل مجاني للسكراب في :area. أسعار عادلة، وزن معتمد ودفع فوري.',
+
+    // ---- Accessibility labels & language switcher ----
+    'Main navigation'            => 'التنقل الرئيسي',
+    'Breadcrumb'                 => 'مسار التنقل',
+    'Close menu'                 => 'إغلاق القائمة',
+
+    // ---- Testimonials (placeholder reviews) ----
+    'Customer reviews shown are collected from verified sellers.' => 'المراجعات المعروضة تم جمعها من بائعين موثوقين.',
+    'Demo reviews — replace these with verified customer reviews at any time from the admin panel.' => 'مراجعات توضيحية — استبدلها بمراجعات موثوقة من العملاء في أي وقت من لوحة التحكم.',
+    'Ahmed Al-M.'            => 'أحمد الم.',
+    'Homeowner — Mecca'      => 'صاحب منزل — مكة',
+    'Sara K.'                => 'سارة ك.',
+    'Restaurant owner — Jeddah' => 'صاحبة مطعم — جدة',
+    'Muhammad R.'            => 'محمد ر.',
+    'Facility manager — Taif' => 'مدير منشأة — الطائف',
+    'Excellent service and very fast pickup. They weighed the copper on the spot and paid immediately.' => 'خدمة ممتازة وتوصيل سريع جدًا. وزنوا النحاس في الموقع ودفعوا فورًا.',
+    'Professional team and transparent pricing. They removed our old kitchen appliances and paid a fair price.' => 'فريق محترف وتسعير شفاف. أزالوا أجهزة مطبخنا القديمة ودفعوا سعرًا عادلًا.',
+    'Very convenient scrap collection service. Same-day pickup for our factory cable scrap. Highly recommended.' => 'خدمة جمع سكراب مريحة جدًا، وتوصيل في نفس اليوم لكابلات مصنعنا. أنصح به بشدة.',
 ];

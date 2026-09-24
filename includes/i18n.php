@@ -223,17 +223,22 @@ if (!function_exists('ts')) {
 }
 
 if (!function_exists('lang_switch_url')) {
-    /** URL that switches the current page to $code: same path, ?lang=$code. */
+    /**
+     * URL that switches the current page to $code: same path, ?lang=$code.
+     *
+     * The parameter is added for BOTH languages — including the default one —
+     * so that switching back to English reliably overrides the preference kept
+     * in the session/cookie. lang_boot() then 302s to the clean canonical URL,
+     * so the address bar never keeps the query string.
+     */
     function lang_switch_url(string $code): string
     {
         $code   = strtolower($code);
         $path   = (string) parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
         if ($path === '') $path = '/';
         $params = $_GET;
-        if ($code === lang_supported()[0]) unset($params['lang']);
-        else $params['lang'] = $code;
-        $query = $params !== [] ? '?' . http_build_query($params) : '';
-        return $path . $query;
+        $params['lang'] = $code;
+        return $path . '?' . http_build_query($params);
     }
 }
 
@@ -250,8 +255,10 @@ if (!function_exists('lang_switcher')) {
         $label   = $labels[$target] ?? strtoupper($target);
         ?>
         <a class="lang-switch" href="<?= e(lang_switch_url($target)) ?>"
-           hreflang="<?= e($target) ?>" lang="<?= e($target) ?>" data-lang-switch="<?= e($target) ?>"
-           title="<?= e(tr('Switch language')) ?>" aria-label="<?= e(tr('Switch language')) ?>: <?= e($label) ?>">
+           hreflang="<?= e($target) ?>" lang="<?= e($target) ?>" rel="alternate"
+           data-lang-switch="<?= e($target) ?>" data-lang-current="<?= e($current) ?>"
+           title="<?= e(tr('Switch language')) ?>"
+           aria-label="<?= e(tr('Switch language')) ?>: <?= e($label) ?>">
             <i class="fa-solid fa-globe" aria-hidden="true"></i>
             <span class="lang-switch__label"><?= e($label) ?></span>
         </a>

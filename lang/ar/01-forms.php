@@ -65,7 +65,7 @@ return [
     'HMS 1' => 'HMS 1',
     'HMS 2' => 'HMS 2',
     'Light Metal Scrap (LMS)' => 'نفائس معدنية خفيفة (LMS)',
-    'Cast Iron' => 'حديد من خلط',
+    'Cast Iron' => 'حديد مصبوب',
     'Machinery Scrap' => 'سكراب آلات',
     'Production Waste' => 'نفايات إنتاج',
     'Industrial Cables' => 'كابلات صناعية',
@@ -81,4 +81,38 @@ return [
         'Wednesday' => 'الأربعاء',
     'Thursday'  => 'الخميس',
     'Friday'    => 'الجمعة',
+
+    // ---- Form validation & flash messages (shown by actions/*.php) ----
+    'Invalid or expired form token. Please try again.' => 'رمز النموذج غير صالح أو منتهي الصلاحية. يرجى المحاولة مرة أخرى.',
+    'Too many requests. Try again in :minutes minutes.' => 'طلبات كثيرة جدًا. حاول مرة أخرى بعد :minutes دقيقة.',
+    'Please fix the following and resubmit:' => 'يرجى تصحيح ما يلي وإعادة الإرسال:',
+    'Please enter your full name.'    => 'يرجى إدخال اسمك الكامل.',
+    'Please enter a valid phone number.' => 'يرجى إدخال رقم هاتف صحيح.',
+    'Please enter a valid WhatsApp number.' => 'يرجى إدخال رقم واتساب صحيح.',
+    'Please select the scrap category.' => 'يرجى اختيار فئة السكراب.',
+    'Please describe the scrap (minimum 10 characters).' => 'يرجى وصف السكراب (10 أحرف على الأقل).',
+    'Please select your city.'        => 'يرجى اختيار مدينتك.',
+    'Please enter a valid pickup address.' => 'يرجى إدخال عنوان توصيل صحيح.',
+    'Please enter a valid pickup date.' => 'يرجى إدخال تاريخ توصيل صحيح.',
+    'Please enter a valid pickup time.' => 'يرجى إدخال وقت توصيل صحيح.',
+    'Estimated weight is too long.'   => 'الوزن التقديري طويل جدًا.',
+    'Message is too long.'            => 'الرسالة طويلة جدًا.',
+    'Please enter the company name.'  => 'يرجى إدخال اسم الشركة.',
+    'Please enter the contact person.' => 'يرجى إدخال اسم الشخص المسؤول.',
+    'Please enter a valid email address.' => 'يرجى إدخال بريد إلكتروني صحيح.',
+    'Please select the scrap type.'   => 'يرجى اختيار نوع السكراب.',
+    'Please give an estimated quantity.' => 'يرجى إدخال الكمية التقديرية.',
+    'Please select the pickup location.' => 'يرجى اختيار موقع التوصيل.',
+    'Please enter a valid visit date.' => 'يرجى إدخال تاريخ زيارة صحيح.',
+    'Please describe the scrap and site details.' => 'يرجى وصف السكراب وتفاصيل الموقع.',
+
+    // ---- Photo upload errors ----
+    'You can upload a maximum of :count photos.' => 'يمكنك رفع :count صور كحد أقصى.',
+    'Photo ":name" could not be uploaded (error code :code).' => 'تعذّر رفع الصورة ":name" (رمز الخطأ :code).',
+    'Photo ":name" exceeds :mb MB.'   => 'حجم الصورة ":name" يتجاوز :mb ميجابايت.',
+    'Photo ":name" must be a JPG, PNG or WEBP image.' => 'يجب أن تكون الصورة ":name" بصيغة JPG أو PNG أو WEBP.',
+    'Photo ":name" could not be stored.' => 'تعذّر تخزين الصورة ":name".',
+
+    // ---- Honeypot field label (spam trap; hidden from users) ----
+    'Website' => 'الموقع الإلكتروني',
 ];

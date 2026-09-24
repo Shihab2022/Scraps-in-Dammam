@@ -35,7 +35,7 @@ return [
     'How quickly can you pick up my scrap?' => 'كم سرعة توصيل سكرابي؟',
     'In most cases we can arrange same-day or next-day pickup in Saudi Arabia and nearby cities. Call or WhatsApp us in the morning and we will confirm the earliest available slot.' => 'في معظم الحالات يمكننا ترتيب توصيل في نفس اليوم أو اليوم التالي في المملكة العربية السعودية والمدن القريبة. اتصل بنا أو راسلنا على واتساب في الصباح وسنؤكد أقرب شريحة متاحة.',
     'Do I need to sort my scrap before pickup?' => 'هل عليّ ترتيب السكراب قبل التوصيل؟',
-    'Sorting is helpful but not required. We grade material on site by type — ferrous, non-ferrous, copper, aluminum and so on — and price each type fairly.' => 'الترتيب مفيد لكن غير مطلوب. نصنف المادة في الموقع حسب النوع — المعدن الذي يحمل الحديد (ferrous)، غير المعدني، النحاس، الألومنيوم وهكذا — ونسعر كل نوع بعادل.',
+    'Sorting is helpful but not required. We grade material on site by type — ferrous, non-ferrous, copper, aluminum and so on — and price each type fairly.' => 'الترتيب مفيد لكن غير مطلوب. نصنف المادة في الموقع حسب النوع — الحديدي وغير الحديدي، النحاس، الألومنيوم وهكذا — ونسعر كل نوع بشكل عادل.',
     'How will I know the price before pickup?' => 'كيف سأعرف السعر قبل التوصيل؟',
     'We give you a price per kilogram after we see photos or a description of your material. The rate is confirmed in writing on WhatsApp before we dispatch a vehicle.' => 'نعطيك سعرًا للكيلو بعد أن نرى صورًا أو وصفًا لموادك. يتم تأكيد السعر كتابيًا على واتساب قبل إرسال المركبة.',
     'What payment methods do you support?' => 'ما طرق الدفع التي تدعمونها؟',

@@ -132,7 +132,7 @@ if (!function_exists('sanitize_text')) {
 if (!function_exists('honeypot_field')) {
     function honeypot_field(): string
     {
-        return '<div class="hp-field" aria-hidden="true"><label for="website">Website</label>'
+        return '<div class="hp-field" aria-hidden="true"><label for="website">' . e(tr('Website')) . '</label>'
              . '<input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>';
     }
 }

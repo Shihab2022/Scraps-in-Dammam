@@ -133,7 +133,7 @@ if (!function_exists('social_image')) {
      */
     function social_image(?string $relativePath = null): string
     {
-        $default   = (string) site('seo.default_og_image', 'images/about-us.png');
+        $default   = (string) site('seo.default_og_image', 'images/about-us.jpg');
         $candidate = ltrim((string) $relativePath, '/');
         if ($candidate !== '') {
             $ext = strtolower((string) pathinfo($candidate, PATHINFO_EXTENSION));
@@ -167,7 +167,10 @@ if (!function_exists('whatsapp_link')) {
     function whatsapp_link(string $message = 'Hello, I would like to sell my scrap. Can you provide a quote?'): string
     {
         $number = preg_replace('/\D/', '', site('whatsapp'));
-        return 'https://wa.me/' . $number . '?text=' . rawurlencode($message);
+        // The prefilled message is localised too. tr() is idempotent (the
+        // dictionary keys are always English), so call sites that already wrap
+        // their message in tr() keep working exactly as before.
+        return 'https://wa.me/' . $number . '?text=' . rawurlencode(tr($message));
     }
 }
 if (!function_exists('phone_href')) {

@@ -1,6 +1,12 @@
 /* ============================================================
  * Scraps Buyer in Saudi Arabia — front-end behaviour (vanilla JS)
  * ============================================================ */
+    // Mark the document as JS-capable. style.css keeps .reveal content visible
+    // while the "no-js" class is present, so a script failure can never leave
+    // the page permanently blank.
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+
 (function () {
     'use strict';
     var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -10,13 +16,17 @@
     var menu = document.getElementById('navMenu');
     var overlay = document.getElementById('navOverlay');
 
+    // Menu button labels come from PHP so they follow the active language.
+    var labelOpen = (toggle && toggle.getAttribute('data-label-open')) || 'Open menu';
+    var labelClose = (toggle && toggle.getAttribute('data-label-close')) || 'Close menu';
+
     function openMenu() {
         if (!menu || !toggle) return;
         menu.classList.add('open');
         if (overlay) overlay.hidden = false;
         document.body.classList.add('nav-open');
         toggle.setAttribute('aria-expanded', 'true');
-        toggle.setAttribute('aria-label', 'Close menu');
+        toggle.setAttribute('aria-label', labelClose);
     }
     function closeMenu() {
         if (!menu || !toggle) return;
@@ -24,7 +34,7 @@
         if (overlay) overlay.hidden = true;
         document.body.classList.remove('nav-open');
         toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'Open menu');
+        toggle.setAttribute('aria-label', labelOpen);
     }
     if (toggle) {
         toggle.addEventListener('click', function () {
@@ -186,3 +196,5 @@
     });
 
 
+
+})();

@@ -52,4 +52,9 @@ return [
 
     'Why customers trust us' => 'لماذا يثق بنا العملاء',
     'Company statistics' => 'إحصائيات الشركة',
+
+    // ---- Hero media + prefilled WhatsApp messages ----
+    'Scrap yard with metal, copper and aluminum ready for pickup' => 'ساحة سكراب بها معادن ونحاس وألومنيوم جاهزة للتحميل',
+    'Hello, I have scrap to sell. Can you provide a quote?' => 'مرحبًا، لدي سكراب للبيع. هل يمكنكم تقديم عرض سعر؟',
+    'Our scrap buying team weighing and loading scrap metal in Mecca, Jeddah and Taif' => 'فريق شراء السكراب لدينا يزن ويحمّل النفائس المعدنية في مكة، جدة والطائف',
 ];

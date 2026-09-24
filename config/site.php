@@ -98,7 +98,7 @@ return [
     'seo' => [
         // Default Open Graph / Twitter image. Must be a raster format
         // (jpg, png, webp or gif) — link previewers cannot render SVG or AVIF.
-        'default_og_image' => 'images/about-us.png',
+        'default_og_image' => 'images/about-us.jpg',
         'og_image_width'   => 1672,
         'og_image_height'  => 941,
         'twitter_site'     => '',            // e.g. '@yourbrand' — leave empty to omit

@@ -19,7 +19,22 @@ if (!function_exists('db')) {
     function db(): ?PDO
     {
         static $pdo = null;
+        static $failedUntil = 0.0;
         if ($pdo !== null) return $pdo;
+
+        // Circuit breaker: after a failed connection, skip connect attempts for
+        // a short window. Without this, every page request blocks on the TCP
+        // connect timeout when MySQL is stopped (adds seconds to each page load).
+        // The state is kept in a small file so it is shared across requests
+        // (a static variable alone resets on every new request).
+        $now = microtime(true);
+        if ($now < $failedUntil) return null;
+
+        $stateFile = UPLOAD_PATH . '/cache/db_circuit';
+        if (is_file($stateFile) && ($now - (float) @filemtime($stateFile)) < 30.0) {
+            return null;
+        }
+
         $c = db_config();
         $dsn = sprintf('mysql:host=%s;port=%s;dbname=%s;charset=%s', $c['host'], $c['port'], $c['name'], $c['charset']);
         try {
@@ -27,8 +42,18 @@ if (!function_exists('db')) {
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                 PDO::ATTR_EMULATE_PREPARES   => false,
+                PDO::ATTR_TIMEOUT            => 1,
+                PDO::ATTR_PERSISTENT         => false,
             ]);
+            $failedUntil = 0.0;
+            @unlink($stateFile);
         } catch (PDOException $ex) {
+            // Fail fast (bounded by the connect timeout) and suppress further
+            // attempts for 30s across all requests.
+            $failedUntil = $now + 30.0;
+            $cacheDir = dirname($stateFile);
+            if (!is_dir($cacheDir)) @mkdir($cacheDir, 0755, true);
+            @touch($stateFile);
             error_log('[db] ' . $ex->getMessage());
             return null;
         }
@@ -83,20 +108,20 @@ if (!function_exists('handle_uploads')) {
         foreach ($input['name'] as $i => $name) {
             $count++;
             if ($count > $maxFiles) {
-                $result['errors'][] = 'You can upload a maximum of ' . $maxFiles . ' photos.';
+                $result['errors'][] = tr('You can upload a maximum of :count photos.', [':count' => (string) $maxFiles]);
                 $result['ok'] = false;
                 break;
             }
             $error = (int) ($input['error'][$i] ?? UPLOAD_ERR_NO_FILE);
             if ($error === UPLOAD_ERR_NO_FILE) continue;
             if ($error !== UPLOAD_ERR_OK) {
-                $result['errors'][] = 'Photo "' . e($name) . '" could not be uploaded (error code ' . $error . ').';
+                $result['errors'][] = tr('Photo ":name" could not be uploaded (error code :code).', [':name' => (string) $name, ':code' => (string) $error]);
                 $result['ok'] = false;
                 continue;
             }
             $size = (int) ($input['size'][$i] ?? 0);
             if ($size > $maxSize) {
-                $result['errors'][] = 'Photo "' . e($name) . '" exceeds ' . round($maxSize / 1048576) . ' MB.';
+                $result['errors'][] = tr('Photo ":name" exceeds :mb MB.', [':name' => (string) $name, ':mb' => (string) round($maxSize / 1048576)]);
                 $result['ok'] = false;
                 continue;
             }
@@ -111,7 +136,7 @@ if (!function_exists('handle_uploads')) {
             }
             $ext = array_search($mime, $allowed, true);
             if ($ext === false) {
-                $result['errors'][] = 'Photo "' . e($name) . '" must be a JPG, PNG or WEBP image.';
+                $result['errors'][] = tr('Photo ":name" must be a JPG, PNG or WEBP image.', [':name' => (string) $name]);
                 $result['ok'] = false;
                 continue;
             }
@@ -119,7 +144,7 @@ if (!function_exists('handle_uploads')) {
             $dir = uploads_subdir('files/' . $relDir);
             $dest = $dir . '/' . bin2hex(random_bytes(16)) . '.' . $ext;
             if (!@move_uploaded_file($tmp, $dest)) {
-                $result['errors'][] = 'Photo "' . e($name) . '" could not be stored.';
+                $result['errors'][] = tr('Photo ":name" could not be stored.', [':name' => (string) $name]);
                 $result['ok'] = false;
                 continue;
             }

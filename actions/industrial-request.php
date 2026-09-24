@@ -11,13 +11,13 @@ require_once __DIR__ . '/../includes/mailer.php';
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !csrf_verify(post('csrf_token'))) {
-    flash_set('error', 'Invalid or expired form token. Please try again.');
+    flash_set('error', tr('Invalid or expired form token. Please try again.'));
     redirect('industrial-scrap-buyer');
 }
 
 $rl = rate_limit_allowed('industrial', 4, 900);
 if (!$rl['allowed']) {
-    flash_set('error', 'Too many requests. Try again in ' . ceil($rl['retry_after'] / 60) . ' minutes.');
+    flash_set('error', tr('Too many requests. Try again in :minutes minutes.', [':minutes' => (string) ceil($rl['retry_after'] / 60)]));
     redirect('industrial-scrap-buyer');
 }
 
@@ -33,21 +33,21 @@ $pickupLoc     = post('pickup_location');
 $preferredDate = post('preferred_date');
 $message       = post('message');
 
-if (mb_strlen($companyName) < 2 || mb_strlen($companyName) > 150)   $errors[] = 'Please enter the company name.';
-if (mb_strlen($contactPerson) < 2 || mb_strlen($contactPerson) > 100) $errors[] = 'Please enter the contact person.';
-if (!valid_phone($phone))                                            $errors[] = 'Please enter a valid phone number.';
-if ($email !== '' && !valid_email($email))                           $errors[] = 'Please enter a valid email address.';
-if ($scrapType === '')                                               $errors[] = 'Please select the scrap type.';
-if (mb_strlen($quantity) < 1 || mb_strlen($quantity) > 80)           $errors[] = 'Please give an estimated quantity.';
-if ($pickupLoc === '')                                               $errors[] = 'Please select the pickup location.';
-if (!valid_date($preferredDate))                                     $errors[] = 'Please enter a valid visit date.';
-if (mb_strlen($message) < 10 || mb_strlen($message) > 2000)          $errors[] = 'Please describe the scrap and site details.';
+if (mb_strlen($companyName) < 2 || mb_strlen($companyName) > 150)   $errors[] = tr('Please enter the company name.');
+if (mb_strlen($contactPerson) < 2 || mb_strlen($contactPerson) > 100) $errors[] = tr('Please enter the contact person.');
+if (!valid_phone($phone))                                            $errors[] = tr('Please enter a valid phone number.');
+if ($email !== '' && !valid_email($email))                           $errors[] = tr('Please enter a valid email address.');
+if ($scrapType === '')                                               $errors[] = tr('Please select the scrap type.');
+if (mb_strlen($quantity) < 1 || mb_strlen($quantity) > 80)           $errors[] = tr('Please give an estimated quantity.');
+if ($pickupLoc === '')                                               $errors[] = tr('Please select the pickup location.');
+if (!valid_date($preferredDate))                                     $errors[] = tr('Please enter a valid visit date.');
+if (mb_strlen($message) < 10 || mb_strlen($message) > 2000)          $errors[] = tr('Please describe the scrap and site details.');
 
 $uploadResult = handle_uploads('photos', 4, 5242880);
 if (!$uploadResult['ok']) foreach ($uploadResult['errors'] as $err) $errors[] = $err;
 
 if ($errors) {
-    flash_set('error', 'Please fix the following and resubmit: ' . implode(' · ', array_slice($errors, 0, 3)));
+    flash_set('error', tr('Please fix the following and resubmit:') . ' ' . implode(' · ', array_slice($errors, 0, 3)));
     redirect('industrial-scrap-buyer');
 }
 

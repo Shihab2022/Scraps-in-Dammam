@@ -16,6 +16,8 @@ composer.lock
 !/uploads/files/.gitkeep
 /uploads/tmp/*
 !/uploads/tmp/.gitkeep
+# Runtime cache (e.g. the database circuit-breaker state file)
+/uploads/cache/*
 
 # OS / editor
 .DS_Store

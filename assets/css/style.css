@@ -98,6 +98,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .nav-dropdown li a i{width:20px;text-align:center;color:var(--green)}
 .nav-cta-wrap{display:flex;gap:8px;margin-left:12px}
 .nav-cta-wrap .btn{padding:11px 18px;font-size:.88rem}
+
+/* Language switcher (English ⇄ العربية) — navbar + mobile drawer */
+.nav-menu .lang-switch{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border:1px solid var(--border);
+  border-radius:999px;background:var(--bg);color:var(--charcoal);font-family:var(--font-head);font-weight:700;font-size:.9rem;
+  white-space:nowrap}
+.nav-menu .lang-switch:hover{border-color:var(--accent);background:var(--accent-soft);color:var(--deep-green)}
+.nav-menu .lang-switch i{color:var(--green);font-size:.95em;line-height:1}
+.nav-menu .lang-switch__label{line-height:1}
 .nav-overlay{position:fixed;inset:0;background:rgba(22,24,29,.55);z-index:950;opacity:0;transition:opacity var(--transition)}
 .nav-overlay.show{opacity:1}
 
@@ -326,9 +334,13 @@ table.data{width:100%;border-collapse:collapse;min-width:600px}
 .info-panel{background:#fff;border-left:4px solid var(--green);border-radius:10px;padding:20px 22px;box-shadow:var(--shadow);margin-block:18px}
 .info-panel h3{font-size:1.05rem;margin-bottom:6px}
 .info-panel p{color:var(--muted);font-size:.95rem}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:none}
-@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+/* Reveal-on-scroll. The hidden start state is applied ONLY once app.js has
+   confirmed it is running (.js on <html>). If JavaScript is disabled, blocked
+   or errors out, the .no-js class stays and every element renders normally
+   instead of being stuck invisible. */
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.js .reveal{opacity:1;transform:none}}
 body.nav-open{overflow:hidden}
 
 /* ============================================================

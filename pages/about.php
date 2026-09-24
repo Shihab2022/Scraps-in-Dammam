@@ -29,7 +29,7 @@ include __DIR__ . '/../includes/header.php';
             <p><?= e(tr('Today we serve residential customers, shops, maintenance workshops, contractors, warehouses and factories in Mecca, Jeddah and Taif. Every kilogram we buy is graded honestly, weighed on certified scales and processed responsibly with licensed recycling partners.')) ?></p>
             <p><?= e(tr('We believe that selling scrap should be simple, transparent and profitable for the seller. That is why we confirm the price before we arrive, pay immediately after weighing, and never ask you to transport heavy material yourself.')) ?></p>
         </div>
-        <img class="reveal" src="<?= e(asset('images/about-us.png')) ?>" alt="<?= e(tr('Our team weighing and sorting scrap at our yard in Saudi Arabia')) ?>" loading="lazy" width="560" height="420">
+        <img class="reveal" src="<?= e(asset('images/about-us.jpg')) ?>" alt="<?= e(tr('Our team weighing and sorting scrap at our yard in Saudi Arabia')) ?>" loading="lazy" width="560" height="420">
     </div>
 </section>
 

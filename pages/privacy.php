@@ -17,7 +17,7 @@ include __DIR__ . '/../includes/header.php';
 <section class="section">
     <div class="container container--narrow legal">
         <h2><?= e(tr('1. Who We Are')) ?></h2>
-        <p><strong><?= e(ts('company')) ?></strong> (operating as “<?= e(ts('site_name')) ?>”, <?= e(ts('address')) ?>) <?= e(tr('is the data controller for the personal information you provide through this website.')) ?> <?= e(tr('Contact us at')) ?> <?= e(ts('email')) ?> <?= e(tr('or')) ?> <?= e(ts('phone')) ?> <?= e(tr('for any privacy question.')) ?></p>
+        <p><strong><?= e(ts('company')) ?></strong> <?= e(tr('(operating as “:site”, :address)', [':site' => ts('site_name'), ':address' => ts('address')])) ?> <?= e(tr('is the data controller for the personal information you provide through this website.')) ?> <?= e(tr('Contact us at')) ?> <?= e(ts('email')) ?> <?= e(tr('or')) ?> <?= e(ts('phone')) ?> <?= e(tr('for any privacy question.')) ?></p>
 
         <h2><?= e(tr('2. Information We Collect')) ?></h2>
         <p><?= e(tr('When you submit a contact, pickup or industrial request form we collect the information you enter: name, phone number, WhatsApp number, email address, scrap type, location, address, dates, message text, and any photos you upload. We also collect basic technical data such as your IP address and requested pages to maintain security and prevent abuse.')) ?></p>

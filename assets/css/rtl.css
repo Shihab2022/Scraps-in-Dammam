@@ -30,6 +30,10 @@ body{font-family:var(--font-body);letter-spacing:0}
 /* Card icon mirrors to the top-left corner */
 .scrap-card__icon{right:auto;left:20px}
 
+/* Text links with a forward arrow: point it towards the reading direction (left) */
+.btn--text .fa-arrow-right{transform:scaleX(-1)}
+.btn--text:hover .fa-arrow-right{transform:scaleX(-1) translateX(4px)}
+
 /* Check-mark list items: bullet on the right, padding on the right */
 .material-card li{padding-left:0;padding-right:18px}
 .material-card li::before{left:auto;right:0}
@@ -55,9 +59,11 @@ input,textarea,select{text-align:right}
     .wa-float{right:auto;left:16px}
 }
 
-/* Mobile slide-in menu enters from the left */
-@media (max-width:980px){
-    .nav-menu{right:auto;left:0;border-radius:10px 0 0 10px}
+/* Mobile slide-in menu enters from the left (mirrors the LTR drawer) */
+@media (max-width:1024px){
+    .nav-menu{right:auto;left:0;border-radius:0 10px 10px 0;
+        box-shadow:14px 0 40px rgba(22,24,29,.22);transform:translateX(-105%)}
+    .nav-menu.open{transform:translateX(0)}
     .nav-menu>li>a,.nav-dropdown-toggle{text-align:right}
     .nav-menu .has-dropdown.open>.nav-dropdown{left:auto;right:0}
 }

@@ -11,13 +11,13 @@ require_once __DIR__ . '/../includes/mailer.php';
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !csrf_verify(post('csrf_token'))) {
-    flash_set('error', 'Invalid or expired form token. Please try again.');
+    flash_set('error', tr('Invalid or expired form token. Please try again.'));
     redirect('contact-us');
 }
 
 $rl = rate_limit_allowed('pickup', 4, 900);
 if (!$rl['allowed']) {
-    flash_set('error', 'Too many requests. Try again in ' . ceil($rl['retry_after'] / 60) . ' minutes.');
+    flash_set('error', tr('Too many requests. Try again in :minutes minutes.', [':minutes' => (string) ceil($rl['retry_after'] / 60)]));
     redirect('contact-us');
 }
 
@@ -35,23 +35,23 @@ $pickupDate   = post('pickup_date');
 $pickupTime   = post('pickup_time');
 $message      = post('message');
 
-if (mb_strlen($name) < 2 || mb_strlen($name) > 100)          $errors[] = 'Please enter your full name.';
-if (!valid_phone($phone))                                    $errors[] = 'Please enter a valid phone number.';
-if ($whatsapp !== '' && !valid_phone($whatsapp))             $errors[] = 'Please enter a valid WhatsApp number.';
-if ($scrapType === '')                                       $errors[] = 'Please select the scrap category.';
-if (mb_strlen($description) < 10 || mb_strlen($description) > 2000) $errors[] = 'Please describe the scrap (minimum 10 characters).';
-if ($location === '')                                        $errors[] = 'Please select your city.';
-if (mb_strlen($address) < 5 || mb_strlen($address) > 200)    $errors[] = 'Please enter a valid pickup address.';
-if (!valid_date($pickupDate))                                $errors[] = 'Please enter a valid pickup date.';
-if (!valid_time($pickupTime))                                $errors[] = 'Please enter a valid pickup time.';
-if ($estWeight !== '' && mb_strlen($estWeight) > 80)         $errors[] = 'Estimated weight is too long.';
-if (mb_strlen($message) > 2000)                              $errors[] = 'Message is too long.';
+if (mb_strlen($name) < 2 || mb_strlen($name) > 100)          $errors[] = tr('Please enter your full name.');
+if (!valid_phone($phone))                                    $errors[] = tr('Please enter a valid phone number.');
+if ($whatsapp !== '' && !valid_phone($whatsapp))             $errors[] = tr('Please enter a valid WhatsApp number.');
+if ($scrapType === '')                                       $errors[] = tr('Please select the scrap category.');
+if (mb_strlen($description) < 10 || mb_strlen($description) > 2000) $errors[] = tr('Please describe the scrap (minimum 10 characters).');
+if ($location === '')                                        $errors[] = tr('Please select your city.');
+if (mb_strlen($address) < 5 || mb_strlen($address) > 200)    $errors[] = tr('Please enter a valid pickup address.');
+if (!valid_date($pickupDate))                                $errors[] = tr('Please enter a valid pickup date.');
+if (!valid_time($pickupTime))                                $errors[] = tr('Please enter a valid pickup time.');
+if ($estWeight !== '' && mb_strlen($estWeight) > 80)         $errors[] = tr('Estimated weight is too long.');
+if (mb_strlen($message) > 2000)                              $errors[] = tr('Message is too long.');
 
 $uploadResult = handle_uploads('photos', 4, 5242880);
 if (!$uploadResult['ok']) foreach ($uploadResult['errors'] as $err) $errors[] = $err;
 
 if ($errors) {
-    flash_set('error', 'Please fix the following and resubmit: ' . implode(' · ', array_slice($errors, 0, 3)));
+    flash_set('error', tr('Please fix the following and resubmit:') . ' ' . implode(' · ', array_slice($errors, 0, 3)));
     redirect('contact-us');
 }
 

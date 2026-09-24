@@ -232,7 +232,7 @@ foreach ($extraSchemas as $extra) {
 
 ?>
 <!DOCTYPE html>
-<html lang="<?= e(current_lang()) ?>" dir="<?= e(lang_dir()) ?>">
+<html lang="<?= e(current_lang()) ?>" dir="<?= e(lang_dir()) ?>" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -307,6 +307,10 @@ foreach ($extraSchemas as $extra) {
 
     <link rel="stylesheet" href="<?= e(asset('css/style.css')) ?>">
     <link rel="stylesheet" href="<?= e(asset('css/responsive.css')) ?>">
+
+    <?php // Swap no-js -> js before first paint, so scroll-reveal elements start
+          // hidden only when the animation script is genuinely going to run. ?>
+    <script>document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'js');</script>
     <?php // Right-to-left overrides — Arabic only, so LTR keeps the exact same CSS. ?>
     <?php if (lang_is_rtl()): ?>
     <link rel="stylesheet" href="<?= e(asset('css/rtl.css')) ?>">

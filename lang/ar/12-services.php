@@ -36,4 +36,7 @@ return [
     'WhatsApp Us' => 'أرسل على واتساب',
     'Scrap collection truck providing pickup service' => 'شاحنة جمع سكراب توفر خدمة التوصيل',
     'Scrap buying services in Mecca, Jeddah & Taif, Saudi Arabia: free pickup, scrap metal buying, industrial scrap collection, vehicle scrapping, site clearance and certified weighing with instant payment.' => 'خدمات شراء السكراب في مكة، جدة والطائف، المملكة العربية السعودية: توصيل مجاني، شراء نفائس معدنية، جمع سكراب صناعي، تشليح مركبات، تفريغ مواقع ووزن معتمد مع دفع فوري.',
+
+    // ---- Prefilled WhatsApp message ----
+    'Hello, I need a scrap pickup.' => 'مرحبًا، أحتاج خدمة توصيل سكراب.',
 ];
