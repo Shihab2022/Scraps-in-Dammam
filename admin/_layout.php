@@ -27,7 +27,7 @@ function admin_header(string $title): void
     <title><?= e($title) ?> — Admin | <?= e($siteName) ?></title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="<?= e(url('assets/css/admin.css')) ?>">
+    <link rel="stylesheet" href="<?= e(asset('css/admin.css')) ?>">
 </head>
 <body>
 <div class="admin">

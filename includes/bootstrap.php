@@ -119,9 +119,24 @@ if (!function_exists('url')) {
     }
 }
 if (!function_exists('asset')) {
+    /**
+     * Public asset URL.
+     *
+     * Stylesheets/scripts/images are cached for 30 days by .htaccess, so the URL
+     * carries a ?v=<mtime> stamp: change the file and every visitor (and phone
+     * with a stale copy) is served the new one immediately, while untouched files
+     * keep benefiting from the long cache.
+     */
     function asset(string $path): string
     {
-        return url('assets/' . ltrim($path, '/'));
+        $clean = ltrim($path, '/');
+        $url   = url('assets/' . $clean);
+        $file  = ROOT_PATH . '/assets/' . $clean;
+        if (is_file($file)) {
+            $mtime = @filemtime($file);
+            if ($mtime) $url .= (str_contains($url, '?') ? '&' : '?') . 'v=' . $mtime;
+        }
+        return $url;
     }
 }
 if (!function_exists('social_image')) {

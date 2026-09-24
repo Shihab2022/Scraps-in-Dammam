@@ -299,9 +299,12 @@ foreach ($extraSchemas as $extra) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <?php // Arabic gets a font that actually covers the script; Latin keeps the brand pair. ?>
+    <?php // Arabic gets a font that actually covers the script (Almarai — the
+          // rounded geometric Arabic sans of the reference design); Latin keeps
+          // the brand pair. Swap the family here to restyle Arabic site-wide.
+          // Only the weights the CSS actually uses are requested — fewer files. ?>
     <link rel="stylesheet" href="<?= e(lang_is_rtl()
-        ? 'https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap'
+        ? 'https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=swap'
         : 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap') ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 

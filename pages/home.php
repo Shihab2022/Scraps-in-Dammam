@@ -26,10 +26,14 @@ include __DIR__ . '/../includes/header.php';
             </div>
         </div>
         <figure class="hero__media">
-            <video class="hero__media-video" autoplay muted loop playsinline preload="metadata"
+            <?php // The clip is ~90 MB: phones never download it (the <source> media
+                  // query skips the file entirely) and just show the 2 KB poster,
+                  // while tablets/desktops play it as before. Re-encoding hero.mp4
+                  // to ~1–2 MB is still recommended — see README. ?>
+            <video class="hero__media-video" autoplay muted loop playsinline preload="none"
                    poster="<?= e(asset('images/hero/hero.svg')) ?>" width="640" height="480"
                    aria-label="<?= e(tr('Scrap yard with metal, copper and aluminum ready for pickup')) ?>">
-                <source src="<?= e(asset('images/hero/hero.mp4')) ?>" type="video/mp4">
+                <source src="<?= e(asset('images/hero/hero.mp4')) ?>" type="video/mp4" media="(min-width: 769px)">
             </video>
             <figcaption class="hero__media-card">
                 <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>

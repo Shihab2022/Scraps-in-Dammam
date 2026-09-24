@@ -2,48 +2,107 @@
    Responsive layout — 320 → 1920px
    ============================================================ */
 
+/* ----- 1400px and below: keep the desktop row on a single line ----- */
+@media (max-width: 1400px){
+    .navbar__inner{gap:12px}
+    .nav-menu{gap:2px}
+    .nav-menu>li>a,.nav-dropdown-toggle{padding:10px 10px;font-size:.92rem}
+    .nav-cta-wrap{margin-left:6px}
+    .nav-cta-wrap .btn{padding:10px 14px;font-size:.84rem}
+    .nav-menu .lang-switch{padding:8px 12px;font-size:.86rem}
+    .brand__text{font-size:1.05rem}
+}
+
 /* ----- 1280px and below ----- */
 @media (max-width: 1280px){
     .footer-grid{grid-template-columns:1.3fr 1fr 0.8fr 1.3fr}
 }
 
-/* ----- 1024px and below: tablet ----- */
-@media (max-width: 1024px){
-    :root{--header-h:66px}
+/* ----- 1200px and below: the navigation collapses into the drawer ----- */
+@media (max-width: 1200px){
+    .navbar__inner{gap:12px}
     .nav-toggle{display:flex}
-    .topbar__info{display:none}
-    .navbar__inner{min-height:var(--header-h)}
     .nav-cta-wrap{display:none}
 
-    /* Navigation becomes a slide-in drawer */
+    /* The popup header carries its own close button and brand, so the navbar row
+       behind it is hidden — otherwise it would show through the white box. */
+    body.nav-open .topbar,
+    body.nav-open .navbar__inner>.brand,
+    body.nav-open .navbar__actions{visibility:hidden;pointer-events:none}
+
+    /* While the popup is open the header stops sticking to the viewport. A sticky
+       header can remain a stacking context and trap the fixed drawer below page
+       content; static lets the dimming overlay cover the topbar/navbar band and
+       lets the full-height drawer use its z-index against page content. */
+    body.nav-open .site-header{position:static}
+    body.nav-open .wa-float,
+    body.nav-open .mobile-cta{visibility:hidden}
+
+    /* Brand name wraps onto at most two lines — never a wall of squeezed text */
+    .brand{align-items:center}
+    .brand__text{white-space:normal;line-height:1.2;font-size:1.04rem;min-width:0;max-width:min(56vw,240px);
+        display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+
+    /* Language switcher stays reachable in the navbar while the drawer is shut */
+    .navbar__actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+    .navbar__lang{display:inline-flex}
+    .navbar__lang .lang-switch{padding:8px 12px;font-size:.86rem}
+
+    /* --- Navigation becomes a slide-in drawer --- */
     .nav-menu{
         position:fixed;top:0;bottom:0;right:0;width:min(360px,88vw);max-width:360px;
-        background:#fff;flex-direction:column;align-items:stretch;gap:2px;
-        padding:24px 18px 130px;overflow-y:auto;overflow-x:hidden;
-        box-shadow:-14px 0 40px rgba(22,24,29,.22);z-index:960;
+        background:#fff;flex-direction:column;align-items:stretch;gap:0;
+        padding:0 0 130px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;
+        box-shadow:-14px 0 40px rgba(22,24,29,.22);z-index:1100;
         transform:translateX(105%);transition:transform .3s ease;
         max-width:100vw;box-sizing:border-box;
     }
     .nav-menu.open{transform:translateX(0)}
-    .nav-menu>li{position:static;max-width:100%}
-    .nav-menu>li>a,.nav-dropdown-toggle{width:100%;max-width:100%;box-sizing:border-box;justify-content:space-between;padding:14px 12px;font-size:1rem;border-radius:10px;white-space:normal;text-align:left}
-    .nav-dropdown{position:static;transform:none;min-width:0;max-width:100%;width:100%;box-sizing:border-box;box-shadow:none;border:none;background:var(--bg);
-        opacity:1;visibility:visible;display:none;margin:0 0 6px 0;border-radius:10px;overflow:hidden}
+    .nav-menu>li{position:static;max-width:100%;flex-shrink:0;border-bottom:1px solid var(--border)}
+    .nav-menu>li:last-child{border-bottom:0}
+    /* Drawer head: its own close button + brand, pinned while the list scrolls */
+    .nav-menu>li.nav-drawer-head{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;padding:12px 16px}
+    .brand--drawer{min-width:0}
+    .brand--drawer .brand__text{font-size:1.05rem;line-height:1.2}
+    .nav-close{flex:none;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;
+        border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--charcoal);font-size:1.1rem}
+    .nav-close:hover{background:var(--accent-soft);border-color:var(--accent);color:var(--deep-green)}
+    .nav-menu>li>a,.nav-dropdown-toggle{width:100%;max-width:100%;box-sizing:border-box;justify-content:space-between;padding:15px 16px;font-size:1.02rem;font-weight:700;border-radius:0;white-space:normal;text-align:left}
+    /* Expand icon sits opposite the label: pointing down while the group is open
+       (the state shown in the reference drawer), flipped when it is collapsed. */
+    .nav-menu .nav-caret{font-size:.8em;color:var(--muted)}
+    .nav-menu .has-dropdown .nav-caret{transform:rotate(0)}
+    .nav-menu .has-dropdown.collapsed .nav-caret{transform:rotate(180deg)}
+    /* Sub-menu: a flat indented list instead of a floating panel. Every group is
+       expanded by default straight from CSS, so all options are visible even
+       before (or without) the script — .collapsed, added on tap, is the only
+       state JavaScript has to manage. */
+    .nav-dropdown{position:static;transform:none;min-width:0;max-width:100%;width:100%;box-sizing:border-box;box-shadow:none;border:none;background:transparent;
+        opacity:1;visibility:visible;display:block;margin:0;padding:0 0 12px;border-radius:0}
     .nav-menu .has-dropdown>.nav-dropdown,
     .nav-menu .has-dropdown:hover>.nav-dropdown,
     .nav-menu .has-dropdown.open>.nav-dropdown{transform:none;left:auto;top:auto}
-    .nav-menu>li{flex-shrink:0}
-    .has-dropdown.open>.nav-dropdown{display:block}
+    .nav-menu .has-dropdown.collapsed:not(.open)>.nav-dropdown{display:none}
+    .nav-dropdown li{max-width:100%}
+    .nav-dropdown li a{padding:11px 16px;font-size:.95rem;font-weight:600;border-radius:0;white-space:normal;word-break:break-word;overflow-wrap:anywhere}
+    .nav-dropdown li a i{width:22px;flex:none;font-size:.85em}
+    .nav-dropdown li a span{min-width:0;flex:1}
+    /* Language row inside the popup (the navbar copy is hidden while it is open) */
+    .nav-menu .lang-switch-item{padding:14px 16px}
+    .nav-menu .lang-switch{width:100%;justify-content:center;text-align:center;padding:12px 16px}
+    .nav-menu .nav-cta-wrap{display:flex;flex-direction:column;padding:16px;margin:0}
     .nav-toggle{position:relative;z-index:970;flex-shrink:0}
     body.nav-open{overflow:hidden}
     .grid-2{grid-template-columns:minmax(0,1fr)}
-    .nav-dropdown li{max-width:100%}
-    .nav-dropdown li a{padding:12px 10px;white-space:normal;word-break:break-word;overflow-wrap:anywhere}
-    .nav-dropdown li a i{width:22px;flex:none}
-    .nav-dropdown li a span{min-width:0;flex:1}
-    .nav-menu .nav-cta-wrap{display:flex;flex-direction:column;margin:20px 0 0}
-    /* Language switcher becomes a full-width row inside the drawer */
-    .nav-menu .lang-switch{width:100%;justify-content:center;text-align:center;padding:13px 16px;margin-top:12px}
+}
+
+/* ----- 1024px and below: tablet ----- */
+@media (max-width: 1024px){
+    :root{--header-h:66px}
+    .topbar__info{display:none}
+    /* Only the service-area line is left, so centre it instead of hugging one side */
+    .topbar__inner{justify-content:center}
+    .navbar__inner{min-height:var(--header-h)}
 
     .scrap-grid,.loc-grid,.why-grid,.testimonial-grid,.steps-grid,.contact-grid{grid-template-columns:repeat(2,1fr)}
     .hero__inner{grid-template-columns:1fr;gap:32px}
@@ -86,6 +145,15 @@
     .table-wrap{border-radius:10px}
 }
 
+/* ----- 560px and below: keep the navbar uncluttered ----- */
+@media (max-width: 560px){
+    /* Full language name becomes its short code so the brand keeps room to wrap */
+    .navbar__lang .lang-switch{padding:8px 11px;gap:6px}
+    .navbar__lang .lang-switch__label{display:none}
+    .navbar__lang .lang-switch__code{display:inline}
+    .brand__text{max-width:min(52vw,210px)}
+}
+
 /* ----- 480px and below: small phones ----- */
 @media (max-width: 480px){
     .container{padding-inline:16px}
@@ -106,7 +174,7 @@
 }
 
 @media print{
-    .topbar,.mobile-cta,.wa-float,.nav-toggle,.cta-band,.footer-legal__links{display:none !important}
+    .topbar,.mobile-cta,.wa-float,.nav-toggle,.nav-drawer-head,.nav-overlay,.cta-band,.footer-legal__links{display:none !important}
     body{padding-bottom:0}
     .site-header{position:static;box-shadow:none}
     a{color:#000}

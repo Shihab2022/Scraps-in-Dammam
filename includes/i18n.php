@@ -261,6 +261,7 @@ if (!function_exists('lang_switcher')) {
            aria-label="<?= e(tr('Switch language')) ?>: <?= e($label) ?>">
             <i class="fa-solid fa-globe" aria-hidden="true"></i>
             <span class="lang-switch__label"><?= e($label) ?></span>
+            <span class="lang-switch__code" aria-hidden="true"><?= e(strtoupper($target)) ?></span>
         </a>
         <?php
     }

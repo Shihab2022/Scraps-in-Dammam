@@ -223,6 +223,18 @@ This powers the floating button, mobile CTA bar, header button and every pre-fil
 - Replace them with real photos while keeping the same filenames, or update the references.
 - Every `<img>` has descriptive `alt` text; non-critical images load lazily.
 - Customer uploads live in `uploads/files/YYYY/MM/` under random names — originals are never used on disk.
+- **Hero video** (`assets/images/hero/hero.mp4`) — phones never download it: the `<source>` in
+  `pages/home.php` carries `media="(min-width: 769px)"`, so small screens render the ~2 KB
+  `hero.svg` poster instead and the page stays light on mobile data.
+  The committed file is still ~90 MB, which is too heavy even for desktop — re-encode it and point
+  the `<source>` at the new file:
+
+  ```bash
+  ffmpeg -i hero.mp4 -vf "scale=1280:-2" -an -c:v libx264 -crf 30 -preset slow \
+         -movflags +faststart hero-web.mp4   # expect ~1–2 MB
+  ```
+
+  If you would rather ship no video at all, delete the `<video>` block — the poster is enough.
 
 ## Loading Screen (Preloader)
 

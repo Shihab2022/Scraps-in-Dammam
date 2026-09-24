@@ -20,10 +20,16 @@
     var labelOpen = (toggle && toggle.getAttribute('data-label-open')) || 'Open menu';
     var labelClose = (toggle && toggle.getAttribute('data-label-close')) || 'Close menu';
 
+    var overlayTimer = null;
+
     function openMenu() {
         if (!menu || !toggle) return;
+        if (overlayTimer) { clearTimeout(overlayTimer); overlayTimer = null; }
         menu.classList.add('open');
-        if (overlay) overlay.hidden = false;
+        if (overlay) {
+            overlay.hidden = false;
+            overlay.classList.add('show');
+        }
         document.body.classList.add('nav-open');
         toggle.setAttribute('aria-expanded', 'true');
         toggle.setAttribute('aria-label', labelClose);
@@ -31,7 +37,16 @@
     function closeMenu() {
         if (!menu || !toggle) return;
         menu.classList.remove('open');
-        if (overlay) overlay.hidden = true;
+        // .show drives the fade + pointer-events, and the overlay is then hidden
+        // outright so an invisible backdrop can never sit over the page and
+        // swallow taps — that would make the menu look like it never opens.
+        if (overlay) {
+            overlay.classList.remove('show');
+            if (overlayTimer) clearTimeout(overlayTimer);
+            overlayTimer = setTimeout(function () {
+                if (!menu.classList.contains('open')) overlay.hidden = true;
+            }, 260);
+        }
         document.body.classList.remove('nav-open');
         toggle.setAttribute('aria-expanded', 'false');
         toggle.setAttribute('aria-label', labelOpen);
@@ -57,20 +72,66 @@
         });
     }
 
+    // The drawer has its own close button inside its header, so the popup never
+    // depends on the navbar hamburger (which is hidden while the drawer is open).
+    var closeBtn = document.getElementById('navClose');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+            closeMenu();
+            if (toggle) toggle.focus();
+        });
+    }
+
     /* ---------- Dropdowns (We Buy / Locations) ---------- */
+    // In the drawer (≤1200px) every group is expanded by CSS itself, so the script
+    // never has to reveal them: it only marks a group .collapsed when the visitor
+    // taps it shut, and syncs aria-expanded. On desktop the panels open on hover
+    // and only one can be pinned open at a time (the .open class).
+    var drawerQuery = window.matchMedia('(max-width: 1200px)');
+    var dropdownGroups = document.querySelectorAll('.nav-menu .has-dropdown');
+
+    function setGroupCollapsed(group, collapsed) {
+        group.classList.toggle('collapsed', collapsed);
+        // .open is kept in sync as well: the current stylesheet expands groups by
+        // default, but an older cached copy reveals them through .open — either
+        // way every option ends up visible in the drawer.
+        group.classList.toggle('open', !collapsed);
+        var btn = group.querySelector('.nav-dropdown-toggle');
+        if (btn) btn.setAttribute('aria-expanded', String(!collapsed));
+    }
+
+    function syncNavMode() {
+        var drawer = drawerQuery.matches;
+        dropdownGroups.forEach(function (group) {
+            setGroupCollapsed(group, !drawer);  // drawer: expanded · desktop: hover-driven
+        });
+    }
+    syncNavMode();
+    if (drawerQuery.addEventListener) {
+        drawerQuery.addEventListener('change', syncNavMode);
+    } else if (drawerQuery.addListener) {
+        drawerQuery.addListener(syncNavMode);   // Safari < 14
+    }
+
     document.querySelectorAll('.nav-dropdown-toggle').forEach(function (btn) {
         btn.addEventListener('click', function () {
-            var parent = btn.closest('.has-dropdown');
-            var isOpen = parent.classList.contains('open');
-            parent.parentElement.querySelectorAll('.has-dropdown').forEach(function (sib) {
-                if (sib !== parent) {
+            var group = btn.closest('.has-dropdown');
+            if (drawerQuery.matches) {
+                // Drawer: open by default, so a tap only collapses/expands this group
+                // and the other groups keep showing their options.
+                setGroupCollapsed(group, !group.classList.contains('collapsed'));
+                return;
+            }
+            var willOpen = !group.classList.contains('open');
+            group.parentElement.querySelectorAll('.has-dropdown').forEach(function (sib) {
+                if (sib !== group) {
                     sib.classList.remove('open');
                     var ob = sib.querySelector('.nav-dropdown-toggle');
                     if (ob) ob.setAttribute('aria-expanded', 'false');
                 }
             });
-            parent.classList.toggle('open', !isOpen);
-            btn.setAttribute('aria-expanded', String(!isOpen));
+            group.classList.toggle('open', willOpen);
+            btn.setAttribute('aria-expanded', String(willOpen));
         });
     });
 

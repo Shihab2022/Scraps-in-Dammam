@@ -35,15 +35,35 @@ $waMsg = tr('Hello, I would like to sell my scrap. Can you provide a quote?');
                 <span class="brand__text"><?= e($siteName) ?></span>
             </a>
 
-            <button class="nav-toggle" id="navToggle" type="button"
-                    aria-expanded="false" aria-controls="navMenu" aria-label="<?= e(tr('Open menu')) ?>"
-                    data-label-open="<?= e(tr('Open menu')) ?>" data-label-close="<?= e(tr('Close menu')) ?>">
-                <span class="nav-toggle__bar" aria-hidden="true"></span>
-                <span class="nav-toggle__bar" aria-hidden="true"></span>
-                <span class="nav-toggle__bar" aria-hidden="true"></span>
-            </button>
+            <div class="navbar__actions">
+                <?php // Language switcher stays in the navbar on phones/tablets;
+                      // the copy inside the drawer below serves the desktop layout. ?>
+                <span class="navbar__lang"><?php lang_switcher(); ?></span>
+
+                <button class="nav-toggle" id="navToggle" type="button"
+                        aria-expanded="false" aria-controls="navMenu" aria-label="<?= e(tr('Open menu')) ?>"
+                        data-label-open="<?= e(tr('Open menu')) ?>" data-label-close="<?= e(tr('Close menu')) ?>">
+                    <span class="nav-toggle__bar" aria-hidden="true"></span>
+                    <span class="nav-toggle__bar" aria-hidden="true"></span>
+                    <span class="nav-toggle__bar" aria-hidden="true"></span>
+                </button>
+            </div>
 
             <ul class="nav-menu" id="navMenu" role="menubar">
+                <?php // Popup header (≤1200px): its own close button + brand, so the
+                      // navbar row behind the drawer never shows through it. ?>
+                <li class="nav-drawer-head">
+                    <a class="brand brand--drawer" href="<?= e(url('/')) ?>"
+                       aria-label="<?= e($siteName) ?> — <?= e(tr('Home')) ?>">
+                        <img class="brand__mark" src="<?= e(asset('images/logo.svg')) ?>" alt="" width="42" height="42">
+                        <span class="brand__text"><?= e($siteName) ?></span>
+                    </a>
+                    <button class="nav-close" id="navClose" type="button"
+                            aria-controls="navMenu" aria-label="<?= e(tr('Close menu')) ?>">
+                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                    </button>
+                </li>
+
                 <li<?= $activeRoute === '' ? ' class="active"' : '' ?>>
                     <a href="<?= e(url('/')) ?>"><?= e(tr('Home')) ?></a></li>
                 <li<?= $activeRoute === '/about-us' ? ' class="active"' : '' ?>>
@@ -69,7 +89,8 @@ $waMsg = tr('Hello, I would like to sell my scrap. Can you provide a quote?');
                 <li<?= $activeRoute === '/contact-us' ? ' class="active"' : '' ?>>
                     <a href="<?= e(url('contact-us')) ?>"><?= e(tr('Contact Us')) ?></a></li>
 
-                <?php // Language switcher — flips the whole site between English and Arabic. ?>
+                <?php // Language switcher (desktop menu). On phones/tablets the same
+                      // button is rendered in the navbar through .navbar__lang. ?>
                 <li class="lang-switch-item"><?php lang_switcher(); ?></li>
 
                 <li class="nav-cta-wrap">
@@ -83,8 +104,8 @@ $waMsg = tr('Hello, I would like to sell my scrap. Can you provide a quote?');
     </nav>
 </header>
 
-<!-- Overlay for the mobile drawer -->
-<div class="nav-overlay" id="navOverlay" hidden></div>
+<!-- Overlay for the mobile drawer (visibility + pointer-events follow .show) -->
+<div class="nav-overlay" id="navOverlay" aria-hidden="true" hidden></div>
 
 <!-- Sticky mobile bottom CTA bar -->
 <div class="mobile-cta" role="group" aria-label="<?= e(tr('Quick contact')) ?>">

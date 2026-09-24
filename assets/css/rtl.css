@@ -5,11 +5,12 @@
    cover in the base sheet. LTR never loads this file.
    ============================================================ */
 
-/* Arabic type — the header loads Cairo for RTL; fall back cleanly. */
+/* Arabic type — the header loads Almarai for RTL (the rounded geometric Arabic
+   sans of the reference design); Cairo/Segoe/system fonts fall back cleanly. */
 :root,
 body {
-    --font-head:'Cairo','Segoe UI',system-ui,sans-serif;
-    --font-body:'Cairo','Segoe UI',system-ui,sans-serif;
+    --font-head:'Almarai','Cairo','Segoe UI',system-ui,sans-serif;
+    --font-body:'Almarai','Cairo','Segoe UI',system-ui,sans-serif;
 }
 body{font-family:var(--font-body);letter-spacing:0}
 .section-eyebrow{letter-spacing:.06em}
@@ -22,10 +23,9 @@ body{font-family:var(--font-body);letter-spacing:0}
 /* Nav CTA gap sits on the opposite side in RTL */
 .nav-cta-wrap{margin-left:0;margin-right:12px}
 
-/* Off-screen helpers stay off-screen from the right */
-.skip-link{left:auto;right:-999px}
-.skip-link:focus{left:auto;right:0}
-.hp-field{left:auto;right:-9999px}
+/* Off-canvas helpers (skip link, honeypot) now hide themselves with a transform
+   or a clip in style.css, so no RTL override is needed — and nothing sits outside
+   the viewport where it could widen the horizontal scroll area in RTL. */
 
 /* Card icon mirrors to the top-left corner */
 .scrap-card__icon{right:auto;left:20px}
@@ -59,11 +59,15 @@ input,textarea,select{text-align:right}
     .wa-float{right:auto;left:16px}
 }
 
-/* Mobile slide-in menu enters from the left (mirrors the LTR drawer) */
-@media (max-width:1024px){
+/* Mobile slide-in menu enters from the left (mirrors the LTR drawer).
+   The closed drawer is parked off-canvas, and horizontal overflow is clipped at
+   the viewport (style.css), so it can never be dragged into view as a blank strip. */
+@media (max-width:1200px){
     .nav-menu{right:auto;left:0;border-radius:0 10px 10px 0;
         box-shadow:14px 0 40px rgba(22,24,29,.22);transform:translateX(-105%)}
     .nav-menu.open{transform:translateX(0)}
     .nav-menu>li>a,.nav-dropdown-toggle{text-align:right}
     .nav-menu .has-dropdown.open>.nav-dropdown{left:auto;right:0}
+    /* Sub-menu rows follow the brand font weight in Arabic too */
+    .nav-dropdown li a{text-align:right}
 }
